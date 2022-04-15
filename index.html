@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -155,6 +155,181 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/15/TIL-2022-04-15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/15/TIL-2022-04-15/" class="post-title-link" itemprop="url">TIL_2022-04-15</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-04-15 21:03:25 / Modified: 21:05:36" itemprop="dateCreated datePublished" datetime="2022-04-15T21:03:25+09:00">2022-04-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="프로그램-언어의-역사"><a href="#프로그램-언어의-역사" class="headerlink" title="프로그램 언어의 역사"></a>프로그램 언어의 역사</h2><p>기존 2진법이나 16진법같은 머신코드로 프로그램을 짜기 어려워서 <code>**어셈블러**</code>란 것을 만들게됨</p>
+<h2 id="어셈블러"><a href="#어셈블러" class="headerlink" title="어셈블러"></a>어셈블러</h2><ul>
+<li>머신 코드를 오브젝트 코드로 해석해주는 번역 프로그램</li>
+<li>기존 엄청 긴 머신코드로 더하기란 기능을 쳐야했으면 a&#x3D;1; 만 쳐도 머신코드를 컴파일하여 메모리에 입력하게됨</li>
+<li>진행 방식<br>Code → Token → AST → 머신코드</li>
+<li>해당 방식을 쓰는 언어 : C, JAVA …</li>
+</ul>
+<blockquote>
+<p>AST explorer Link :  <a target="_blank" rel="noopener" href="https://astexplorer.net/">https://astexplorer.net/</a></p>
+</blockquote>
+<h2 id="HTML-HTTP-Browser"><a href="#HTML-HTTP-Browser" class="headerlink" title="HTML, HTTP, Browser"></a>HTML, HTTP, Browser</h2><p>어셈블리 이후 나타난 것이 <code>**HTML, HTTP, Browser</code>** 이다.</p>
+<ul>
+<li>HTML &#x3D; 쉽게 코드를 작성할 수 있고</li>
+<li>HTTP &#x3D; 쉽게 요청을 보내거나 받을 수 있고</li>
+<li>Browser &#x3D; HTTP를 통해 전달받은 정보를 사용자에게 보여줄 수 있다.</li>
+</ul>
+<p>Browser 주소창에 넣는 문장이나 요청의 형식은 <code>URL(Uniform Resource Locator)</code>이라고 불리며 작성에 대한 약속된 기준이 있다.</p>
+<h2 id="URL의-작성-방식"><a href="#URL의-작성-방식" class="headerlink" title="URL의 작성 방식"></a>URL의 작성 방식</h2><ul>
+<li>scheme: 약속된 방식의 이름 (ftp, http …)</li>
+<li>host: 접속하려는 페이지의 주소</li>
+<li>port: 접속하거나 정보를 주고 받는데 쓰이는 통로의 구분</li>
+<li>path: 해당 주소의 어떠한 파일로 통하는 경로</li>
+<li>query: 추가로 요청할 때 무엇을 요청할지에 대한 정보</li>
+</ul>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><ul>
+<li>DOM을 구성하는 가장 기본적인 언어</li>
+<li><html> 태그 안에 생성되어야하며, <head>태그와 <body> 태그 내에서 내용을 작성</li>
+<li>약속된 의미에 맞도록 태그를 사용해야 컴퓨터가 처리하기 좋음</li>
+</ul>
+<h2 id="DOCTYPE"><a href="#DOCTYPE" class="headerlink" title="DOCTYPE"></a>DOCTYPE</h2><p>마크업 언어에서 문서 형식을 정의하며, 웹 브라우저가 <strong>어떤 HTML 버전</strong>의 해석 방식으로 페이지를 이해하면 되는지 알려주는 용도</p>
+<h2 id="META"><a href="#META" class="headerlink" title="META"></a>META</h2><p>HTML문서의 제작자, 내용, 키워드, 화면 정보 등 여러 정보를 <strong>검색 엔진이나 브라우저</strong>에게 제공</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/14/TIL-2022-04-14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/14/TIL-2022-04-14/" class="post-title-link" itemprop="url">2022 04 14 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-04-14 22:29:37" itemprop="dateCreated datePublished" datetime="2022-04-14T22:29:37+09:00">2022-04-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-04-15 13:51:28" itemprop="dateModified" datetime="2022-04-15T13:51:28+09:00">2022-04-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/14/2022-04-14-TIL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -183,9 +358,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-04-14 22:26:06 / Modified: 22:39:36" itemprop="dateCreated datePublished" datetime="2022-04-14T22:26:06+09:00">2022-04-14</time>
+      <time title="Created: 2022-04-14 22:26:06" itemprop="dateCreated datePublished" datetime="2022-04-14T22:26:06+09:00">2022-04-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-04-15 14:58:02" itemprop="dateModified" datetime="2022-04-15T14:58:02+09:00">2022-04-15</time>
     </span>
 
   
@@ -220,63 +401,63 @@
 </li>
 </ul>
 <aside>
-💡 **막간 취업 코테 팁!
+💡 막간 취업 코테 팁!
 
-<p>Python의 경우 웹 언어로써의 능력은 떨어지지만 코딩 테스트용으로는 좋다**</p>
+<p>Python의 경우 웹 언어로써의 능력은 떨어지지만 코딩 테스트용으로는 좋다</p>
 </aside>
 
-<h1 id="Git-Flow"><a href="#Git-Flow" class="headerlink" title="Git Flow"></a>Git Flow</h1><h2 id="branch-models"><a href="#branch-models" class="headerlink" title="branch models"></a>branch models</h2><ul>
-<li><strong>git flow (★) : 현재 강의에서는 주로 git flow를 다룰 것임</strong></li>
-<li>github flow</li>
-<li>gitlab flow</li>
-</ul>
+<h1 id="Git-Flow"><a href="#Git-Flow" class="headerlink" title="Git Flow"></a>Git Flow</h1><pre><code>## branch models
+
+- **git flow (★) : 현재 강의에서는 주로 git flow를 다룰 것임**
+- github flow
+- gitlab flow
+</code></pre>
 <p>#Git Flow</p>
-<h2 id="Git-flow-작업-순서"><a href="#Git-flow-작업-순서" class="headerlink" title="Git flow 작업 순서"></a>Git flow 작업 순서</h2><ul>
-<li>git flow init ⇒ git flow 초기화 셋팅</li>
-<li>git flow feature start {branch name} ⇒ 기능 branch를 생성 후 기능 개발 시작</li>
-<li>개발이 끝나면 git flow feature finish {branch name}로 branch 제거</li>
-<li>git flow release start {release name} ⇒ 릴리즈 기능 시작</li>
-<li>git flow release finish {release name} ⇒ 릴리즈에 대한 확인 후 commit 메세지 작성, 해당 branch는 삭제되니 merge 메세지 작성</li>
-<li>작업한 내용을 push를 안하면 github는 모르기때문에 git push -u origin {branch name} (여기서는 main branch가 아닌 작업했던 branch name을 기입)</li>
-<li>이후 main branch로 가서 똑같이 git push origin main</li>
-<li>tag를 알리기 위해 git tag  를 입력 후 git push —tags로 버전도 같이 push</li>
-</ul>
-<p><strong>ex) 첫 git flow tags link :</strong> <a target="_blank" rel="noopener" href="https://github.com/dbstjddbwls/branch-practice/tags">https://github.com/dbstjddbwls/branch-practice/tags</a></p>
-<h2 id="Git-Rename"><a href="#Git-Rename" class="headerlink" title="Git Rename"></a>Git Rename</h2><ul>
-<li>mv {file} {rename file}을 하고 git status를 하면 rename이 아니라 delete라고 인식한다.</li>
-<li>이를 방지하고싶다면 git mv {file} {rename file}이라고 앞에 git을 넣어줘야함</li>
-</ul>
-<h2 id="Git-Restore"><a href="#Git-Restore" class="headerlink" title="Git Restore"></a>Git Restore</h2><ul>
-<li>수정 후 commit까지 했는데 다시 되돌려야할때</li>
-<li>git restore {file name} 를 통해 바로 이전버전 커밋으로 되돌림</li>
-</ul>
-<h2 id="Git-Unstaging"><a href="#Git-Unstaging" class="headerlink" title="Git Unstaging"></a>Git Unstaging</h2><ul>
-<li><p>add를 취소하기</p>
-</li>
-<li><p>add한 파일을 다시 unstaging하려면 git reset HEAD {file name}</p>
-<ul>
-<li>수정한 내용이 사라진건 아님</li>
-</ul>
-</li>
-<li><p>restore와 reset의 차이점은 내용을 이전 버전으로 수정 하냐안하냐의 차이로 나뉘어진다</p>
-</li>
-<li><p>단 reset은 내 repo에서 삭제해도 다른 팀원의 repo에는 살아있을 수 있기 때문에 쓰지 않는걸 권장</p>
-<ul>
-<li>reset의 대안은 <strong>revert</strong>를 사용</li>
-</ul>
-</li>
-</ul>
-<h2 id="Git-Revert"><a href="#Git-Revert" class="headerlink" title="Git Revert"></a>Git Revert</h2><ul>
-<li>git revert —no-commit HEAD~{num}</li>
-<li>{num} 수 만큼 가장 최근 기준으로 이전에 커밋한 내용을 되돌림</li>
-<li>reset과의 다른 점은 revert의 경우 가장 최근의 커밋 내역까지 되돌리며 삭제까지 진행.</li>
-<li>즉 파일 생성→ add→ status→ commit  순으로 보통 진행했다면 commit →status →add →파일 삭제로 되돌아감</li>
-<li>revert했다면 꼭 사유를 commit 메세지에 적을 것</li>
-</ul>
-<h2 id="Git-Commit-—amend"><a href="#Git-Commit-—amend" class="headerlink" title="Git Commit —amend"></a>Git Commit —amend</h2><ul>
-<li>이전에 commit했던 commit message를 수정할 때 사용</li>
-<li>Git commit —amend</li>
-</ul>
+<pre><code>## Git flow 작업 순서
+
+- git flow init ⇒ git flow 초기화 셋팅
+- git flow feature start &#123;branch name&#125; ⇒ 기능 branch를 생성 후 기능 개발 시작
+- 개발이 끝나면 git flow feature finish &#123;branch name&#125;로 branch 제거
+- git flow release start &#123;release name&#125; ⇒ 릴리즈 기능 시작
+- git flow release finish &#123;release name&#125; ⇒ 릴리즈에 대한 확인 후 commit 메세지 작성, 해당 branch는 삭제되니 merge 메세지 작성
+- 작업한 내용을 push를 안하면 github는 모르기때문에 git push -u origin &#123;branch name&#125; (여기서는 main branch가 아닌 작업했던 branch name을 기입)
+- 이후 main branch로 가서 똑같이 git push origin main
+- tag를 알리기 위해 git tag  를 입력 후 git push —tags로 버전도 같이 push
+**ex) 첫 git flow tags link :** [https://github.com/dbstjddbwls/branch-practice/tags](https://github.com/dbstjddbwls/branch-practice/tags)
+
+## Git Rename
+
+- mv &#123;file&#125; &#123;rename file&#125;을 하고 git status를 하면 rename이 아니라 delete라고 인식한다.
+- 이를 방지하고싶다면 git mv &#123;file&#125; &#123;rename file&#125;이라고 앞에 git을 넣어줘야함
+
+## Git Restore
+
+- 수정 후 commit까지 했는데 다시 되돌려야할때
+- git restore &#123;file name&#125; 를 통해 바로 이전버전 커밋으로 되돌림
+
+## Git Unstaging
+
+- add를 취소하기
+- add한 파일을 다시 unstaging하려면 git reset HEAD &#123;file name&#125;
+    - 수정한 내용이 사라진건 아님
+
+- restore와 reset의 차이점은 내용을 이전 버전으로 수정 하냐안하냐의 차이로 나뉘어진다
+- 단 reset은 내 repo에서 삭제해도 다른 팀원의 repo에는 살아있을 수 있기 때문에 쓰지 않는걸 권장
+    - reset의 대안은 **revert**를 사용
+
+## Git Revert
+
+- git revert —no-commit HEAD~&#123;num&#125;
+- &#123;num&#125; 수 만큼 가장 최근 기준으로 이전에 커밋한 내용을 되돌림
+- reset과의 다른 점은 revert의 경우 가장 최근의 커밋 내역까지 되돌리며 삭제까지 진행.
+- 즉 파일 생성→ add→ status→ commit  순으로 보통 진행했다면 commit →status →add →파일 삭제로 되돌아감
+- revert했다면 꼭 사유를 commit 메세지에 적을 것
+
+## Git Commit —amend
+
+- 이전에 commit했던 commit message를 수정할 때 사용
+- Git commit —amend
+</code></pre>
 
       
     </div>
