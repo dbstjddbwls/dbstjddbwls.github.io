@@ -20,27 +20,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"dbstjddbwls.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="프로그램 언어의 역사기존 2진법이나 16진법같은 머신코드로 프로그램을 짜기 어려워서 **어셈블러**란 것을 만들게됨 어셈블러 머신 코드를 오브젝트 코드로 해석해주는 번역 프로그램 기존 엄청 긴 머신코드로 더하기란 기능을 쳐야했으면 a&#x3D;1; 만 쳐도 머신코드를 컴파일하여 메모리에 입력하게됨 진행 방식Code → Token → AST → 머신코드 해당">
+    <meta name="description" content="수업 내용Javascript의 메모리메모리는 크게 4가지 영역으로 분류되어있다.  코드 영역 : 유저가 입력한 코드가 들어있는 영역 스택 영역 : 입력한 코드에 따라 처리해야할 항목들을 순서대로 쌓아두는 영역 데이터 영역 : 메모리의 주소가 담겨있고 데이터를 구조화시키는 영역 힙(heap) 영역 :  데이터 영역에서 실행할 기능들이 담겨있는 영역버튼을 클릭">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2022 04 15 TIL">
-<meta property="og:url" content="https://dbstjddbwls.github.io/2022/04/15/TIL-2022-04-15/index.html">
+<meta property="og:title" content="2022 04 22 TIL">
+<meta property="og:url" content="https://dbstjddbwls.github.io/2022/04/22/TIL-2022-04-22/index.html">
 <meta property="og:site_name" content="프론트엔드에 깃발 세우기">
-<meta property="og:description" content="프로그램 언어의 역사기존 2진법이나 16진법같은 머신코드로 프로그램을 짜기 어려워서 **어셈블러**란 것을 만들게됨 어셈블러 머신 코드를 오브젝트 코드로 해석해주는 번역 프로그램 기존 엄청 긴 머신코드로 더하기란 기능을 쳐야했으면 a&#x3D;1; 만 쳐도 머신코드를 컴파일하여 메모리에 입력하게됨 진행 방식Code → Token → AST → 머신코드 해당">
+<meta property="og:description" content="수업 내용Javascript의 메모리메모리는 크게 4가지 영역으로 분류되어있다.  코드 영역 : 유저가 입력한 코드가 들어있는 영역 스택 영역 : 입력한 코드에 따라 처리해야할 항목들을 순서대로 쌓아두는 영역 데이터 영역 : 메모리의 주소가 담겨있고 데이터를 구조화시키는 영역 힙(heap) 영역 :  데이터 영역에서 실행할 기능들이 담겨있는 영역버튼을 클릭">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-15T12:03:25.000Z">
-<meta property="article:modified_time" content="2022-04-15T12:14:40.268Z">
+<meta property="article:published_time" content="2022-04-22T12:21:26.000Z">
+<meta property="article:modified_time" content="2022-04-22T12:22:09.740Z">
 <meta property="article:author" content="Kim Yun Seong">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://dbstjddbwls.github.io/2022/04/15/TIL-2022-04-15/">
+<link rel="canonical" href="https://dbstjddbwls.github.io/2022/04/22/TIL-2022-04-22/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://dbstjddbwls.github.io/2022/04/15/TIL-2022-04-15/","path":"2022/04/15/TIL-2022-04-15/","title":"2022 04 15 TIL"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://dbstjddbwls.github.io/2022/04/22/TIL-2022-04-22/","path":"2022/04/22/TIL-2022-04-22/","title":"2022 04 22 TIL"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>2022 04 15 TIL | 프론트엔드에 깃발 세우기</title>
+<title>2022 04 22 TIL | 프론트엔드에 깃발 세우기</title>
   
 
 
@@ -108,7 +108,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EC%96%B8%EC%96%B4%EC%9D%98-%EC%97%AD%EC%82%AC"><span class="nav-number">1.</span> <span class="nav-text">프로그램 언어의 역사</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%96%B4%EC%85%88%EB%B8%94%EB%9F%AC"><span class="nav-number">2.</span> <span class="nav-text">어셈블러</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-HTTP-Browser"><span class="nav-number">3.</span> <span class="nav-text">HTML, HTTP, Browser</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL%EC%9D%98-%EC%9E%91%EC%84%B1-%EB%B0%A9%EC%8B%9D"><span class="nav-number">4.</span> <span class="nav-text">URL의 작성 방식</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">5.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOCTYPE"><span class="nav-number">6.</span> <span class="nav-text">DOCTYPE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#META"><span class="nav-number">7.</span> <span class="nav-text">META</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%88%98%EC%97%85-%EB%82%B4%EC%9A%A9"><span class="nav-number">1.</span> <span class="nav-text">수업 내용</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Javascript%EC%9D%98-%EB%A9%94%EB%AA%A8%EB%A6%AC"><span class="nav-number">1.1.</span> <span class="nav-text">Javascript의 메모리</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%88%9C%EC%84%9C%EB%8F%84"><span class="nav-number">1.2.</span> <span class="nav-text">메모리 순서도</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B7%B8%EB%A3%B9%EC%8A%A4%ED%84%B0%EB%94%94"><span class="nav-number">1.3.</span> <span class="nav-text">그룹스터디</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%9A%8C%EA%B3%A0"><span class="nav-number">2.</span> <span class="nav-text">회고</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -161,7 +161,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/15/TIL-2022-04-15/">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/22/TIL-2022-04-22/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -174,12 +174,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="2022 04 15 TIL | 프론트엔드에 깃발 세우기">
+      <meta itemprop="name" content="2022 04 22 TIL | 프론트엔드에 깃발 세우기">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          2022 04 15 TIL
+          2022 04 22 TIL
         </h1>
 
         <div class="post-meta-container">
@@ -191,7 +191,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-04-15 21:03:25 / Modified: 21:14:40" itemprop="dateCreated datePublished" datetime="2022-04-15T21:03:25+09:00">2022-04-15</time>
+      <time title="Created: 2022-04-22 21:21:26 / Modified: 21:22:09" itemprop="dateCreated datePublished" datetime="2022-04-22T21:21:26+09:00">2022-04-22</time>
     </span>
 
   
@@ -204,37 +204,25 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="프로그램-언어의-역사"><a href="#프로그램-언어의-역사" class="headerlink" title="프로그램 언어의 역사"></a>프로그램 언어의 역사</h2><p>기존 2진법이나 16진법같은 머신코드로 프로그램을 짜기 어려워서 <code>**어셈블러**</code>란 것을 만들게됨</p>
-<h2 id="어셈블러"><a href="#어셈블러" class="headerlink" title="어셈블러"></a>어셈블러</h2><ul>
-<li>머신 코드를 오브젝트 코드로 해석해주는 번역 프로그램</li>
-<li>기존 엄청 긴 머신코드로 더하기란 기능을 쳐야했으면 a&#x3D;1; 만 쳐도 머신코드를 컴파일하여 메모리에 입력하게됨</li>
-<li>진행 방식<br>Code → Token → AST → 머신코드</li>
-<li>해당 방식을 쓰는 언어 : C, JAVA …</li>
-</ul>
-<blockquote>
-<p>AST explorer Link :  <a target="_blank" rel="noopener" href="https://astexplorer.net/">https://astexplorer.net/</a></p>
-</blockquote>
-<h2 id="HTML-HTTP-Browser"><a href="#HTML-HTTP-Browser" class="headerlink" title="HTML, HTTP, Browser"></a>HTML, HTTP, Browser</h2><p>어셈블리 이후 나타난 것이 <code>**HTML, HTTP, Browser</code>** 이다.</p>
+        <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="Javascript의-메모리"><a href="#Javascript의-메모리" class="headerlink" title="Javascript의 메모리"></a>Javascript의 메모리</h2><p>메모리는 크게 4가지 영역으로 분류되어있다.</p>
 <ul>
-<li>HTML &#x3D; 쉽게 코드를 작성할 수 있고</li>
-<li>HTTP &#x3D; 쉽게 요청을 보내거나 받을 수 있고</li>
-<li>Browser &#x3D; HTTP를 통해 전달받은 정보를 사용자에게 보여줄 수 있다.</li>
+<li>코드 영역 : 유저가 입력한 코드가 들어있는 영역</li>
+<li>스택 영역 : 입력한 코드에 따라 처리해야할 항목들을 순서대로 쌓아두는 영역</li>
+<li>데이터 영역 : 메모리의 주소가 담겨있고 데이터를 구조화시키는 영역</li>
+<li>힙(heap) 영역 :  데이터 영역에서 실행할 기능들이 담겨있는 영역<br>버튼을 클릭시 객체를 생성하는 기능같은 기능들이 모여있다.</li>
 </ul>
-<p>Browser 주소창에 넣는 문장이나 요청의 형식은 <code>URL(Uniform Resource Locator)</code>이라고 불리며 작성에 대한 약속된 기준이 있다.</p>
-<h2 id="URL의-작성-방식"><a href="#URL의-작성-방식" class="headerlink" title="URL의 작성 방식"></a>URL의 작성 방식</h2><ul>
-<li>scheme: 약속된 방식의 이름 (ftp, http …)</li>
-<li>host: 접속하려는 페이지의 주소</li>
-<li>port: 접속하거나 정보를 주고 받는데 쓰이는 통로의 구분</li>
-<li>path: 해당 주소의 어떠한 파일로 통하는 경로</li>
-<li>query: 추가로 요청할 때 무엇을 요청할지에 대한 정보</li>
+<h2 id="메모리-순서도"><a href="#메모리-순서도" class="headerlink" title="메모리 순서도"></a>메모리 순서도</h2><ul>
+<li>스택 영역에 하나씩 콜을 해온다. &#x3D; 콜스택</li>
+<li>코드를 실행할 환경을 셋팅한다.</li>
+<li>프로그램을 하는데 필요한 메모리 객체를 생성할 환경을 셋팅한다. (var, const, let, this)</li>
+<li>window에 관련된 속성이나 기능을 셋팅한다. (console, alert, var b &#x3D; {age:’20’} …)</li>
+<li>function에 관련된 속성이나 기능을 셋팅한다. (prototype …)</li>
 </ul>
-<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><ul>
-<li>DOM을 구성하는 가장 기본적인 언어</li>
-<li><html> 태그 안에 생성되어야하며, <head>태그와 <body> 태그 내에서 내용을 작성</li>
-<li>약속된 의미에 맞도록 태그를 사용해야 컴퓨터가 처리하기 좋음</li>
-</ul>
-<h2 id="DOCTYPE"><a href="#DOCTYPE" class="headerlink" title="DOCTYPE"></a>DOCTYPE</h2><p>마크업 언어에서 문서 형식을 정의하며, 웹 브라우저가 <strong>어떤 HTML 버전</strong>의 해석 방식으로 페이지를 이해하면 되는지 알려주는 용도</p>
-<h2 id="META"><a href="#META" class="headerlink" title="META"></a>META</h2><p>HTML문서의 제작자, 내용, 키워드, 화면 정보 등 여러 정보를 <strong>검색 엔진이나 브라우저</strong>에게 제공</p>
+<h2 id="그룹스터디"><a href="#그룹스터디" class="headerlink" title="그룹스터디"></a>그룹스터디</h2><p><a target="_blank" rel="noopener" href="https://www.notion.so/f39dacf362ad4339a6ba3de85ab6b6cd">https://www.notion.so/f39dacf362ad4339a6ba3de85ab6b6cd</a></p>
+<p>위 노션에 정리한 내용들을 위주로 발표하였습니다.</p>
+<p>참고 원문 : <a target="_blank" rel="noopener" href="https://yozm.wishket.com/magazine/detail/1294/">https://yozm.wishket.com/magazine/detail/1294/</a></p>
+<p>위 내용을 조금 정리하여 본인의 생각과 경험을 첨가하여 이야기를 하였습니다. 다른 조원들은 부트캠프 시작 후 어려웠던 점이나 블로그 작성한 후기 등을 공유함과 동시에 각자 분야에서 겪었던 일들과 같이 간단한 이야기를 나누었습니다.</p>
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘은 이전 CSS강의에서 position에 대한 마무리 설명과 JS의 기초 수업을 진행했습니다. 기본적인 데이터 타입부터 메모리에 관한 내용을 진행하였는데, 알던 것을 다시 한 번 들으니 아 맞다 이랬었지란 생각만이 들었습니다. 사람의 기억은 휘발성이라는데 맞는 말인 것 같습니다. 다만 오늘은 JS의 위주 강의로 생각했는데 기존 CSS의 마지막 단계라 그런가 복습 차원의 기본 속성이나 개념만 설명이 주된 내용이였어서 조금 아쉬운 감은 있던 것 같습니다.</p>
 
     </div>
 
@@ -248,14 +236,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/04/14/TIL-2022-04-14/" rel="prev" title="2022 04 14 TIL">
-                  <i class="fa fa-chevron-left"></i> 2022 04 14 TIL
+                <a href="/2022/04/21/TIL-2022-04-21/" rel="prev" title="2022 04 21 TIL">
+                  <i class="fa fa-chevron-left"></i> 2022 04 21 TIL
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/04/18/TIL-2022-04-18/" rel="next" title="2022 04 18 TIL">
-                  2022 04 18 TIL <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
