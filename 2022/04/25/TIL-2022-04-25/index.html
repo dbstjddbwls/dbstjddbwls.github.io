@@ -27,12 +27,10 @@
 <meta property="og:site_name" content="프론트엔드에 깃발 세우기">
 <meta property="og:description" content="수업 내용Global Context코드 구현을 위한 글로벌 환경을 설정하는 것. 정해진 내부 순서를 마친 뒤 다시 Global Context를 실행하여 다른 환경을 세팅한다. Global Context 순서 기본 window 관련 함수, 사용자 설정 함수 선언 var의 참조자 선언 Outer 환경 참조 및 this 객체 선언 Object 객체 선언, let">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8c4211e4-931d-4d96-9b81-c6a22409e97a/Untitled.png">
 <meta property="article:published_time" content="2022-04-25T12:52:01.000Z">
-<meta property="article:modified_time" content="2022-04-25T12:52:51.666Z">
+<meta property="article:modified_time" content="2022-04-26T12:38:26.211Z">
 <meta property="article:author" content="Kim Yun Seong">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8c4211e4-931d-4d96-9b81-c6a22409e97a/Untitled.png">
 
 
 <link rel="canonical" href="https://dbstjddbwls.github.io/2022/04/25/TIL-2022-04-25/">
@@ -123,7 +121,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -191,9 +189,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-04-25 21:52:01 / Modified: 21:52:51" itemprop="dateCreated datePublished" datetime="2022-04-25T21:52:01+09:00">2022-04-25</time>
+      <time title="Created: 2022-04-25 21:52:01" itemprop="dateCreated datePublished" datetime="2022-04-25T21:52:01+09:00">2022-04-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-04-26 21:38:26" itemprop="dateModified" datetime="2022-04-26T21:38:26+09:00">2022-04-26</time>
     </span>
 
   
@@ -233,7 +237,6 @@
 <p>그러나  function의 선언의 경우 Global Context 순서 중 가장 첫 사이클, 준비 단계에 초기화 후 선언되기 때문에 (선언형 방식) 가능해진다.</p>
 <p>호출이 선언보다 위에 있어도 Global Context의 순서에 따라 끌어오는 것을 호이스팅이라고 한다.</p>
 <h2 id="함수-코드-평가"><a href="#함수-코드-평가" class="headerlink" title="함수 코드 평가"></a>함수 코드 평가</h2><p>함수의 단위, 즉 하나의 함수가 생길 때마다 함수 실행 컨텍스트가 생성된다. 가장 첫 단계인 콜스택에 하나씩 쌓이는 것이다.</p>
-<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8c4211e4-931d-4d96-9b81-c6a22409e97a/Untitled.png" alt="Untitled"></p>
 <p>만약 콜스택 1의 함수에서 a를 console.log를 하라 하였을 때 해당 함수 내에 지역 변수로 없다면 다른 함수나 전역으로 가서 찾게된다. 이후 함수가 실행되면 콜스택과의 관계를 끊어버리며 스택의 층이 변하게 된다. 이 때문에 함수 안에서 함수 밖에는 접근이 가능하나, 함수 밖에서 함수 안의 지역 변수에 접근을 할 수가 없다.</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="title function_">foo</span>(a);</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params">b</span>)&#123;</span><br><span class="line">	<span class="keyword">var</span> c = <span class="number">20</span>;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(a+b+c); <span class="comment">//40</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c) <span class="comment">//error</span></span><br></pre></td></tr></table></figure>
 
@@ -259,6 +262,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2022/04/26/TIL-2022-04-26/" rel="next" title="2022 04 26 TIL">
+                  2022 04 26 TIL <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
