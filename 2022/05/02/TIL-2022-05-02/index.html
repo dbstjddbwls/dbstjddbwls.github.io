@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dbstjddbwls.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="수업 내용TypeScript Compiler Compilation Context : 어떤 파일을 컴파일 하거나 컴파일 하지 않을 것인지 구분하고, 변환 시 어떠한 옵션을 사용하는지 정함 CompileOnSave :  true &#x2F; false(defual)로 구분하며, true로 설정하였을 때 컴파일을 어느 프로그램에서 진행하느냐를 정함 extends">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022 05 02 TIL">
+<meta property="og:url" content="https://dbstjddbwls.github.io/2022/05/02/TIL-2022-05-02/index.html">
+<meta property="og:site_name" content="프론트엔드에 깃발 세우기">
+<meta property="og:description" content="수업 내용TypeScript Compiler Compilation Context : 어떤 파일을 컴파일 하거나 컴파일 하지 않을 것인지 구분하고, 변환 시 어떠한 옵션을 사용하는지 정함 CompileOnSave :  true &#x2F; false(defual)로 구분하며, true로 설정하였을 때 컴파일을 어느 프로그램에서 진행하느냐를 정함 extends">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-02T13:11:00.000Z">
+<meta property="article:modified_time" content="2022-05-02T13:11:47.936Z">
+<meta property="article:author" content="Kim Yun Seong">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dbstjddbwls.github.io/2022/05/02/TIL-2022-05-02/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://dbstjddbwls.github.io/2022/05/02/TIL-2022-05-02/","path":"2022/05/02/TIL-2022-05-02/","title":"2022 05 02 TIL"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>2022 05 02 TIL | 프론트엔드에 깃발 세우기</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">프론트엔드에 깃발 세우기</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%88%98%EC%97%85-%EB%82%B4%EC%9A%A9"><span class="nav-number">1.</span> <span class="nav-text">수업 내용</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeScript-Compiler"><span class="nav-number">1.1.</span> <span class="nav-text">TypeScript Compiler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interface"><span class="nav-number">1.2.</span> <span class="nav-text">Interface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interface-%EC%9E%91%EC%84%B1-%EC%8B%9C-Option"><span class="nav-number">1.3.</span> <span class="nav-text">Interface 작성 시 Option</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interface-%EB%82%B4-Function"><span class="nav-number">1.4.</span> <span class="nav-text">Interface 내 Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interface-%EB%82%B4-Class"><span class="nav-number">1.5.</span> <span class="nav-text">Interface 내 Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interface-%EB%82%B4-extends"><span class="nav-number">1.6.</span> <span class="nav-text">Interface 내 extends</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function-Interface"><span class="nav-number">1.7.</span> <span class="nav-text">Function Interface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ReadOnly-Interface"><span class="nav-number">1.8.</span> <span class="nav-text">ReadOnly Interface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Type-alias-vs-Interface"><span class="nav-number">1.9.</span> <span class="nav-text">Type alias vs Interface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Classes"><span class="nav-number">1.10.</span> <span class="nav-text">Classes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Constructor-amp-initialize"><span class="nav-number">1.11.</span> <span class="nav-text">Constructor &amp; initialize</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Acces-Modifiers"><span class="nav-number">1.12.</span> <span class="nav-text">Acces  Modifiers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Initialization-in-Constructor"><span class="nav-number">1.13.</span> <span class="nav-text">Initialization in Constructor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Getters-amp-Setters"><span class="nav-number">1.14.</span> <span class="nav-text">Getters &amp; Setters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class-readonly"><span class="nav-number">1.15.</span> <span class="nav-text">Class readonly</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Index-Signature-in-Class"><span class="nav-number">1.16.</span> <span class="nav-text">Index Signature in Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Static-Properties-amp-Methods"><span class="nav-number">1.17.</span> <span class="nav-text">Static Properties &amp; Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Singletons"><span class="nav-number">1.18.</span> <span class="nav-text">Singletons</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inheritance-extends"><span class="nav-number">1.19.</span> <span class="nav-text">Inheritance (extends)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract-Classes"><span class="nav-number">1.20.</span> <span class="nav-text">Abstract Classes</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%9A%8C%EA%B3%A0"><span class="nav-number">2.</span> <span class="nav-text">회고</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kim Yun Seong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/05/02/TIL-2022-05-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="2022 05 02 TIL | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2022 05 02 TIL
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-02 22:11:00 / Modified: 22:11:47" itemprop="dateCreated datePublished" datetime="2022-05-02T22:11:00+09:00">2022-05-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="TypeScript-Compiler"><a href="#TypeScript-Compiler" class="headerlink" title="TypeScript Compiler"></a>TypeScript Compiler</h2><ul>
+<li><strong>Compilation Context</strong> : 어떤 파일을 컴파일 하거나 컴파일 하지 않을 것인지 구분하고, 변환 시 어떠한 옵션을 사용하는지 정함</li>
+<li><strong>CompileOnSave</strong> :  true &#x2F; false(defual)로 구분하며, true로 설정하였을 때 컴파일을 어느 프로그램에서 진행하느냐를 정함</li>
+<li><strong>extends</strong> : 주로 상속받을 때 사용된다. 파일 경로명이 String Type으로 들어가야하며, ts 2.1 버전 이상부터 사용 가능한 속성이다. 특수한 설정 파일을 만들어서 tsconfig 파일을 수정없이 사용할 수 있다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//tsconfig.json</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;extend&quot;</span>:<span class="string">&quot;./test.json&quot;</span>,</span><br><span class="line">	<span class="string">&quot;compilerOption&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;strict&quot;</span>: <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//test.json</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;compilerOption&quot;</span>:&#123;</span><br><span class="line">		<span class="string">&quot;strict&quot;</span>: <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 타입스크립트에서 제공하는 검증된 기능들이 있는 npm도 있다.</span></span><br><span class="line">npm install --save <span class="meta">@tsconfig</span>/deno</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>files, include, exclude</strong> : 이 3가지 속성 다 설정이 없으면 실행 폴더 내 모든 파일을 컴파일 한다. 어떤 파일이나 어떤 디렉토리를 컴파일 하는지 정하는 속성이다.<ul>
+<li>files<ul>
+<li>상대 혹은 절대 경로의 리스트 배열이다</li>
+<li>exclude보다 강한 영향력을 행사한다.</li>
+</ul>
+</li>
+<li>include, exclude<ul>
+<li>glob 패텁을 사용한다. (.gitignore 과 유사함)</li>
+<li>include는 exclude보다 약하지만 *를 사용하면 .ts&#x2F; .tsx&#x2F; .td.ts 만 include 한다.</li>
+<li>exclude는 설정을 안하면 4가지(node_modiles, bower_components, jspm_package,<outDir>)를 default 값으로 제외하고 컴파일한다. 단 <outDir>은 include에 포함되어도 제외한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>CompileOptions</strong><ul>
+<li><p>@types</p>
+<ul>
+<li>TypeScript 2.0부터 사용 가능해진 내장 시스템이다.</li>
+<li>node_modules&#x2F;@types 라는 모든 경로를 찾아서 사용한다.</li>
+<li>배열 안의 모듈이나 node_modules&#x2F;@types 안의 모듈 이름에서 찾아온다.</li>
+<li><input disabled="" type="checkbox"> 같은 빈 배열을 넣으면 false 처리가 된다.</li>
+</ul>
+</li>
+<li><p>typeRoots</p>
+<ul>
+<li>해당 배열 안에 들어있는 경로들 아래에서만 가져온다.</li>
+<li>types와 typeRoots는 같이 사용되지는 않는다.</li>
+</ul>
+</li>
+<li><p>target</p>
+<ul>
+<li>어떠한 runTime에서 실행하는지 결정해준다.</li>
+<li>defualt 속성의 값을 기준으로 어느 버전으로  컴파일 할 지 결정한다. 아무것도 지정하지 않으면 es3 기준으로 컴파일을 실행한다.</li>
+</ul>
+</li>
+<li><p>lib</p>
+<ul>
+<li>실행하려는 환경에 맞게 기본 속성들을 설정한다.</li>
+<li>lib를 지정하지 않았을 때 target이 es3이면 lib.d.ts를, es5면 dom, es5, scripthost를, es6면 dom, es6, dom.iterable, scripthost를 디폴트로 사용한다.</li>
+<li>lib를 지정하면 해당 lib 배열로만 라이브러리를 사용한다.</li>
+</ul>
+</li>
+<li><p>outDir</p>
+<ul>
+<li>컴파일 내용을 출력할 디렉토리</li>
+</ul>
+</li>
+<li><p>outFile</p>
+<ul>
+<li>단일파일로 출력 시 파일명</li>
+</ul>
+</li>
+<li><p>rootDir</p>
+<ul>
+<li>입력파일의 rootDir 설정</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;outDir&quot;</span>: <span class="string">&quot;./dist&quot;</span>,</span><br><span class="line"><span class="string">&quot;rootDir&quot;</span> : <span class="string">&quot;./src&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 컴파일 시 ./src 폴더 내에 있는 ts 파일들만 컴파일하여 결과물인 js파일은 dist 폴더에 넣는다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//만약 rootDir를 설정하지 않으면 dist 폴더 내에 모든 파일과 폴더를 컴파일하여 dist 폴더 내에 넣는다. 즉 dist/src/.tsfile 이 생기게 된다.</span></span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>strict</p>
+<ul>
+<li><p>엄격한 타입 검사를 실행하는 옵션</p>
+</li>
+<li><p>—nolmplicitAny</p>
+<ul>
+<li>타입스크립트가 추론에 실패한 경우, any가 맞으면 any라고 지정하라함.</li>
+<li>아무것도 쓰지 않으면 에러</li>
+<li>해당 오류를 해결하면, any라고 지정되어 있지 않은 경우는 any가 아닌 것임</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fnuction <span class="title function_">func</span>(<span class="params">arg</span>)&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// arg의 타입 선언을 안하여 에러</span></span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>suppressImplicitAnyIndexErrors</p>
+<ul>
+<li>noImplicitAny를 사용할 때 인덱스 객체에 인덱스 signature가 없는 경우 오류가 발생하는데 이를 예외 처리</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">	<span class="attr">bar</span>: <span class="number">100</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj[<span class="string">&#x27;foo&#x27;</span>] = <span class="number">100</span>;</span><br><span class="line"><span class="comment">// error</span></span><br><span class="line"><span class="comment">// index 시그니쳐가 없어서 에러. 위 옵션을 사용 시 에러 발생이 안됨</span></span><br><span class="line"></span><br><span class="line">obj[<span class="string">&quot;bar&quot;</span>] = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>—noImolicitThis</p>
+<ul>
+<li>명시적이지 않게 any 타입을 사용하여, this 표현식에 사용하면 에러가 발생함</li>
+<li>해결을 위해선 매개변수 인자 첫 자리에 this를 놓고, this에 대한 타입을 선언해야한다. class를 사용하여도 가능하다.</li>
+<li>js에서 인자에 this를 넣으면 예약어라 에러가 난다.</li>
+<li>call, apply, bind 등과 같이 this를 대체하여 함수 콜을 하는 용도로 쓰인다.</li>
+<li>this는 보통 any로 선언한다.</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params">name:<span class="built_in">string</span></span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// error</span></span><br><span class="line"><span class="comment">// this에 대한 선언이 없다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"><span class="variable language_">this</span>:<span class="built_in">any</span>, name:<span class="built_in">string</span></span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ThisClass</span>&#123;</span><br><span class="line">	preivate _name : <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">name:<span class="built_in">string</span></span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">_name</span> = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">print</span>(<span class="params"><span class="variable language_">this</span>: ThisClass</span>)&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">_name</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">ThisClass</span>(<span class="string">&#x27;Name&#x27;</span>).<span class="title function_">print</span>()</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>—strictNullChecks</p>
+<ul>
+<li>null 및 undefined 값을 모든 타입이 가질 수 없고, 가지려면 union type이나 any는 null과 undefined를 가진다.</li>
+<li>예외적으로 void는 undefined를 가진다.</li>
+<li>해당 옵션을 적용하지 않고 계속 사용하다보면 정확히 어떤 타입이 오는지 헷갈릴 수 있다.</li>
+<li>null과 undefined를 사용하는 경우 신중하게 사용해야하며 되도록 정확한 타입을 지정하려는 노력을 해야한다.</li>
+</ul>
+</li>
+<li><p>—strictPropertyInitialization</p>
+<ul>
+<li>정의되지 않은 클래스의 속성이 생성자에서 초기화되었는지 확인한다.</li>
+<li>해당 옵션을 사용하려면 —strictNullChecks를 사용해야한다.</li>
+<li>constructor를 사용 안하는 경우는 다른 함수로 이니셜라이즈 하는 경우엔 사용하지 않는다. (async)</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="attr">_name</span>: <span class="built_in">string</span>;</span><br><span class="line">	<span class="comment">// error</span></span><br><span class="line">	<span class="comment">// constructor()&#123;&#125;에 할당되어있지 않기 때문이다</span></span><br><span class="line"></span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>)&#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">_name</span> = name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//async 사용</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">	<span class="keyword">private</span> _name!: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">async</span> <span class="title function_">initialize</span>(<span class="params">name: <span class="built_in">string</span></span>)&#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">_name</span> = name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>—alwaysStrict</p>
+<ul>
+<li>각 소스 파일에 대해 js의 strict mode로 코드를 분석하고 엄격하게 사용을 해제한다. 즉 타입의 선언을 안해도 되는 것.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h2><ul>
+<li>타입을 정리하는 하나의 데이터 묶음이다.</li>
+<li>변수나 인자에 타입 선언 대신하여 넣을 수 있다.</li>
+<li>해당 키워드는 컴파일 타임에만 사용되며 컴파일이 되면 js 파일에는 보여지지 않는다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Person1</span> &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">	<span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params">person:&#123;name:<span class="built_in">string</span>;&#125;</span>):<span class="built_in">void</span> &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">name</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">p</span>: &#123;<span class="attr">name</span>: <span class="built_in">string</span>; <span class="attr">age</span>: <span class="built_in">number</span>&#125; = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;Mark&quot;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">27</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">p2</span>: <span class="title class_">Person1</span> = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;YS&quot;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">28</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">func</span>(p)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Interface-작성-시-Option"><a href="#Interface-작성-시-Option" class="headerlink" title="Interface 작성 시 Option"></a>Interface 작성 시 Option</h2><ul>
+<li>? : 해당 인자가 값이 들어올 수도 있고 안들어올 수도 있다.</li>
+<li>[index: string] : 해당 인자 내에 어떠한 속성 값도 넣을 수 있다. 즉 interface내에 설정한 이름이 아니여도 무작위로 넣을 수 있게된다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//? Option</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Person2</span>&#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">	age?: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">hello2</span>(<span class="params">person: Person2</span>): <span class="built_in">void</span>&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">name</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">hello2</span>(&#123;<span class="attr">name</span>:<span class="string">&quot;YS&quot;</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//? Option</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Person3</span>&#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">	age?: <span class="built_in">number</span>;</span><br><span class="line">	[<span class="attr">index</span>: <span class="built_in">string</span>]: <span class="built_in">any</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">hello3</span>(<span class="params">person: Person3</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(person.<span class="property">name</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">p31</span>: <span class="title class_">Person3</span> = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;Mark&quot;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">39</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">p32</span>: <span class="title class_">Person3</span> = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;YS&quot;</span>,</span><br><span class="line">	<span class="attr">testText</span>:[<span class="string">&#x27;test1&#x27;</span>,<span class="string">&#x27;test2&#x27;</span>]</span><br><span class="line">	<span class="comment">// [&#x27;test1&#x27;,&#x27;test2&#x27;]가 any에 할당됨</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">p33</span>: <span class="title class_">Person3</span> = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;Anna&quot;</span>,</span><br><span class="line">	<span class="attr">father</span>: p31,</span><br><span class="line">	<span class="attr">mother</span>: p32,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">hello3</span>(p33);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Interface-내-Function"><a href="#Interface-내-Function" class="headerlink" title="Interface 내 Function"></a>Interface 내 Function</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Person4</span> &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">	<span class="title function_">hello</span>(): <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">p41</span>: <span class="title class_">Person4</span> = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;Mark&quot;</span>,</span><br><span class="line">	<span class="attr">hello</span>: <span class="keyword">function</span>(<span class="params"></span>): <span class="built_in">void</span> &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">p42</span>: <span class="title class_">Person4</span> = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;Mark&quot;</span>,</span><br><span class="line">	<span class="title function_">hello</span>(<span class="attr">this</span>:<span class="title class_">Person4</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Interface-내-Class"><a href="#Interface-내-Class" class="headerlink" title="Interface 내 Class"></a>Interface 내 Class</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">IPerson1</span>&#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">	age?: <span class="built_in">number</span></span><br><span class="line">	<span class="title function_">hello</span>():<span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> <span class="keyword">implements</span> <span class="title class_">IPerson1</span>&#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>)&#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">name</span> = name</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="title function_">hello</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Mark&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">person2</span>: <span class="title class_">IPerson1</span> = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Mark&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Interface-내-extends"><a href="#Interface-내-extends" class="headerlink" title="Interface 내 extends"></a>Interface 내 extends</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">IPerson2</span> &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">	age?: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">IKorean</span> <span class="keyword">extends</span> <span class="title class_">IPerson2</span>&#123;</span><br><span class="line">	<span class="attr">city</span>: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">k</span>: <span class="title class_">IKorean</span> = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;Mark&quot;</span>,</span><br><span class="line">	<span class="attr">city</span>: <span class="string">&quot;Seoul&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Function-Interface"><a href="#Function-Interface" class="headerlink" title="Function Interface"></a>Function Interface</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">HelloPerson</span> &#123;</span><br><span class="line">	(<span class="attr">name</span>: <span class="built_in">string</span>, age?: <span class="built_in">number</span>): <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">helloPerson</span>: <span class="title class_">HelloPerson</span> = <span class="keyword">function</span>(<span class="params">name: <span class="built_in">string</span></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">helloPerson</span>(<span class="string">&#x27;Mark&#x27;</span>,<span class="number">39</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="ReadOnly-Interface"><a href="#ReadOnly-Interface" class="headerlink" title="ReadOnly Interface"></a>ReadOnly Interface</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Person8</span>&#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">	<span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">	<span class="keyword">readonly</span> <span class="attr">gender</span>: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">p81</span>: <span class="title class_">Person8</span> = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;Mark&quot;</span>,</span><br><span class="line">	<span class="attr">gender</span>: <span class="string">&quot;male&quot;</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p81.<span class="property">gernder</span> = <span class="string">&quot;female&quot;</span>;</span><br><span class="line"><span class="comment">// error</span></span><br><span class="line"><span class="comment">// 한 번 만들고 변경될 수 없음</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Type-alias-vs-Interface"><a href="#Type-alias-vs-Interface" class="headerlink" title="Type alias vs Interface"></a>Type alias vs Interface</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// --function--</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// alias</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">EatType</span> = <span class="function">(<span class="params">food: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span>;</span><br><span class="line"><span class="comment">// interface</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">IEat</span> &#123;</span><br><span class="line">	(<span class="attr">food</span>: <span class="built_in">string</span>):<span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// --array--</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// alias</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">List</span> = <span class="built_in">string</span>[];</span><br><span class="line"><span class="comment">// interface</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">List</span> &#123;</span><br><span class="line">	[<span class="attr">index</span>: <span class="built_in">number</span>]: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// --intersection--</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Error</span>&#123;</span><br><span class="line">	<span class="attr">sec</span>:<span class="built_in">boolean</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">	<span class="attr">artist</span>: &#123;<span class="attr">name</span>: <span class="built_in">string</span>&#125;[];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// alias</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">PersonData</span> = <span class="title class_">Data</span> &amp; <span class="title class_">Error</span>;</span><br><span class="line"><span class="comment">//interface</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">IData</span> <span class="keyword">extends</span> <span class="title class_">Data</span>, <span class="title class_">Error</span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">art</span>: <span class="title class_">Data</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">iar</span>: <span class="title class_">IData</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// --union type--</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> one&#123;</span><br><span class="line">	<span class="attr">one</span>: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> two&#123;</span><br><span class="line">	<span class="title function_">two</span>(): <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// alias</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">PetType</span> = one | two</span><br><span class="line"><span class="comment">// interface</span></span><br><span class="line"><span class="keyword">interface</span> three <span class="keyword">extends</span> one&#123;&#125;;</span><br><span class="line"><span class="comment">// !error</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Classes"><a href="#Classes" class="headerlink" title="Classes"></a>Classes</h2><ul>
+<li>object를 만드는 설계도</li>
+<li>클래스 이전에 object를 만드는 기본적인 방법은 function</li>
+<li>Javascript에서도 class 는 es6부터 가능</li>
+<li>TypeScript에서는 class도 사용자가 만드는 타입의 하나이다.</li>
+<li>this를 이용하여 만들어진 object를 가리킬 수 있다.</li>
+<li>es5 이하 버전으로 컴파일하면 function으로 변경된다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">	name;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>)&#123;</span><br><span class="line">			<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p1 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Mark&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Constructor-amp-initialize"><a href="#Constructor-amp-initialize" class="headerlink" title="Constructor &amp; initialize"></a>Constructor &amp; initialize</h2><ul>
+<li>생성자 함수가 없으면 디폴트 생성자가 불린다.</li>
+<li>생성자 함수가 있으면 디폴트 생성자는 사라진다.</li>
+<li>strict 모드에서는 프로퍼티를 선언하는 곳이나 생성자에서 값을 할당해야한다.</li>
+<li>프로퍼티를 선언하는 곳이나 생성자에서 값을 할당하지 않는 경우에는 !를 붙여 위험 표시를 한다.</li>
+<li>클래스의 프로퍼티가 정의되어있어도, 값을 넣지 않으면 undefined다.</li>
+<li>생성자 자체에는 async를 설정할 수 없다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="built_in">string</span> = <span class="string">&quot;Mark&quot;</span>;</span><br><span class="line">	<span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">	<span class="comment">// age error;</span></span><br><span class="line">	<span class="comment">// 초기화 된 값이 없기 때문</span></span><br><span class="line">	<span class="comment">// age!: number;</span></span><br><span class="line"></span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">age: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>( age === <span class="literal">undefined</span>)&#123;</span><br><span class="line">				<span class="variable language_">this</span>.<span class="property">age</span> = <span class="number">20</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">p1</span>: <span class="title class_">Person</span> = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="number">39</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="attr">p2</span>: <span class="title class_">Person</span> = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="number">39</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// p1.age = 39;</span></span><br><span class="line"><span class="comment">// Class 외부에서 선언하려면 해당 요소에 age!: number 처럼 !를 붙혀야한다.</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1.<span class="property">age</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Acces-Modifiers"><a href="#Acces-Modifiers" class="headerlink" title="Acces  Modifiers"></a>Acces  Modifiers</h2><ul>
+<li>외부에서 접근할 수 있는지, 상속받은 요소에서 접근할 수 있는지, 내부에서만 접근 가능한지 설정할 수 있다.</li>
+<li>클래스 내부의 모든 곳에 설정이 가능하다.</li>
+<li>public : 가장 기본 설정이며, 설정하지 않으면 public이 된다. 외부에서도 접근을 가능하게 한다.</li>
+<li>private : 클래스 외부에서, 심지어 호출하는 부분에서도 인자를 주는 것마저도 접근할 수 없다. javascript에서는 지원하지 않아 예전부터 프로퍼티나 메서드 앞에 _를 붙여서 사용하였다.</li>
+<li>protected : 상속받은 요소에서만 접근이 가능하다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="attr">name</span>: <span class="built_in">string</span> = <span class="string">&quot;Mark&quot;</span>;</span><br><span class="line">	<span class="keyword">public</span> age!: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">constructor</span>(<span class="params">age?: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>( age === <span class="literal">undefined</span>)&#123;</span><br><span class="line">				<span class="variable language_">this</span>.<span class="property">age</span> = <span class="number">20</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">async</span> <span class="title function_">init</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">p1</span>: <span class="title class_">Person</span> = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="number">39</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Initialization-in-Constructor"><a href="#Initialization-in-Constructor" class="headerlink" title="Initialization in Constructor"></a>Initialization in Constructor</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">constructor</span>(<span class="params"><span class="keyword">public</span> name: <span class="built_in">string</span>, <span class="keyword">private</span> age: <span class="built_in">number</span></span>)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">p1</span>: <span class="title class_">Person</span> = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Mark&quot;</span>, <span class="number">39</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Getters-amp-Setters"><a href="#Getters-amp-Setters" class="headerlink" title="Getters &amp; Setters"></a>Getters &amp; Setters</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">constructor</span>(<span class="params"><span class="keyword">public</span> name: <span class="built_in">string</span>, <span class="keyword">private</span> age: <span class="built_in">number</span></span>)&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">get</span> <span class="title function_">name</span>()</span><br><span class="line">		<span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">_name</span> + <span class="string">&quot;Kim&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">set</span> <span class="title function_">name</span>(<span class="params">n: <span class="built_in">string</span></span>)&#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">_name</span> = n;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">p1</span>: <span class="title class_">Person</span> = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Mark&quot;</span>, <span class="number">39</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1.<span class="property">name</span>); <span class="comment">// getter</span></span><br><span class="line">p1.<span class="property">name</span> = <span class="string">&quot;YS&quot;</span>; <span class="comment">// setter</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Class-readonly"><a href="#Class-readonly" class="headerlink" title="Class readonly"></a>Class readonly</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">readonly</span> <span class="attr">name</span>: <span class="built_in">string</span> = <span class="string">&quot;Mark&quot;</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">readonly</span> <span class="attr">count</span>: <span class="built_in">string</span>;</span><br><span class="line">	<span class="comment">// 선언하는 곳 또는 constructor에만 변경 또는 할당 가능하다.</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">constructor</span>(<span class="params"><span class="keyword">public</span> name: <span class="built_in">string</span>, <span class="keyword">private</span> age: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">count</span> = <span class="string">&quot;Korea&quot;</span></span><br><span class="line">	<span class="comment">// constructor에선 readonly여도 변경할 수 있다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">hello</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">count</span> = <span class="string">&quot;USA&quot;</span>;</span><br><span class="line">		<span class="comment">// error</span></span><br><span class="line">		<span class="comment">// 클래스 내부에 작용하는 private 이여도 readonly이기 때문에 불가능하다</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">p1</span>: <span class="title class_">Person</span> = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Mark&quot;</span>,<span class="number">39</span>);</span><br><span class="line"></span><br><span class="line">p1.<span class="property">name</span> = <span class="string">&quot;YS&quot;</span>;</span><br><span class="line"><span class="comment">// error</span></span><br><span class="line"><span class="comment">// readonly라 컨트롤이 불가능하다</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Index-Signature-in-Class"><a href="#Index-Signature-in-Class" class="headerlink" title="Index Signature in Class"></a>Index Signature in Class</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Students</span> &#123;</span><br><span class="line">	<span class="attr">mark</span>: <span class="built_in">string</span> = <span class="string">&#x27;male&#x27;</span>;</span><br><span class="line">	<span class="comment">// 이렇게되면 요소가 추가될 때마다 써야한다.</span></span><br><span class="line"></span><br><span class="line">	[<span class="attr">index</span>: <span class="built_in">string</span>]: <span class="string">&quot;male&quot;</span> | <span class="string">&quot;female&quot;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="attr">mark</span>:<span class="built_in">string</span> = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">	<span class="comment">// error</span></span><br><span class="line">	<span class="comment">// index: string에는 두 성별 외엔 할당 불가</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = <span class="keyword">new</span> <span class="title class_">Students</span>();</span><br><span class="line">a.<span class="property">mark</span> = <span class="string">&#x27;male&#x27;</span>;</span><br><span class="line">a.<span class="property">jade</span> = <span class="string">&#x27;male&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> b = <span class="keyword">new</span> <span class="title class_">Students</span>();</span><br><span class="line">b.<span class="property">kim</span> = <span class="string">&#x27;female&#x27;</span>;</span><br><span class="line">b.<span class="property">lee</span> = <span class="string">&#x27;male&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Static-Properties-amp-Methods"><a href="#Static-Properties-amp-Methods" class="headerlink" title="Static Properties &amp; Methods"></a>Static Properties &amp; Methods</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> staric <span class="variable constant_">CITY</span> = <span class="string">&quot;Seoul&quot;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="title function_">hello</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Person</span>.<span class="property">CITY</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">change</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="title class_">PErson</span>.<span class="property">CITY</span> = <span class="string">&quot;LA&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p1 = <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">p1.<span class="title function_">hello</span>();</span><br><span class="line"><span class="comment">// Seoul</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p2 = <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">p2.<span class="title function_">hello</span>();</span><br><span class="line"><span class="comment">// Seoul</span></span><br><span class="line"></span><br><span class="line">p1.<span class="title function_">change</span>();</span><br><span class="line">p2.<span class="title function_">change</span>();</span><br><span class="line"><span class="comment">// LA</span></span><br><span class="line"><span class="comment">// 둘 다 공유하고 있기 때문에 LA로 다같이 변경됨</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Singletons"><a href="#Singletons" class="headerlink" title="Singletons"></a>Singletons</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ClassName</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> instance = <span class="title class_">ClassName</span> | <span class="literal">null</span> = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="title function_">getInstance</span>(): <span class="title class_">ClassName</span>&#123;</span><br><span class="line">	<span class="comment">// ClassName 으로부터 만든 obj가 있으면 그것을 리턴, 없으면 만들어서 리턴</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (<span class="title class_">ClassName</span>.<span class="property">instance</span> === <span class="literal">null</span>)&#123;</span><br><span class="line">			<span class="title class_">ClassName</span>.<span class="property">instance</span> = <span class="keyword">new</span> <span class="title class_">ClassName</span>();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="title class_">ClassName</span>.<span class="property">instance</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="title function_">constructor</span>(<span class="params"></span>)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = <span class="title class_">ClassName</span>.<span class="title function_">getInstance</span>();</span><br><span class="line"><span class="keyword">const</span> b = <span class="title class_">ClassName</span>.<span class="title function_">getInstance</span>();</span><br></pre></td></tr></table></figure>
+
+<h2 id="Inheritance-extends"><a href="#Inheritance-extends" class="headerlink" title="Inheritance (extends)"></a>Inheritance (extends)</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Parent</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">protexted _name: <span class="built_in">string</span>, <span class="keyword">private</span> _age: <span class="built_in">number</span></span>)&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">print</span>(): <span class="built_in">void</span>&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>, <span class="variable language_">this</span>.<span class="property">age</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">protected</span> <span class="title function_">printName</span>():<span class="built_in">void</span>&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>, <span class="variable language_">this</span>.<span class="property">age</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="title class_">Parent</span>(<span class="string">&quot;Mark&quot;</span>, <span class="number">39</span>);</span><br><span class="line">p.<span class="title function_">print</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Child</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Parent</span></span><br><span class="line">	<span class="keyword">public</span> gender = <span class="string">&quot;male&quot;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">age: <span class="built_in">number</span></span>)&#123;</span><br><span class="line">		<span class="variable language_">super</span>(<span class="string">&quot;Mark Jr.&quot;</span>, age);</span><br><span class="line"></span><br><span class="line">		<span class="variable language_">this</span>.<span class="title function_">printName</span>();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c = <span class="keyword">new</span> <span class="title class_">Child</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">p.<span class="property">_name</span> <span class="comment">// error;</span></span><br><span class="line">c.<span class="property">_name</span> <span class="comment">// Mark Jr.</span></span><br><span class="line">c.<span class="title function_">print</span>() <span class="comment">// Mark Jr, 1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Abstract-Classes"><a href="#Abstract-Classes" class="headerlink" title="Abstract Classes"></a>Abstract Classes</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">AbsPerson</span>&#123;</span><br><span class="line">	<span class="keyword">protected</span> <span class="attr">_name</span>: <span class="built_in">string</span> = <span class="string">&quot;Mark&quot;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">abstract</span> <span class="title function_">setName</span>(<span class="attr">name</span>: <span class="built_in">string</span>): <span class="built_in">void</span>;</span><br><span class="line">	<span class="comment">//abstract 붙혀서 &#123;&#125; 붙히지 않아도 됨</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">AbsPerson</span>();</span><br><span class="line"><span class="comment">// error</span></span><br><span class="line"><span class="comment">// abstract가 있어 기능이 불완전하기 때뭄에 new 사용 불가함</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> <span class="keyword">extends</span> <span class="title class_ inherited__">AbsPerson</span>&#123;</span><br><span class="line">	<span class="title function_">setName</span>(<span class="attr">name</span>:<span class="built_in">string</span>):<span class="built_in">void</span>&#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">_name</span> = name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">p.<span class="title function_">setName</span>(<span class="string">&quot;Mark&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>타입스크립트의 강의가 벌써 끝나갑니다. 아직 개념에만 집중한 강의들인데 실제로 이 언어를 통해 무언가를 만들어보았으면 좋겠다란 생각이 듭니다. 다음 번 javascript toy project에선 타입스크립트를 통하여 작업을 하는 것을 생각해볼만한 가치가 있다고 생각합니다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/04/29/TIL-2022-04-29/" rel="prev" title="2022 04 29 TIL">
+                  <i class="fa fa-chevron-left"></i> 2022 04 29 TIL
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kim Yun Seong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
