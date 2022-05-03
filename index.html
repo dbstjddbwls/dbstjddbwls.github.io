@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -155,6 +155,174 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/05/03/TIL-2022-05-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/03/TIL-2022-05-03/" class="post-title-link" itemprop="url">2022 05 03 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-03 21:41:39 / Modified: 21:42:16" itemprop="dateCreated datePublished" datetime="2022-05-03T21:41:39+09:00">2022-05-03</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="Generics-Any의-차이점"><a href="#Generics-Any의-차이점" class="headerlink" title="Generics, Any의 차이점"></a>Generics, Any의 차이점</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">helloStr</span>(<span class="params">msg: <span class="built_in">string</span></span>): <span class="built_in">string</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> msg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">helloNum</span>(<span class="params">msg: <span class="built_in">number</span></span>): <span class="built_in">number</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> msg</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 하나만 가질 수 있는 타입을 가진 함수는 계속 타입별로 만들어야함</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">hello</span>(<span class="params">msg: <span class="built_in">any</span></span>): <span class="built_in">any</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">any</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">hello</span>(<span class="string">&quot;Mark&quot;</span>).<span class="property">length</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">hello</span>(<span class="number">39</span>).<span class="property">length</span>);</span><br><span class="line"><span class="comment">// 39에는 length를 못 쓰나 any타입이라 쓸 수 있는 것처럼 보여진다. 하지만 런타임 시 undefined가 노출되게 되는 등 혼란이 일어난다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//--Generics--</span></span><br><span class="line"><span class="keyword">function</span> helloGeneric&lt;T&gt;(<span class="attr">msg</span>: T): T&#123;</span><br><span class="line">	<span class="keyword">return</span> msg;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// &lt;T&gt;는 type을 의미</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">helloGeneric</span>(<span class="string">&quot;Mark&quot;</span>).<span class="property">length</span>);</span><br><span class="line"><span class="comment">// String 타입이 T에 들어간다.</span></span><br><span class="line"><span class="comment">// &lt;T&gt;에 string이 들어가면 뒤쪽 T에도 동일한 값을 넣게되며, 그로 인하여 각 타입의 내장함수를 사용할 수 있다.</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Generic-Basic"><a href="#Generic-Basic" class="headerlink" title="Generic Basic"></a>Generic Basic</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> helloBasic&lt;T&gt;(<span class="attr">msg</span>: T): T&#123;</span><br><span class="line">	<span class="keyword">return</span> msg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">helloBasic&lt;<span class="built_in">string</span>&gt;(<span class="string">&quot;Mark&quot;</span>);</span><br><span class="line"><span class="comment">// 위 방법으로 진행 시 인자로 &lt;&gt;내 선언된 타입만 넣을 수 있으며 그 외에 넣으면 오류가 난다.</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">helloBasic</span>(<span class="number">36</span>);</span><br><span class="line"><span class="comment">// &lt;&gt; 안에 따로 설정하지 않아도 사용 가능하다. 그렇게되면 T를 추론하여 값을 대입한다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> helloBasic2&lt;T, U&gt;(<span class="attr">msg</span>: T, <span class="attr">comment</span>: U): T&#123;</span><br><span class="line">	<span class="keyword">return</span> msg;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 인자를 2개를 넣을 수도 있으며, 그에 대한 값을 항상 선언 시 할당해야한다.</span></span><br><span class="line"></span><br><span class="line">helloBasic2&lt;<span class="built_in">string</span>, <span class="built_in">number</span>&gt;(<span class="string">&quot;Mark&quot;</span>, <span class="number">39</span>);</span><br><span class="line"><span class="title function_">helloBasic2</span>(<span class="number">36</span>, <span class="number">39</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Generic-Array-amp-Tuple"><a href="#Generic-Array-amp-Tuple" class="headerlink" title="Generic Array &amp; Tuple"></a>Generic Array &amp; Tuple</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> helloArray&lt;T&gt;(<span class="attr">msg</span>: T[]): T&#123;</span><br><span class="line">	<span class="keyword">return</span> msg[<span class="number">0</span>]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">helloArray</span>([<span class="string">&quot;Hello&quot;</span>, <span class="string">&quot;World&quot;</span>]);</span><br><span class="line"><span class="comment">// function helloArray&lt;string&gt;(msg: string[]): string&#123; &#125;</span></span><br><span class="line"><span class="comment">// 가장 공통되는 타입을 추론하여 타입을 설정한다.</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">helloArray</span>([<span class="string">&quot;hello&quot;</span>, <span class="number">5</span>]);</span><br><span class="line"><span class="comment">// function helloArray&lt;string | number&gt;(msg: (string | number)[]): string | number &#123; &#125;</span></span><br><span class="line"><span class="comment">// 둘 다 들어올 수 있기에 |을 선언하여 설정한다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> helloTuple&lt;T, K&gt;(<span class="attr">msg</span>: [T, K]): T&#123;</span><br><span class="line">	<span class="keyword">return</span> msg[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">helloTuple</span>([<span class="string">&quot;hello&quot;</span>, <span class="number">5</span>]);</span><br><span class="line"><span class="comment">// function helloArray&lt;string, number&gt;(msg: (string, number)[]): string, number &#123; &#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Generics-Function"><a href="#Generics-Function" class="headerlink" title="Generics Function"></a>Generics Function</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">HelloFunctionGeneric1</span> = &lt;T&gt;<span class="function">(<span class="params">msg: T</span>) =&gt;</span> T;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">helloFunction1</span>: <span class="title class_">HelloFunctionGeneric1</span> = &lt;T&gt;(<span class="attr">msg</span>: T): <span class="function"><span class="params">T</span> =&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> msg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">HelloFunctionGeneric2</span> &#123;</span><br><span class="line">	&lt;T&gt;(<span class="attr">msg</span>: T): T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">helloFunction2</span>: <span class="title class_">HelloFunctionGeneric2</span> = &lt;T&gt;(<span class="attr">msg</span>: T): <span class="function"><span class="params">T</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> msg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Generic-Class"><a href="#Generic-Class" class="headerlink" title="Generic Class"></a>Generic Class</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&lt;T, K&gt; &#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="attr">_name</span>: T;</span><br><span class="line">	<span class="keyword">private</span> <span class="attr">_age</span>: K;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">name: T, age: T</span>)&#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">_name</span> = name;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">_age</span> = age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Mark&quot;</span>, <span class="number">39</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Person</span>&lt;<span class="built_in">string</span>, <span class="built_in">number</span>&gt;(<span class="string">&quot;YS&quot;</span>, <span class="number">27</span>);</span><br><span class="line"><span class="comment">// 미리 Generic을 선언하면 class Person 뒤에 따로 선언하지 않아도 된다.</span></span><br><span class="line"><span class="comment">// 단 인자로 선언한 것과 다르게 인자로 넣으면 에러가 난다.</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Generic-with-extends"><a href="#Generic-with-extends" class="headerlink" title="Generic with extends"></a>Generic with extends</h2><ul>
+<li>extends는 기존 상속의 개념이지만, Generic에서는 조금 다르게 쓰게 된다.</li>
+<li>T extends 뒤에 타입을 선언하면 해당 타입으로만 선언할 수 있게 제한할 수 있다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">PersonExtends</span>&lt;T <span class="keyword">extends</span> <span class="built_in">string</span> | <span class="built_in">number</span>&gt; &#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="attr">_name</span>: T;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">name: T</span>)&#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">_name</span> = name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">PersonExtends</span>(<span class="string">&quot;Mark&quot;</span>);</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">PersonExtends</span>(<span class="number">39</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">PersonExtends</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="comment">// extends 내에서 string | number로 제한했기 때문</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Keyof-amp-type-lookup"><a href="#Keyof-amp-type-lookup" class="headerlink" title="Keyof &amp; type lookup"></a>Keyof &amp; type lookup</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">IPerson</span> &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">	<span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">person</span>: <span class="title class_">IPerson</span> = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;Mark&quot;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">39</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getProp</span>(<span class="params">obj: IPerson, key: <span class="string">&#x27;name&#x27;</span> | <span class="string">&#x27;age&#x27;</span></span>): <span class="built_in">string</span> | <span class="built_in">number</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> obj[key];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">setProp</span>(<span class="params">obj: IPerson, key: <span class="string">&#x27;name&#x27;</span> | <span class="string">&#x27;age&#x27;</span>, value: <span class="built_in">string</span> | <span class="built_in">number</span></span>): <span class="built_in">void</span>&#123;</span><br><span class="line">	obj[key] = value;</span><br><span class="line">	<span class="comment">// Error</span></span><br><span class="line">	<span class="comment">// name과 age 중 아무거나 들어갈 수 있게 key가 설정되었는데, value에서도 동일하여 name인데도 숫자가 들어가거나 할 수 있어서 에러가 난다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Keys</span> = keyof <span class="title class_">IPerson</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">keys</span>: <span class="title class_">Keys</span> = <span class="string">&quot;name&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="attr">keys2</span>: <span class="title class_">Keys</span> = <span class="string">&quot;age&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> getProp2&lt;T, K <span class="keyword">extends</span> keyof T&gt;(<span class="attr">obj</span>: T, <span class="attr">key</span>: K): T[K] &#123;</span><br><span class="line">	<span class="comment">/* IPerson[keyof IPerson]</span></span><br><span class="line"><span class="comment">		=&gt; IPerson[&quot;name&quot; | &quot;age&quot;]</span></span><br><span class="line"><span class="comment">		=&gt; IPerson[&quot;name&quot;] | IPerson[&quot;age&quot;]</span></span><br><span class="line"><span class="comment">		=&gt; string | number */</span></span><br><span class="line">	<span class="keyword">return</span> obj[key];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">getProp2</span>(person, <span class="string">&#x27;name&#x27;</span>);</span><br><span class="line"><span class="title function_">getProp2</span>(person, <span class="string">&#x27;age&#x27;</span>);</span><br><span class="line"><span class="comment">// obj를 인자로 처음 주고, 2번째로 쓴 요소를 준다.</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">getProp2</span>(person, <span class="string">&#x27;name1&#x27;</span>);</span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> setProp2&lt;T, K <span class="keyword">extends</span> keyof T&gt;(<span class="attr">obj</span>: T, <span class="attr">key</span>: K, <span class="attr">value</span>: T[K]: <span class="built_in">void</span>&#123;</span><br><span class="line">	obj[key] = value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">setProp2</span>(person, <span class="string">&quot;name&quot;</span>, <span class="string">&quot;Anna&quot;</span>);</span><br><span class="line"><span class="comment">// function setProp2&lt;IPerson, &quot;name&quot;&gt;(obj: IPerson, key: &quot;name&quot;, value: string): void &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Bundler"><a href="#Bundler" class="headerlink" title="Bundler"></a>Bundler</h2><ul>
+<li>번들러란 모든 종류의 파일들을 모듈 단위로 나누어 최소한의 파일 묶음(번들)로 만들어낸 것이다.</li>
+<li>node_module 들을 생각하면 편하다.</li>
+<li><strong>Parcel</strong> : 구성이 없는 <strong>자동</strong> 번들링. 소, 중형 프로젝트에 적합하다.</li>
+<li><strong>Webpack</strong> : Parcel에 비해 매우 꼼꼼한 구성이며 중, 대형 프로젝트에 적합하다.</li>
+</ul>
+<h2 id="Parcel"><a href="#Parcel" class="headerlink" title="Parcel"></a>Parcel</h2><ul>
+<li><p>설치 방법 : npm i -D parcel-bundler</p>
+</li>
+<li><p>postcss : 일상적인 css 동작을 자동화하기 위해 자바스크립트 기반 플러그인을 사용하는 소프트웨어 개발 도구이다. 현재 autoprefixer 10.2.5 버전은 postcss 8.2.8 버전과 충돌이 난다. 이 경우 autoprefixer의 버전을 9로 낮추면 된다.</p>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .postcssrc.js</span></span><br><span class="line"><span class="comment">// ESM이 아닌 CommonJS 환경을 사용</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// import autoprefixer from &#x27;autoprefixer&#x27;(X)</span></span><br><span class="line"><span class="keyword">const</span> autoperfixer = <span class="built_in">require</span>(<span class="string">&#x27;autoprefixer&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//export (X)</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">	<span class="attr">plugins</span>: [</span><br><span class="line">		autoprefixer</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>autoprefixer : 공급업체접두사를 자동으로 확인해주는 기능이다. webkit-box나 ms-등 최신 기술을 우선 적용해보고 안되면 취소하게 된다. browserslist란 package.json 내 속성을 사용하며, npm 프로젝트에서 지원할 브라우저 범위를 명시한다.</p>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="string">&quot;browserslist&quot;</span>: [</span><br><span class="line">	<span class="string">&#x27;&gt; 1&amp;&#x27;</span>,</span><br><span class="line">	<span class="string">&#x27;last 2 version&#x27;</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 전세계 점유율 1퍼센트 이상의 브라우저들을 대상으로 마지막 2개 버전까지 지원한다.</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>babel : ES 2015+ 이상의 문법 코드를 그 이전 JS엔진에서 실행할 수 있게 변환을 해준다. 설치는 @babel&#x2F;core @babel&#x2F;preset-env 등을 사용하여 추가한다. 추가로 위에 사용한 browserslist에 값을 설정했다면 그 범위에 맞게 작동한다.</p>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .babelrc.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">	<span class="attr">preset</span>: [<span class="string">&#x27;@babel/preset-env&#x27;</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">const</span> promise = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">123</span>);</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">await</span> promise);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>();</span><br><span class="line"><span class="comment">// ReferenceError</span></span><br><span class="line"><span class="comment">// babel을 설치하여도 async await를 지원하진 않는다</span></span><br><span class="line"><span class="comment">// @babel/plugin-transform-runtime 이란 npm을 설치해야 사용이 가능하다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// .babelrc.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">	<span class="attr">preset</span>: [<span class="string">&#x27;@babel/preset-env&#x27;</span>],</span><br><span class="line">	<span class="attr">plugins</span>: [</span><br><span class="line">		[<span class="string">&#x27;@babel/plugin-transform-runtime&#x27;</span>]</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.js</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>();</span><br><span class="line"><span class="comment">// 123</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>CLI : 커맨드 라인 인터페이스라고 하며, npm i나 git 등 간단한 명령어를 통하여 작업하는 것을 통칭한다.</p>
+<p>  ex) parcel index.html, parcel build index.html, parcel watch …</p>
+</li>
+<li><p>배포</p>
+<ol>
+<li>.gitignore을 만들어 안에 .cache, .DS_Store, node_modules, dist를 제외하고 배포한다.</li>
+<li>git init → git status → git add . → git status → git commit -m “msg” → git remote add origin “github link” →git push origin master</li>
+</ol>
+</li>
+</ul>
+<h2 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h2><ul>
+<li><p>설치 방법 : npm i -D webpack + webpack-cli webpack-dev-server@next</p>
+</li>
+<li><p>적용 방법</p>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// package.json</span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"><span class="string">&quot;scripts&quot;</span>:&#123;</span><br><span class="line">	<span class="string">&quot;dev&quot;</span>: <span class="string">&quot;webpack-dev-server --mode development&quot;</span>,</span><br><span class="line">	<span class="string">&quot;build&quot;</span>: <span class="string">&quot;webpack --mode production&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// 개발버전과 제품 배포버전을 따로 구분할 수 있다.</span></span><br><span class="line"><span class="comment">// webpack의 경우 구성 옵션을 따로 파일로 구분해줘야한다. ex) webpack.config.js</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>entry, output</p>
+<ul>
+<li>entry : 파일을 읽어들이기 시작하는 진입점 설정</li>
+<li>output : 결과물을 반환하는 설정</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//import</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// export</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">	<span class="attr">entry</span>: <span class="string">&#x27;./js/main.js&#x27;</span>,</span><br><span class="line">	<span class="attr">output</span>: &#123;</span><br><span class="line">		<span class="comment">//__dirname은 현재 파열 경로를 지정하는 예약어이다.</span></span><br><span class="line">		<span class="comment">// 성공 시 __dirname 의 경로에 public이란 폴더를 경로로 지정한다.</span></span><br><span class="line">		<span class="attr">path</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;public&#x27;</span>),</span><br><span class="line">		<span class="attr">filename</span>: <span class="string">&#x27;app.js&#x27;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// public &gt; app.js가 생성되며 main.js의 내용이 들어가있다.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">output</span>: &#123;</span><br><span class="line">		<span class="attr">path</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;public&#x27;</span>),</span><br><span class="line">		<span class="comment">// app.js와 main.js가 모두 public에 있게되며 변경 전 파일(app.js)이 삭제되진 않는다.</span></span><br><span class="line">		<span class="attr">filename</span>: <span class="string">&#x27;main.js&#x27;</span>,</span><br><span class="line"></span><br><span class="line">		<span class="comment">// clean: true 시 이전에 작성했던 app.js는 삭제되고 현재 filename인 main.js만 남아있다.</span></span><br><span class="line">		<span class="attr">clean</span>: <span class="literal">true</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>plugin : 번들링 후 결과물의 처리 방식 등 다양한 플러인 설정</p>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"><span class="comment">// npm i -D html-webpack-plugin</span></span><br><span class="line"><span class="comment">// npm i -D copy-webpack-plugin</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">HtmlPlugin</span> = <span class="built_in">require</span>(<span class="string">&#x27;html-webpack-plugin&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">CopyPlugin</span> = <span class="built_in">require</span>(<span class="string">&#x27;copy-webpack-plugin&#x27;</span>);</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"><span class="attr">plugins</span>: [</span><br><span class="line">	<span class="keyword">new</span> <span class="title class_">HtmlPlugin</span>(&#123;</span><br><span class="line">		<span class="attr">template</span>: <span class="string">&#x27;./index.html&#x27;</span></span><br><span class="line">	&#125;),</span><br><span class="line">	<span class="keyword">new</span> <span class="title class_">CopyPlugin</span>(&#123;</span><br><span class="line">		<span class="attr">patterns</span>: [</span><br><span class="line">			<span class="comment">// static의 파일이나 폴더들을 dist에 복사</span></span><br><span class="line">			&#123; <span class="attr">from</span>: <span class="string">&#x27;static&#x27;</span> &#125;</span><br><span class="line">		]</span><br><span class="line">	&#125;)</span><br><span class="line">],</span><br><span class="line"></span><br><span class="line"><span class="attr">devServer</span>:&#123;</span><br><span class="line">	<span class="attr">host</span>: <span class="string">&#x27;localhost&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>module화</p>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// root(index.html 경로) &gt; css &gt; main.css</span></span><br><span class="line"></span><br><span class="line">body&#123;</span><br><span class="line">	background-<span class="attr">color</span>: orange;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// root &gt; js &gt; main.js</span></span><br><span class="line"><span class="comment">// entry를 통해 import한 css 파일을 불러들일 수 있다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;../css/main.css&#x27;</span>;</span><br><span class="line"><span class="comment">// 단 js 파일은 css를 읽을 수 없어 npm 추가 설치 필요</span></span><br><span class="line"><span class="comment">// npm i -D css-loader style-loader sass-loader sass</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="attr">module</span>: &#123;</span><br><span class="line">		<span class="attr">rules</span>: [</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">// .css로 끝나는 파일을 찾는다.</span></span><br><span class="line">				<span class="comment">// s?css로 하면 s가 있을 수도 있고 없을 수도 있다는 뜻이다.</span></span><br><span class="line">				<span class="attr">text</span>: <span class="regexp">/\.s?css$/</span>,</span><br><span class="line">				<span class="attr">use</span>: [</span><br><span class="line">					<span class="string">&#x27;style-loader&#x27;</span>,</span><br><span class="line">					<span class="string">&#x27;css-loader&#x27;</span>,</span><br><span class="line">					<span class="string">&#x27;sass-loader&#x27;</span></span><br><span class="line">				]</span><br><span class="line">			&#125;</span><br><span class="line">		]</span><br><span class="line">	&#125;,</span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// root &gt; scss &gt; main.scss</span></span><br><span class="line"></span><br><span class="line">$color--<span class="attr">white</span>: #fff;</span><br><span class="line"></span><br><span class="line">body&#123;</span><br><span class="line">	h1&#123;</span><br><span class="line">		<span class="attr">color</span>: $clor-white</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>autoprefixer(postcss)</p>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// npm i -D postcss autoprefixer postcss-loader</span></span><br><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="attr">module</span>: &#123;</span><br><span class="line">		<span class="attr">rules</span>: [</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="attr">text</span>: <span class="regexp">/\.s?css$/</span>,</span><br><span class="line">				<span class="attr">use</span>: [</span><br><span class="line">					<span class="string">&#x27;style-loader&#x27;</span>,</span><br><span class="line">					<span class="string">&#x27;css-loader&#x27;</span>,</span><br><span class="line">					<span class="comment">// 순서가 중요하다.</span></span><br><span class="line">					<span class="string">&#x27;postcss-loader&#x27;</span>,</span><br><span class="line">					<span class="string">&#x27;sass-loader&#x27;</span></span><br><span class="line">				]</span><br><span class="line">			&#125;</span><br><span class="line">		]</span><br><span class="line">	&#125;,</span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// package.json</span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"><span class="string">&quot;browserslist: [</span></span><br><span class="line"><span class="string">	&quot;</span>&gt; <span class="number">1</span>%<span class="string">&quot;,</span></span><br><span class="line"><span class="string">	&quot;</span>last <span class="number">2</span> versions<span class="string">&quot;</span></span><br><span class="line"><span class="string">	],</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// .postcssrc.js</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">module.exports = &#123;</span></span><br><span class="line"><span class="string">	plugins: [</span></span><br><span class="line"><span class="string">		require(&#x27;autoprefixer&#x27;)</span></span><br><span class="line"><span class="string">	]</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// h1의 css에 display:flex가 들어가있으면 공급업체(브라우저)의 기본 추가 접두사를 먼저 적용해본다. ex) webkit-flex</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>babel</p>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// npm i -D @babel/core @babel/preset-env @babel/plugin-transform-runtime babel-loader</span></span><br><span class="line"><span class="comment">//.babelrc.js</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">	<span class="attr">preset</span>: [<span class="string">&#x27;@babel/preset-env&#x27;</span>],</span><br><span class="line">	<span class="attr">plugins</span>: [</span><br><span class="line">		[<span class="string">&#x27;@babel/plugin-transform-runtime&#x27;</span>]</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="attr">module</span>: &#123;</span><br><span class="line">		<span class="attr">rules</span>: [</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="attr">text</span>: <span class="regexp">/\.s?css$/</span>,</span><br><span class="line">				<span class="attr">use</span>: [</span><br><span class="line">					<span class="string">&#x27;style-loader&#x27;</span>,</span><br><span class="line">					<span class="string">&#x27;css-loader&#x27;</span>,</span><br><span class="line">					<span class="comment">// 순서가 중요하다.</span></span><br><span class="line">					<span class="string">&#x27;postcss-loader&#x27;</span>,</span><br><span class="line">					<span class="string">&#x27;sass-loader&#x27;</span></span><br><span class="line">				]</span><br><span class="line">			&#125;,</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="attr">test</span>: <span class="regexp">/\.js$/</span>,</span><br><span class="line">				<span class="attr">use</span>: [</span><br><span class="line">					<span class="string">&#x27;babel-loader&#x27;</span></span><br><span class="line">				]</span><br><span class="line">			&#125;</span><br><span class="line">		]</span><br><span class="line">	&#125;,</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Netlify 배포</p>
+<ol>
+<li>.gitignore을 만들어 안에 .cache, .DS_Store, node_modules, dist를 제외하고 배포한다.</li>
+<li>git init → git status → git add . → git status → git commit -m “msg” → git remote add origin “github link” →git push origin master</li>
+<li><a target="_blank" rel="noopener" href="http://app.netlify.com/">app.netlify.com</a> 접속</li>
+<li>New Create site Click</li>
+<li>Github 내 해당 저장소 검색 후 선택</li>
+<li>사이트 배포 전 옵션 선택 후 Deploy Site Click</li>
+</ol>
+</li>
+</ul>
+<h2 id="NPX-Degit"><a href="#NPX-Degit" class="headerlink" title="NPX, Degit"></a>NPX, Degit</h2><ul>
+<li>npx degit ~ 명령어를 통해 github 저장소를 로컬에 다운 받을 때 사용한다.</li>
+<li>사용법 : npx degit UserName&#x2F;RepositorieName newLocalFolderName</li>
+<li>터미널에서 버전관리가 되어있지 않을 때 git init을 통해 새롭게 버전관리를 할 수 있다는 장점이 있다.</li>
+<li>git clone githubLink를 통하여 작업하면 버전의 내역까지 넘어온다. 즉 템플릿으로써는 부적합하다.</li>
+</ul>
+<h2 id="JS-트레이닝"><a href="#JS-트레이닝" class="headerlink" title="JS 트레이닝"></a>JS 트레이닝</h2><ul>
+<li>정을수 강사님 JS 트레이닝 노션 Link : <a target="_blank" rel="noopener" href="https://www.notion.so/JS-e6d442d231044a0bab22e3c7e83235b9">https://eulsoo.notion.site/JS-e6d442d231044a0bab22e3c7e83235b9</a></li>
+</ul>
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘은 TypeScript의 마지막 강의와 Bundler에 대해 공부하였습니다. TypeScript의 경우 하면 할 수록 매우 편리하고 왜 여러 기업에서 TypeScript를 사용하는지 알 수 있었습니다. 매우 안정적이고 오류를 줄여주고 협업 시에도 유리하다고 판단이 되며 해당 언어에 대해 좀 더 깊게 공부해봐도 좋을 것 같다고 생각이 듭니다.</p>
+<p>Bundler의 경우 기존 Parcel을 통하여 공부하였지만 Parcel이 무엇이 부족하고 어느 경우에 써야하는지 제한되는 부분을 알게 되었고 추후 중견 규모의 프로젝트를 들어가게 되면 주로 Webpack을 메인으로 쓸 것 같다는 생각이 듭니다.</p>
+<p>당장 한 번만으로 TypeScript와 Webpack을 모두 알 수 있다고 생각하지 않습니다. 앞으로의 js 과제의 경우 모두 TypeScript로 대체하여 작업을 해보도록 노력하겠습니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/05/02/TIL-2022-05-02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -183,9 +351,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-05-02 22:11:00 / Modified: 22:11:47" itemprop="dateCreated datePublished" datetime="2022-05-02T22:11:00+09:00">2022-05-02</time>
+      <time title="Created: 2022-05-02 22:11:00" itemprop="dateCreated datePublished" datetime="2022-05-02T22:11:00+09:00">2022-05-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-05-03 13:47:17" itemprop="dateModified" datetime="2022-05-03T13:47:17+09:00">2022-05-03</time>
     </span>
 
   
@@ -226,7 +400,7 @@
 <li>TypeScript 2.0부터 사용 가능해진 내장 시스템이다.</li>
 <li>node_modules&#x2F;@types 라는 모든 경로를 찾아서 사용한다.</li>
 <li>배열 안의 모듈이나 node_modules&#x2F;@types 안의 모듈 이름에서 찾아온다.</li>
-<li><input disabled="" type="checkbox"> 같은 빈 배열을 넣으면 false 처리가 된다.</li>
+<li>[  ] 같은 빈 배열을 넣으면 false 처리가 된다.</li>
 </ul>
 </li>
 <li><p>typeRoots</p>
@@ -1551,116 +1725,6 @@
 </ul>
 <h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘도 이전과 같이 HTML, CSS 강의를 수강하였습니다. 다만 HTML 부분은 이제 끝나 주로 CSS에 관련된 부분이였고 float나 position 부분에 대하여 수업을 진행하였습니다.</p>
 <p>대부분의 정의는 알고 있었으나 흥미로웠던 점이 BFC란 정의에 대해서입니다. 기존 float를 쓰면 요소가 붕 뜬 상태로 존재한다는 개념은 알고 있었으나 어떠한 원인과 과정을 통하여 작동하는지는 몰랐는데 확실하게 알아갈 수 있어서 좋은 내용을 들었다고 생각합니다.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/19/TIL-2022-04-19/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Yun Seong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/19/TIL-2022-04-19/" class="post-title-link" itemprop="url">2022 04 19 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-04-19 21:57:46" itemprop="dateCreated datePublished" datetime="2022-04-19T21:57:46+09:00">2022-04-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-27 21:30:57" itemprop="dateModified" datetime="2022-04-27T21:30:57+09:00">2022-04-27</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="CSS-연결-방법"><a href="#CSS-연결-방법" class="headerlink" title="CSS 연결 방법"></a>CSS 연결 방법</h2><ul>
-<li>HTML에 link Tasg를 통하여 css 파일을 연결</li>
-<li>CSS 파일 내부에 <code>@import</code> 를 통하여 css파일끼리 연결</li>
-</ul>
-<h2 id="선택자"><a href="#선택자" class="headerlink" title="선택자"></a>선택자</h2><ul>
-<li><ul>
-<li>: 모든 요소를 선택</li>
-</ul>
-</li>
-<li>. : HTML 내 class 속성의 요소를 선택</li>
-<li><h1 id="HTML-내-id-속성의-요소를-선택"><a href="#HTML-내-id-속성의-요소를-선택" class="headerlink" title=": HTML 내 id 속성의 요소를 선택"></a>: HTML 내 id 속성의 요소를 선택</h1></li>
-<li>Selector1.Selector2 : 선택자 Selector1 과 Selector2 을 <strong>동시에 만족하는</strong> 요소를 선택</li>
-<li>Selector1 &gt; Selector : 앞 선택자 내 <strong>바로 밑 자식 요소를</strong> 선택</li>
-<li>Selector Selector : 앞 선택자 내 <strong>모든 자식 요소를</strong> 선택</li>
-<li>Selector + Selector : 앞 선택자 <strong>형제 요소를</strong> 선택</li>
-</ul>
-<h2 id="가상-클래스-선택자"><a href="#가상-클래스-선택자" class="headerlink" title="가상 클래스 선택자"></a>가상 클래스 선택자</h2><ul>
-<li><code>:hover</code> : 해당 요소에 <strong>마우스를 올리고 있는 동안</strong></li>
-<li><code>:active</code> : 해당 요소를 <strong>클릭하고 있는 동안</strong></li>
-<li><code>:focus</code> : 해당 요소에 <strong>포커스 가능한 요소에 포커스되고 있는 동안</strong></li>
-<li><code>:first-child</code> : 형제 요소 중 <strong>첫 번째</strong> 요소를 선택</li>
-<li><code>:last-child</code> : 형제 요소 중 <strong>마지막</strong> 요소를 선택</li>
-<li><code>:nth-child(n)</code> : 형제 요소 중 <strong>n번째</strong> 요소를 선택</li>
-<li><code>:not(Selector)</code> : Selector 요소에 <strong>해당되지 않는</strong> 요소를 선택</li>
-</ul>
-<h2 id="가상-요소-선택자"><a href="#가상-요소-선택자" class="headerlink" title="가상 요소 선택자"></a>가상 요소 선택자</h2><ul>
-<li><code>::before</code> : 해당 요소의 <strong>내부 앞</strong>에 내용을 삽입</li>
-<li><code>::after</code> : 해당 요소의 <strong>내부 뒤</strong>에 내용을 삽임</li>
-</ul>
-<h2 id="선택자-속성"><a href="#선택자-속성" class="headerlink" title="선택자 속성"></a>선택자 속성</h2><ul>
-<li>[ABC] : 속성 ABC를 포함한 요소 선택<br>ex) [disabled], [type]</li>
-<li>[ABC&#x3D;”DEF”] : 속성 ABC를 포함하는 요소 중 DEF 속성을 가진 요소 선택<br>ex) [type&#x3D;”text”], [data-attr-attr&#x3D;”attr”]</li>
-</ul>
-<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>금일은 CSS 온라인 수업과 같이 JS특강도 진행하였으나 해당 특강의 경우 JS의 기본 문법이나 개념에 대해 설명하는 부분이였습니다. 특강의 경우 이미 알고있는 내용들이 주류여서 다시 한 번 복습한다는 생각으로 신청하였고 따로 노션에 기재하지는 않았습니다.</p>
-<p>CSS 온라인 강의의 경우 아직 초반부라 간단한 용어와 선택자, 이용법에 대해 다뤘으며 이에 대해서도 아는 내용이지만 이 경우 시간이 지나 헷갈리거나 할 수 있는 부분을 위주로 정리하였습니다.</p>
 
       
     </div>
