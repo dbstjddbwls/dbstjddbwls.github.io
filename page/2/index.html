@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,115 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/25/TIL-2022-04-25/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/25/TIL-2022-04-25/" class="post-title-link" itemprop="url">2022 04 25 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-04-25 21:52:01" itemprop="dateCreated datePublished" datetime="2022-04-25T21:52:01+09:00">2022-04-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-04-26 21:38:26" itemprop="dateModified" datetime="2022-04-26T21:38:26+09:00">2022-04-26</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="Global-Context"><a href="#Global-Context" class="headerlink" title="Global Context"></a>Global Context</h2><p>코드 구현을 위한 글로벌 환경을 설정하는 것. 정해진 내부 순서를 마친 뒤 다시 Global Context를 실행하여 다른 환경을 세팅한다.</p>
+<h2 id="Global-Context-순서"><a href="#Global-Context-순서" class="headerlink" title="Global Context 순서"></a>Global Context 순서</h2><ul>
+<li>기본 window 관련 함수, 사용자 설정 함수 선언</li>
+<li>var의 참조자 선언</li>
+<li>Outer 환경 참조 및 this 객체 선언</li>
+<li>Object 객체 선언, let이나 const에 변수에 값을 할당</li>
+</ul>
+<h2 id="let과-var의-차이점-블록-스코프"><a href="#let과-var의-차이점-블록-스코프" class="headerlink" title="let과 var의 차이점 (블록 스코프)"></a>let과 var의 차이점 (블록 스코프)</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">30</span>;</span><br><span class="line"><span class="keyword">const</span> c = <span class="number">40</span>;</span><br><span class="line"><span class="keyword">if</span>(a &gt; <span class="number">20</span>)&#123;</span><br><span class="line">	<span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">var</span> b = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">const</span> c = <span class="number">20</span></span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">//10</span></span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(b); <span class="comment">//10</span></span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(c); <span class="comment">// 20</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">//100</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b); <span class="comment">//10</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c); <span class="comment">//40</span></span><br></pre></td></tr></table></figure>
+
+<p>조건문 안에서 재선언 후 로컬이 아닌 전역에서 호출하였을 때 값이 달라진다.</p>
+<p>let과 const의 경우 한 블록(동일한 중괄호) 안에 같은 이름으로 let 변수명을 또 한 번 선언하면 오류가 난다. 그러나 var의 경우엔 이러한 오류가 나지 않는다.</p>
+<p>즉 전역 스코프냐 블록 스코프냐의 차이인데, let과 const는 블록이 다르면 새로운 화이트보드 위에 새로 그리게 되는 것이고, var는 그것이 조건문이나 반복문 밖에도 영향을 끼치게 되는 것이다.</p>
+<p>단순히 var는 재선언, let이나 const의 경우 같은 블록 스코프에선 재선언이 불가하며 다른 블록일 경우 재선언보단 동일한 이름의 새로운 변수가 탄생하는 것이다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">if</span> (a &gt; <span class="number">20</span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">//error</span></span><br><span class="line">	<span class="keyword">let</span> a = <span class="number">10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">foo</span>(a)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params">b</span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(b); <span class="comment">//100</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>이 경우 에러가 나오는데 이유는 초기화가 되지 않아서이다. var였으면 실행 전 지역 변수에 없으니 전역 변수에서 값을 가져왔을 것이지만, let이나 const의 경우 지역 내에서 전역 let이나 const의 값을 가져오고 싶다면 초기화를 우선적으로 해야한다.</p>
+<p>다만 선언을 어떠한 형식으로 하냐에 따라 지역 변수가 없다면 전역 변수에서 받아오는 것이 가능하다.</p>
+<p>요약)  let과 const는 초기화가 되지 않는다. function name()으로 선언을 하면 null로 초기화가 된다.</p>
+<h2 id="함수-스코프"><a href="#함수-스코프" class="headerlink" title="함수 스코프"></a>함수 스코프</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> f = <span class="keyword">function</span> (<span class="params">num</span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(num);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">f</span>(num) <span class="comment">//error</span></span><br><span class="line"><span class="title function_">f</span>(<span class="number">2</span>) <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+<p>블록 스코프와 같이 function에서 받은 인자값은 외부에서 해당 인자값의 변수명으로 불러올 수 없다. 같은 인자의 이름을 사용하더라도 지역인자로만 사용되어 전역의 값으론 사용이 불가능하여 꼬이지가 않는 것이다.</p>
+<h2 id="호이스팅"><a href="#호이스팅" class="headerlink" title="호이스팅"></a>호이스팅</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">b</span>(<span class="number">2</span>) <span class="comment">// error</span></span><br><span class="line"><span class="keyword">const</span> b = <span class="keyword">function</span>(<span class="params">num</span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(num)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">f</span>(<span class="number">2</span>); <span class="comment">//2</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f</span>(<span class="params">num</span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>위와 같이 const로 선언을 하였다면 const는 Global Context의 순서에 의해 const 선언이 함수 실행보다 뒤에 있어서 오류가 난다.</p>
+<p>그러나  function의 선언의 경우 Global Context 순서 중 가장 첫 사이클, 준비 단계에 초기화 후 선언되기 때문에 (선언형 방식) 가능해진다.</p>
+<p>호출이 선언보다 위에 있어도 Global Context의 순서에 따라 끌어오는 것을 호이스팅이라고 한다.</p>
+<h2 id="함수-코드-평가"><a href="#함수-코드-평가" class="headerlink" title="함수 코드 평가"></a>함수 코드 평가</h2><p>함수의 단위, 즉 하나의 함수가 생길 때마다 함수 실행 컨텍스트가 생성된다. 가장 첫 단계인 콜스택에 하나씩 쌓이는 것이다.</p>
+<p>만약 콜스택 1의 함수에서 a를 console.log를 하라 하였을 때 해당 함수 내에 지역 변수로 없다면 다른 함수나 전역으로 가서 찾게된다. 이후 함수가 실행되면 콜스택과의 관계를 끊어버리며 스택의 층이 변하게 된다. 이 때문에 함수 안에서 함수 밖에는 접근이 가능하나, 함수 밖에서 함수 안의 지역 변수에 접근을 할 수가 없다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="title function_">foo</span>(a);</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params">b</span>)&#123;</span><br><span class="line">	<span class="keyword">var</span> c = <span class="number">20</span>;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(a+b+c); <span class="comment">//40</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c) <span class="comment">//error</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="메소드-체이닝"><a href="#메소드-체이닝" class="headerlink" title="메소드 체이닝"></a>메소드 체이닝</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> b = a.<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>).<span class="title function_">reverse</span>().<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line"><span class="comment">// 메소드가 체인처럼 연결되있다하여 메소드체이닝</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b); <span class="comment">//olleH</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>이제 패스트캠퍼스 부트캠프를 시작한지 3주가 되었습니다. 지금까지는 아는 내용들을 복습하는 것이였다면 오늘은 모르는 것을 잘 알게된 날인 것 같습니다.</p>
+<p>기존 퍼블리셔 작업을 하면서 JS의 구조나 스코프의 경우 알지도 못한 채 그냥 쓰고 있었습니다. 그것을 쓰고 있으면서도 블록 스코프가 무엇인지, 함수 스코프가 무엇인지, var나 let의 차이나 Global Context 등 누군가 이것이 무엇인지 물어보면 답하지 못 하는 상황이였습니다. 허나 오늘 수업으로 인해 이에대한 대답을 할 수 있게 된 것만으로도 아주 유익했던 수업이였던 것 같습니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1171,89 +1280,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/13/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Yun Seong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/13/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-04-13 19:08:09" itemprop="dateCreated datePublished" datetime="2022-04-13T19:08:09+09:00">2022-04-13</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
