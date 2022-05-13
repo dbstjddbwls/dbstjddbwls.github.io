@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dbstjddbwls.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="수업 내용React Event React의 경우 SyntheticEvent 객체를 전달 받는다. 예를 들어 onMouseLeave에서 event.nativeEvent는 mouseout 이벤트를 가리킨다. 즉 js와는 조금 다른 부분이 있다. React는 소문자 대신에 카멜 케이스를 사용한다. jsx를 사용하여 문자열이 아닌 함수로 이벤트 핸들러를 전달한다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022 05 13 TIL">
+<meta property="og:url" content="https://dbstjddbwls.github.io/2022/05/13/TIL-2022-05-13/index.html">
+<meta property="og:site_name" content="프론트엔드에 깃발 세우기">
+<meta property="og:description" content="수업 내용React Event React의 경우 SyntheticEvent 객체를 전달 받는다. 예를 들어 onMouseLeave에서 event.nativeEvent는 mouseout 이벤트를 가리킨다. 즉 js와는 조금 다른 부분이 있다. React는 소문자 대신에 카멜 케이스를 사용한다. jsx를 사용하여 문자열이 아닌 함수로 이벤트 핸들러를 전달한다.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-13T10:00:59.000Z">
+<meta property="article:modified_time" content="2022-05-13T10:01:33.965Z">
+<meta property="article:author" content="Kim Yun Seong">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dbstjddbwls.github.io/2022/05/13/TIL-2022-05-13/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://dbstjddbwls.github.io/2022/05/13/TIL-2022-05-13/","path":"2022/05/13/TIL-2022-05-13/","title":"2022 05 13 TIL"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>2022 05 13 TIL | 프론트엔드에 깃발 세우기</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">프론트엔드에 깃발 세우기</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%88%98%EC%97%85-%EB%82%B4%EC%9A%A9"><span class="nav-number">1.</span> <span class="nav-text">수업 내용</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#React-Event"><span class="nav-number">1.1.</span> <span class="nav-text">React Event</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%A1%B0%EA%B1%B4%EB%B6%80-%EB%A0%8C%EB%8D%94%EB%A7%81"><span class="nav-number">1.2.</span> <span class="nav-text">조건부 렌더링</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List-amp-Key"><span class="nav-number">1.3.</span> <span class="nav-text">List &amp; Key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hook"><span class="nav-number">1.4.</span> <span class="nav-text">Hook</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Composition"><span class="nav-number">1.5.</span> <span class="nav-text">Composition</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kim Yun Seong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/05/13/TIL-2022-05-13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="2022 05 13 TIL | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2022 05 13 TIL
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-13 19:00:59 / Modified: 19:01:33" itemprop="dateCreated datePublished" datetime="2022-05-13T19:00:59+09:00">2022-05-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="React-Event"><a href="#React-Event" class="headerlink" title="React Event"></a>React Event</h2><ul>
+<li>React의 경우 SyntheticEvent 객체를 전달 받는다.</li>
+<li>예를 들어 onMouseLeave에서 event.nativeEvent는 mouseout 이벤트를 가리킨다. 즉 js와는 조금 다른 부분이 있다.</li>
+<li>React는 소문자 대신에 카멜 케이스를 사용한다.</li>
+<li>jsx를 사용하여 문자열이 아닌 함수로 이벤트 핸들러를 전달한다.</li>
+<li>HTML과 다르게 return false를 반환해도 기본 동작을 방지할 순 없다. 반드시 .preventDefault를 사용해야 한다.</li>
+<li>React의 경우addEventListener를 호출할 필요가 없다. 대신 처음 렌더링 될 때 리스너를 제공하면 된다.</li>
+<li>이벤트 버블링 : 어떤 컴포넌트나 엘리먼트를 클릭했을 때 부모 요소로 이벤트를 올려보내는 것</li>
+<li>이벤트 캡쳐링 : 자식 요소 중 어떤 요소가 이벤트를 발생시켰는가 확인하는 요소이다.</li>
+<li>순서는 보통 캡쳐링 이후에 버블링이 발생한다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Event</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="title function_">handleButtonClick</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;handleButtonClick&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> <span class="title function_">handleClickCapture</span>= (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;handleClickCapture&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> <span class="title function_">handleClickCaputure2</span>= (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;handleClickCaputure2&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> <span class="title function_">handleClickBubble</span>= (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;handleClickBubble&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span>(</span><br><span class="line">		<span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">onClickCapture</span>=<span class="string">&#123;handleClickCapture&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">div</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">			<span class="attr">onClickCapture</span>=<span class="string">&#123;handleClickCaputure2&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">			<span class="attr">onClick</span>=<span class="string">&#123;handleClickBubble&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;handleButtonClick&#125;</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">					Button </span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">	)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 버튼 클릭시 결과</span></span><br><span class="line"><span class="comment">// 1. handleClickCapture</span></span><br><span class="line"><span class="comment">// 2. handleClickCapture2</span></span><br><span class="line"><span class="comment">// 3. handleButtonClick</span></span><br><span class="line"><span class="comment">// 4. handleClickBubble</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 부모 캡쳐림 -&gt; 본인 이벤트 -&gt; 부모 버블링의 순서로 간다. V의 형태로 작업됨</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 만약 여기에 leave 이벤트를 Button에 추가한다면</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">handleMouseLeave</span>= (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;handleMouseLeave&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">...</span><br><span class="line">&lt;button onClick=&#123;handleButtonClick&#125; onMouseLeave=&#123;handleMouseLeave&#125;&gt;</span><br><span class="line">	<span class="title class_">Button</span></span><br><span class="line">&lt;/button&gt;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// 결과</span></span><br><span class="line"><span class="comment">// Mouseout이 되었을 때 작업이 실행된다.</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="조건부-렌더링"><a href="#조건부-렌더링" class="headerlink" title="조건부 렌더링"></a>조건부 렌더링</h2><ul>
+<li>React의 조건부 렌더링은 JS의 조건 처리와 같이 동작한다. if나 논리 연산자 사용도 가능하며 추가로 컴포넌트의 출현도 조절할 수 있다.<ul>
+<li>if : JS와 동일하게 작성</li>
+<li>&amp;&amp; : JS와 조금 다른데 앞의 조건이 만족하면 바로 뒤의 코드를 실행</li>
+<li>삼항 연산자 : JS와 동일하게 작성</li>
+<li>무시해야할 경우 : return null</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">UserGreeting</span>(<span class="params">props</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> </span><br><span class="line">		<span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			&#123;props.name &amp;&amp; props.name + &quot;,&quot;&#125; Welcome &#123;props.count &amp;&amp; props.count + &quot; Time&#125;</span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">GuestGreeting</span>(<span class="params">props</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Please sign up<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Greeting</span>(<span class="params">props</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> props.<span class="property">isLoggedIn</span> ? <span class="language-xml"><span class="tag">&lt;<span class="name">UserGreeting</span> <span class="attr">name</span>=<span class="string">&quot;jimy&quot;</span> <span class="attr">count</span>=<span class="string">&#123;0&#125;</span> /&gt;</span></span> : <span class="language-xml"><span class="tag">&lt;<span class="name">GuestGreeting</span> /&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Condition</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">const</span> isLoggedIn = <span class="literal">true</span></span><br><span class="line">	<span class="keyword">return</span>(</span><br><span class="line">		<span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">Greeting</span> <span class="attr">isLoggedIn</span>=<span class="string">&#123;isLoggedIn&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">		&lt;/<span class="attr">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	)</span></span><br><span class="line"><span class="language-xml">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="List-amp-Key"><a href="#List-amp-Key" class="headerlink" title="List &amp; Key"></a>List &amp; Key</h2><ul>
+<li>React에선 배열을 기반으로 엘리먼트 리스트나 컴포넌트 리스트로 만들 수 있다.</li>
+<li>.map()을 사용하여 여러 태그를 만들 때 해당 html tag에는 꼭 key값을 넣어줘야한다. 안그러면 경고가 표시된다. 오류가 나진 않는다.</li>
+<li>일반 컴포넌트 선언이 아닌 map 함수 안의 요소에 써야한다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list = [</span><br><span class="line">	&#123;<span class="attr">id</span>: <span class="number">1</span>, <span class="attr">text</span>:<span class="string">&quot;A1&quot;</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">id</span>: <span class="number">2</span>, <span class="attr">text</span>:<span class="string">&quot;A2&quot;</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">id</span>: <span class="number">3</span>, <span class="attr">text</span>:<span class="string">&quot;A3&quot;</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">id</span>: <span class="number">4</span>, <span class="attr">text</span>:<span class="string">&quot;A4&quot;</span>&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">List</span> = (<span class="params">props</span>) =&gt; &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;props.text&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">	<span class="comment">// li 안에 props.key를 출력하려하면 나오지 않는다.</span></span><br><span class="line">	<span class="comment">// key는 map 같은 반복문 안에서 구별을 위해 쓰는거라 상속이 되지 않는다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> listMap = list.<span class="title function_">map</span>(<span class="function">(<span class="params">li</span>) =&gt;</span> <span class="language-xml"><span class="tag">&lt;<span class="name">List</span> <span class="attr">key</span>=<span class="string">&#123;list.id&#125;</span> &#123;<span class="attr">...list</span> /&gt;</span></span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span>  <span class="language-xml"><span class="tag">&lt;&gt;</span> (listMap) <span class="tag">&lt;/&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Hook"><a href="#Hook" class="headerlink" title="Hook"></a>Hook</h2><ul>
+<li><p>Hook이란 useState를 기본으로 사용한다.</p>
+</li>
+<li><p>Class의 단점을 보완하며 재사용성이 강화되었다.</p>
+</li>
+<li><p>useState는 인자로 초기 state 값 하나를 받는다.</p>
+</li>
+<li><p>Hook은 2가지 규칙을 준수해야한다.</p>
+<ul>
+<li>최상위에서만 Hook을 호출해야한다. (반복문, 조건문, 중첩 함수 내에서 Hook을 실행해선 안된다.)</li>
+<li>React 함수 컴포넌트에서만 Hook을 호출해야한다. js 함수 내에서는 안된다.</li>
+</ul>
+</li>
+<li><p>useEffect는 side effects에 사용된다. 주로 렌더링 이후에 어떤 작업을 할지를 담당한다.</p>
+</li>
+<li><p>componentDidMount &amp; componentWillUnmount를 useEffect 하나에서 처리한다.</p>
+</li>
+<li><p>사용 후 clean-up(정리)하는 과정이 필요하다.</p>
+</li>
+<li><p>데이터 fetch나 구독, Dom 수정 등을 할 수 있다.</p>
+</li>
+</ul>
+<h2 id="Composition"><a href="#Composition" class="headerlink" title="Composition"></a>Composition</h2><p>컴포넌트 안에 컴포넌트를 담아 작업하는 것을 말한다.</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">WelcomeComponent</span>(<span class="params">props</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span>(</span><br><span class="line">		<span class="language-xml"><span class="tag">&lt;<span class="name">Component</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">p</span>&gt;</span> Hello <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">Component</span>&gt;</span></span></span><br><span class="line">	)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ----------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Component</span>(<span class="params">props</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span>(</span><br><span class="line">		<span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			&#123;props.children&#125;</span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">	)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// -----------------</span></span><br><span class="line"></span><br><span class="line"><span class="variable constant_">OB</span><span class="variable constant_">OB</span><span class="title class_">OBfunction</span> <span class="title class_">CustomComponent</span>(props)&#123;</span><br><span class="line">	<span class="keyword">return</span>(</span><br><span class="line">		<span class="language-xml"><span class="tag">&lt;<span class="name">Component</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			&#123;props.children&#125;</span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">Component</span>&gt;</span></span></span><br><span class="line">	)</span><br><span class="line"><span class="variable constant_">OB</span><span class="variable constant_">OB</span><span class="variable constant_">OB</span>&#125;</span><br><span class="line"><span class="variable constant_">OB</span><span class="variable constant_">OB</span><span class="variable constant_">OB</span><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string">OBOBOB</span></span><br><span class="line"><span class="string">## HOC (Higher Order Component)</span></span><br><span class="line"><span class="string">OBOBOB</span></span><br><span class="line"><span class="string">- 고차 컴포넌트란 뜻으로 컴포넌트 로직을 재사용하기 위한 기술이다. API의 일부가 아니며 리액트의 구성적 특성에서 나오는 패턴이다.</span></span><br><span class="line"><span class="string">OBOBOB- 컴포넌트를 인자로 받아와 새로운 컴포넌트를 리턴하는 작업을 뜻한다.</span></span><br><span class="line"><span class="string">- 문법은  highOrderComponent()를 사용한다.</span></span><br><span class="line"><span class="string">- 단 render 안에서 HOC를 사용하면 화면이 바뀔 때마다 재생성 되어서 성능 문제가 생길 수 있다.</span></span><br><span class="line"><span class="string">OBOBOB</span></span><br><span class="line"><span class="string">## Memoization</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">- 컴퓨터가 동일한 계산을 반복해야 할 때 이전 계산 값을 메모리에 저정하여 동일한 계산이 실행되면 수행을 하지 않고 저장된 값을 가져오기만 함.</span></span><br><span class="line"><span class="string">- 동일한 props로 렌더링한다면 React.memo를 사용한다.</span></span><br><span class="line"><span class="string">- useMemo로 실행 함수를 감싸거나 memo()를 사용한다</span></span><br><span class="line"><span class="string">- 크게 보면 4가지로 구분할 수 있다.</span></span><br><span class="line"><span class="string">    - React.memo : HOC / Props 비교하며 메모</span></span><br><span class="line"><span class="string">    - Profiler : 리액트 성능 분석 도구</span></span><br><span class="line"><span class="string">    - callback : 함수를 memo하고 싶다면 useCallback을 사용</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        `</span><span class="string">``</span>tsx</span><br><span class="line">        <span class="keyword">const</span> memoCallback = <span class="title function_">useCallback</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">        	<span class="title function_">doSomething</span>(a,b)</span><br><span class="line">        &#125;, [a,b])</span><br></pre></td></tr></table></figure>
+<pre><code>- value : 변수를 memo하고 싶다면 useMemo 을 사용
+</code></pre>
+<p>OBOBOB&#96;&#96;&#96;tsx<br>&#x2F;&#x2F; .memo()를 안쓴다면<br>OBOBOB<br>OBOBOBconst list &#x3D; [<br>OBOBOB	{id: 1, text:”1”},<br>    {id: 2, text:”2”},<br>OBOBOB	{id: 3, text:”3”},<br>]<br>OBOBOB<br>export default function Memo(){<br>    const [comments, setComments] &#x3D; useState(list);<br>    return <Comments list={list} /><br>}</p>
+<p>&#x2F;&#x2F; Comments.js</p>
+<p>export defualt function Comments({list}){<br>    return(<br>        <div><br>            {list.map(li &#x3D;&gt; <CommentItem
+                    key={li.id}
+                    title={li.text}
+            />)}<br>        </div><br>    )<br>}</p>
+<p>&#x2F;&#x2F; CommentItem.js<br>export defualt function CommentItem({id, title}){<br>    return(<br>        <div className="CommentItem"><br>            <span> {id} </span><br>            <span> {title} </title><br>        </div><br>    )<br>}</p>
+<p>&#x2F;&#x2F; .memo를 사용한다면</p>
+<p>&#x2F;&#x2F; Memo.jsx<br>export default function Memo(){<br>    const [comments, setComments] &#x3D; useState(list);</p>
+<pre><code>useEffect(() =&gt; &#123;
+</code></pre>
+<p>OBOBOB		const interval &#x3D; setInterval(() &#x3D;&gt; {<br>            …prevComments,<br>            {<br>                id: {prevComments.length + 1}<br>OBOBOB				text:”text”+ {prevComments.length + 1}<br>            }<br>        }, 1000)<br>OBOBOB<br>        return ()&#x3D;&gt;{<br>            clearInterval(interval);<br>OBOBOB		}<br>    }, [])</p>
+<pre><code>return &lt;Comment list=&#123;list&#125;
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F; Comments.js</p>
+<p>export defualt function Comments({list}){<br>    cosnt handleChange &#x3D; useCallback(<br>        () &#x3D;&gt; {<br>                console.log(“Push”);<br>        }<br>    )</p>
+<pre><code>return(
+    &lt;div&gt;
+        &#123;list.map(li =&gt; &lt;CommentItem
+                key=&#123;li.id&#125;
+                title=&#123;li.text&#125;
+                onClick=&#123;handleChange&#125;;
+        /&gt;)&#125;
+    &lt;/div&gt;
+)
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F; CommentItem.js<br>import {Propfiler} from “react”</p>
+<p>function CommentItem({id, title, onClick}){<br>    function onrenderCallback(){<br>        console.log(“Hello “+${id});<br>    }</p>
+<pre><code>const handleClick = () =&gt;&#123;
+    onClick();
+    alert(&#123;title&#125;+ &quot;눌림&quot;);
+&#125;
+
+return(
+    &lt;Profiler id=&quot;CommentItem&quot; onRender=&#123;onRenderCallback&#125;&gt;
+        &lt;div className=&quot;CommentItem&quot;&gt;
+            &lt;span&gt; &#123;id&#125; &lt;/span&gt;
+            &lt;span&gt; &#123;title&#125; &lt;/title&gt;
+        &lt;/div&gt;
+    &lt;/Profiler&gt;
+)
+</code></pre>
+<p>}</p>
+<p>export default memo(CommentItem);</p>
+<pre><code>
+# 회고
+
+어렵습니다. 온라인 강의라고 해도 어느정도의 개념의 설명 후 두세번의 반복 학습을 하면 좋겠지만 공식 문서 상만 한 번 읽고 한 번 코드로 보여주고 하는 것 뿐이니 이해도 힘들고 무엇보다 설명이 어렵습니다. 좀 더 실습 위주로 써보는 것이 좋다고 생각하지만 별도로 해야하는 아쉬움이 있는 하루였습니다. 다만 useMemo나 .memo, Event의 경우 거의 필수로 알아야 하는 지식같아서 이를 아는 것만 해도 좋다고 생각합니다.
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/12/TIL-2022-05-12/" rel="prev" title="2022 05 12 TIL">
+                  <i class="fa fa-chevron-left"></i> 2022 05 12 TIL
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kim Yun Seong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

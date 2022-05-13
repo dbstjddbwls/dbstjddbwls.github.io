@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,160 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/14/TIL-2022-04-14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/14/TIL-2022-04-14/" class="post-title-link" itemprop="url">2022 04 14 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-04-14 22:26:06" itemprop="dateCreated datePublished" datetime="2022-04-14T22:26:06+09:00">2022-04-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-04-15 14:58:02" itemprop="dateModified" datetime="2022-04-15T14:58:02+09:00">2022-04-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h1><ul>
+<li>프로젝트와 Repository를 설명하는 책의 표지와 같은 문서</li>
+<li>나와 동료, 이 repo의 사용자를 위한 문서</li>
+</ul>
+<h1 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h1><p>git에 업로드를 할 때 gitignore에 적힌 내부 파일은 git에서 추적하지 않음</p>
+<h1 id="Git-branch"><a href="#Git-branch" class="headerlink" title="Git branch"></a>Git branch</h1><ul>
+<li><p>branch 이동</p>
+<ul>
+<li>git switch {branchname} ⇒ branch만을 이동</li>
+<li>git checkout {branchname} ⇒ commit간이나 branch간이나 모든 요소들을 이동</li>
+</ul>
+</li>
+<li><p>branch 삭제</p>
+<ul>
+<li>git branch -D {branchname} ⇒ 해당 {branchname}을 삭제</li>
+</ul>
+</li>
+<li><p>branch 병합</p>
+<p>  git merger {branchname} ⇒ 현재 있는 branch로 {branchname}의 내용을 가져옴</p>
+</li>
+</ul>
+<aside>
+💡 막간 취업 코테 팁!
+
+<p>Python의 경우 웹 언어로써의 능력은 떨어지지만 코딩 테스트용으로는 좋다</p>
+</aside>
+
+<h1 id="Git-Flow"><a href="#Git-Flow" class="headerlink" title="Git Flow"></a>Git Flow</h1><pre><code>## branch models
+
+- **git flow (★) : 현재 강의에서는 주로 git flow를 다룰 것임**
+- github flow
+- gitlab flow
+</code></pre>
+<p>#Git Flow</p>
+<pre><code>## Git flow 작업 순서
+
+- git flow init ⇒ git flow 초기화 셋팅
+- git flow feature start &#123;branch name&#125; ⇒ 기능 branch를 생성 후 기능 개발 시작
+- 개발이 끝나면 git flow feature finish &#123;branch name&#125;로 branch 제거
+- git flow release start &#123;release name&#125; ⇒ 릴리즈 기능 시작
+- git flow release finish &#123;release name&#125; ⇒ 릴리즈에 대한 확인 후 commit 메세지 작성, 해당 branch는 삭제되니 merge 메세지 작성
+- 작업한 내용을 push를 안하면 github는 모르기때문에 git push -u origin &#123;branch name&#125; (여기서는 main branch가 아닌 작업했던 branch name을 기입)
+- 이후 main branch로 가서 똑같이 git push origin main
+- tag를 알리기 위해 git tag  를 입력 후 git push —tags로 버전도 같이 push
+**ex) 첫 git flow tags link :** [https://github.com/dbstjddbwls/branch-practice/tags](https://github.com/dbstjddbwls/branch-practice/tags)
+
+## Git Rename
+
+- mv &#123;file&#125; &#123;rename file&#125;을 하고 git status를 하면 rename이 아니라 delete라고 인식한다.
+- 이를 방지하고싶다면 git mv &#123;file&#125; &#123;rename file&#125;이라고 앞에 git을 넣어줘야함
+
+## Git Restore
+
+- 수정 후 commit까지 했는데 다시 되돌려야할때
+- git restore &#123;file name&#125; 를 통해 바로 이전버전 커밋으로 되돌림
+
+## Git Unstaging
+
+- add를 취소하기
+- add한 파일을 다시 unstaging하려면 git reset HEAD &#123;file name&#125;
+    - 수정한 내용이 사라진건 아님
+
+- restore와 reset의 차이점은 내용을 이전 버전으로 수정 하냐안하냐의 차이로 나뉘어진다
+- 단 reset은 내 repo에서 삭제해도 다른 팀원의 repo에는 살아있을 수 있기 때문에 쓰지 않는걸 권장
+    - reset의 대안은 **revert**를 사용
+
+## Git Revert
+
+- git revert —no-commit HEAD~&#123;num&#125;
+- &#123;num&#125; 수 만큼 가장 최근 기준으로 이전에 커밋한 내용을 되돌림
+- reset과의 다른 점은 revert의 경우 가장 최근의 커밋 내역까지 되돌리며 삭제까지 진행.
+- 즉 파일 생성→ add→ status→ commit  순으로 보통 진행했다면 commit →status →add →파일 삭제로 되돌아감
+- revert했다면 꼭 사유를 commit 메세지에 적을 것
+
+## Git Commit —amend
+
+- 이전에 commit했던 commit message를 수정할 때 사용
+- Git commit —amend
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
