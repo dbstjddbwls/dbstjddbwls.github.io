@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,227 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/29/TIL-2022-04-29/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/29/TIL-2022-04-29/" class="post-title-link" itemprop="url">2022 04 29 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-04-29 21:56:33 / Modified: 21:57:15" itemprop="dateCreated datePublished" datetime="2022-04-29T21:56:33+09:00">2022-04-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h2><ul>
+<li>타입스크립트란 하나의 언어이며, 자바스크립트의 기능을 강화하고 Type이란 개념을 추가하였습니다. 또한 컴파일 과정을 통하여 타입스크립트를 브라우저나 노드에서 실행 가능한 순수한 자바스크립트로 변환시켜 작동합니다.</li>
+<li>컴파일 언어<ul>
+<li>컴파일이 필요하다.</li>
+<li>컴파일러가 필요하다.</li>
+<li>컴파일을 하는 시점이 있어야한다.</li>
+<li>작성한 코드가 아닌 컴파일된 결과물을 실행하는 구조이다.</li>
+<li>그 컴파일된 결과물을 실행하는 시점이 있다.</li>
+</ul>
+</li>
+<li>즉 순서가 TS Editor에서 작성하고 Compiler를 통하여 JS나 Node에서 돌아가는 코드로 변경해주는 것이다.</li>
+<li>사용 환경은 크게 2가지가 있다.<ul>
+<li>Node.js : 크롬 V8 엔진을 사용하여 자바스크립트를 해석하고 OS 레벨에서 API를 제공하는 서버사이드 용 자바스크립트 런타임 환경</li>
+<li>브라우저 : HTML을 동적으로 만들기 위하여 브라우저에서 자바스크립트를 해석하고, DOM을 제어할 수 있도록 하는 자바스크립터 런타임 환경</li>
+</ul>
+</li>
+</ul>
+<h2 id="TypeScript-설치법"><a href="#TypeScript-설치법" class="headerlink" title="TypeScript 설치법"></a>TypeScript 설치법</h2><ol>
+<li>우선 Node.js를 설치한다.</li>
+<li>npm init 후 npm i typescript -g를 입력한다.</li>
+<li>명령어는 tsc이며 tsc -init 후 작업을 시작한다.</li>
+<li>기본적으로 ts에서 작업을 하고 tsc 명령어를 입력해야 하지만, tsc -watch를 한다면 ts 파일을 수정하면 바로 js파일을 수정한다.</li>
+<li>만약 tsc를 -g로 설치하지 않으면 기존에는 npx tsc라고 작업을 해야하지만 package.json에 가서 script 부분에 build: tsc라고 적으면 npm run build만 입력해도 작업이 가능해진다.</li>
+</ol>
+<h2 id="Type-Annotation"><a href="#Type-Annotation" class="headerlink" title="Type Annotation"></a>Type Annotation</h2><ul>
+<li>TypeScript의 가장 대표적인 것으로 변수를 선언할 때 어떠한 변수에는 특정 형식의 데이터만 올 수 있게 작업하는 것이다. 변수부터 함수의 인자까지 사용할 수 있다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">&quot;Mark&quot;</span>; <span class="comment">// Type String</span></span><br><span class="line"><span class="keyword">let</span> b; <span class="comment">// Type any</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">c</span>: <span class="built_in">number</span>; <span class="comment">// Type String</span></span><br><span class="line"></span><br><span class="line">a = <span class="number">39</span>; <span class="comment">// Error: String 형식이라 Number 형식을 들어올 수 없습니다.</span></span><br><span class="line">b = <span class="number">40</span>;</span><br><span class="line">c = <span class="number">41</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">hello</span>(<span class="params">d:<span class="built_in">number</span></span>)&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">hello</span>(<span class="string">&quot;Mark&quot;</span>); <span class="comment">// Error</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="TypeScript의-Type"><a href="#TypeScript의-Type" class="headerlink" title="TypeScript의 Type"></a>TypeScript의 Type</h2><ul>
+<li>기본적으로 TypeScript는 Static Type이며 개발하는 도중에 타입을 체크한다. 위에 배웠던 Annotation이다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">n1:<span class="built_in">number</span>, n2:<span class="built_in">number</span></span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> n1+n2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Type List</p>
+<ul>
+<li><p>Primitive Type : 자바스크립트에서 넘어온 타입들로 오브젝트나 레퍼런스의 형태가 아닌 실제 값을 저장하는 자료형이다.</p>
+<ul>
+<li>Boolean</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">isDone</span>: <span class="built_in">boolean</span> = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">isDone = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> isDone)</span><br><span class="line"><span class="comment">// &#x27;boolean&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">isOk</span>: <span class="title class_">Boolean</span> = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> isNotOk : <span class="built_in">boolean</span> = <span class="keyword">new</span> <span class="title class_">Boolean</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="comment">// new Boolean을 사용하면 Error가 나온다.</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Number</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">decimal</span>: <span class="built_in">number</span> = <span class="number">6</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">hex</span>: <span class="built_in">number</span> = <span class="number">0xf00d</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">binary</span>: <span class="built_in">number</span> = <span class="number">0b1010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">octal</span>: <span class="built_in">number</span> = <span class="number">0o744</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">notANumber</span>: <span class="built_in">number</span> = <span class="title class_">NaN</span>;</span><br><span class="line"><span class="comment">// NaN은 숫자의 한 형태이다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">underscoreNum</span>: <span class="built_in">number</span> = <span class="number">1_000_000</span>;</span><br><span class="line"><span class="comment">// 언더스코어도 사용이 가능하다.</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>String</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">myName</span>: <span class="built_in">string</span> = <span class="string">&quot;Mark&quot;</span>;</span><br><span class="line"></span><br><span class="line">myName = <span class="string">&quot;Anna&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> youName = <span class="string">`hello <span class="subst">$&#123;myName&#125;</span>`</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Null &amp; Undefined</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">u</span>: <span class="literal">undefined</span> = <span class="literal">undefined</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">n</span>: <span class="literal">null</span> = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">a</span>: <span class="built_in">string</span> = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">b</span>: <span class="built_in">number</span> = <span class="literal">undefined</span>;</span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="comment">// tsconfig에서 strict:true인 경우 error가 나온다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">u1</span>: undefine = <span class="literal">null</span> (X);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">v</span>: <span class="built_in">void</span> = <span class="literal">undefined</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">union</span>: <span class="built_in">string</span> | <span class="literal">null</span> | <span class="literal">undefined</span> = <span class="string">&quot;str&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Symbol</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Symbol</span> (X) <span class="comment">// Error</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Symbol</span>(<span class="string">&#x27;foo&#x27;</span>));</span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="comment">// ts 환경에서 symbol을 사용할 수 있는 환경이 설정되있지 않을 수 있다. tsconfig에서 &quot;lib&quot;: [&quot;ES2015&quot;,&quot;DOM&quot;]를 설정해주면 된다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> sym = <span class="title class_">Symbol</span>();</span><br><span class="line"><span class="comment">// Symbol로 생성된 값은 고유하고 수정이 불가능하게 만들어준다. 주로 접근을 제어할 때 사용한다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">	[sym]: <span class="string">&quot;value&quot;</span>,</span><br><span class="line">	<span class="comment">// symbol 객체는 []로 감싼다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj[sym]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Object</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;<span class="attr">name</span>: <span class="string">&#x27;Mark&#x27;</span>, <span class="attr">age</span>: <span class="number">39</span>&#125;</span><br><span class="line"><span class="comment">// person &#123;name: String, age: Number&#125;</span></span><br><span class="line"><span class="comment">// Object Type으로 나오지는 않는다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person2 = <span class="title class_">Object</span>.<span class="title function_">create</span>(&#123;<span class="attr">name</span>: <span class="string">&#x27;Mark&#x27;</span>, <span class="attr">age</span>: <span class="number">39</span>&#125;)</span><br><span class="line"><span class="comment">// Object.create(o:object | null)</span></span><br><span class="line"><span class="comment">// create() 안에는 Object 형태나 null을 넣을 수 있다. 단 Number이나 일반 String만 쓰는건 불가능하다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">obj</span>: <span class="built_in">object</span> = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">obj = &#123;<span class="attr">name</span>: <span class="string">&#x27;YS&#x27;</span>&#125;;</span><br><span class="line"></span><br><span class="line">obj = [&#123;<span class="attr">name</span>: <span class="string">&#x27;YS&#x27;</span>&#125;];</span><br><span class="line"></span><br><span class="line">obj = <span class="number">39</span>; <span class="comment">//Error</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">function</span> <span class="title function_">create</span>(<span class="params">o: <span class="built_in">object</span> | <span class="literal">null</span></span>): <span class="built_in">void</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">create</span>(&#123;<span class="attr">name</span>:<span class="string">&#x27;YS&#x27;</span>&#125;);</span><br><span class="line"><span class="title function_">create</span>(<span class="built_in">void</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>Array</p>
+</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">list2</span>: <span class="built_in">number</span>[] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">list3</span>: <span class="title class_">Array</span>&lt;<span class="built_in">number</span>&gt; = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="comment">// 단 이 방식은 jsx에서 오류가 날 수 있다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">list4</span>: <span class="built_in">number</span>[] = [<span class="number">1</span>,<span class="string">&quot;2&quot;</span>];</span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">list5</span>: (<span class="built_in">number</span> | <span class="built_in">string</span>)[] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">&quot;4&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Tuple</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">x</span>: [<span class="built_in">string</span>, <span class="built_in">number</span>];</span><br><span class="line"></span><br><span class="line">x = [<span class="string">&quot;hello&quot;</span>,<span class="number">39</span>];</span><br><span class="line"></span><br><span class="line">x = [<span class="number">10</span>, <span class="string">&quot;goodbye&quot;</span>];</span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="comment">// Tuple 형식으로 작성했으면 위치는 맞아야한다.</span></span><br><span class="line"></span><br><span class="line">x[<span class="number">2</span>];</span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="comment">// Tuple에 할당된 자리는 2개가 3번째 요소를 불러오려하면 에러가 남</span></span><br><span class="line"></span><br><span class="line">x[<span class="number">2</span>] = <span class="string">&quot;world;</span></span><br><span class="line"><span class="string">// Error</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">const person: [string, number] = [&quot;</span><span class="title class_">Mark</span><span class="string">&quot;, 39];</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">const [first, second] = person;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">const [first2, second2, third2] = person;</span></span><br><span class="line"><span class="string">// Error</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>any<ul>
+<li>any는 어떤 타입이여도 상관이 없다.</li>
+<li>대신 이걸 최대한 쓰지 않는게 핵심이다.</li>
+<li>컴파일 타임에 타입 체크가 정상적으로 이뤄지지 않아 타입의 안전성을 잃는 것이 원인이지만, any를 써야하는데 쓰지 않으면 안되는 경우도 있다.</li>
+</ul>
+</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">returnAny</span>(<span class="params">message: <span class="built_in">any</span></span>): <span class="built_in">any</span>&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> any1 = <span class="title function_">returnAny</span>(<span class="string">&#x27;Hi&#x27;</span>);</span><br><span class="line"><span class="comment">// message의 경우 내용이 문자가 올지 숫자나 에러코드가 올지 모르기 때문에 any로 지정하는 것이 맞다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">looselyTyped</span>: <span class="built_in">any</span> = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> d = looselyTyped.<span class="property">a</span>.<span class="property">b</span>.<span class="property">c</span>.<span class="property">d</span>;</span><br><span class="line"><span class="comment">// any를 통한 전파성</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">leakingAny</span>(<span class="params">obj: <span class="built_in">any</span></span>)&#123;</span><br><span class="line">	<span class="keyword">const</span> a = obj.<span class="property">num</span>;</span><br><span class="line">	<span class="comment">// obj.num은 any Type이다.</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> b = a + <span class="number">1</span>;</span><br><span class="line">	<span class="comment">// b의 경우 숫자를 더하는 것이여도 any Type이다.</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> c = <span class="title function_">leakingAny</span>(&#123;<span class="attr">num</span>: <span class="number">0</span>&#125;);</span><br><span class="line"><span class="comment">// c의 Type 또한 any로 나온다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">e</span>: <span class="built_in">string</span> = c.<span class="title function_">indexOf</span>(<span class="string">&#x27;0&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>unknown<ul>
+<li>응용 프로그램 작성 시 모르는 변수 타입을 묘사할 때 사용한다.</li>
+<li>해당 변수가 무엇이든 될 수 있음을 알려준다. any를 대신하여 나왔다.</li>
+<li>any와 같이 아무것이나 할당할 수 있으나, 할당하려하면 컴파일러가 자동으로 추론한다.</li>
+<li>타입을 확정해주지 않으면 다른 곳에 할당도 안되고 사용도 안된다.</li>
+</ul>
+</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">declare</span> <span class="keyword">const</span> <span class="attr">maybe</span>: <span class="built_in">unknown</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">aNumber</span>: <span class="built_in">number</span> = maybe;</span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="comment">// unknown은 number같은 형태에 바로 할당할 수 없다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(maybe === <span class="literal">true</span>)&#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="attr">aBoolean</span>: <span class="built_in">boolean</span> = maybe;</span><br><span class="line">	<span class="comment">// maybe의 type은 true가 된다.</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> <span class="attr">aString</span>: <span class="built_in">string</span> = maybe;</span><br><span class="line">	<span class="comment">// Error</span></span><br><span class="line">	<span class="comment">// 조건문에 걸쳐 자동으로 Boolean 형식으로 maybe가 변경되었기 때문이다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> maybe === <span class="string">&#x27;string&#x27;</span>)&#123;</span><br><span class="line">	<span class="comment">// if문 안에 있는 구간에선 maybe는 string 형식이다.</span></span><br><span class="line">	<span class="keyword">const</span> <span class="attr">aString</span>: <span class="built_in">string</span> = maybe;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>never<ul>
+<li>never Type은 모든 타입의 subtype이며, 모든 타입에 할당이 가능하다.</li>
+<li>하지만 never 자체에는 그 어떤 것도 할당할 수 없다.</li>
+<li>any도 할당을 할 수 없으며, 잘못된 타입을 넣는 실수를 막을 때 사용한다.</li>
+</ul>
+</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">error</span>(<span class="params">msg: <span class="built_in">string</span></span>): <span class="built_in">never</span> &#123;</span><br><span class="line">	<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(msg);</span><br><span class="line">	<span class="comment">// 함수 내에서 throw를 하면 바로 다음 명령을 실행하고 종료한다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fail</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="title function_">error</span>(<span class="string">&quot;failed&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">infiniteLoop</span>(<span class="params"></span>): <span class="built_in">never</span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(ture)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">let</span> <span class="attr">a</span>: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">let</span> <span class="attr">b</span>: <span class="built_in">string</span> | <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> a !== <span class="string">&#x27;string&#x27;</span>)&#123;</span><br><span class="line">	<span class="comment">// a가 스트링이 아닌 경우 nerver가 나온다.</span></span><br><span class="line">	a;</span><br><span class="line">	<span class="comment">// Type never</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> b !== <span class="string">&#x27;string&#x27;</span>)&#123;</span><br><span class="line">	b;</span><br><span class="line">	<span class="comment">// Type number</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>void</li>
+</ul>
+  <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">name</span>(<span class="params">msg: <span class="built_in">string</span></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(msg);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">	<span class="comment">// function return 값 자체의 타입은 void</span></span><br><span class="line">	<span class="comment">// function name():void&#123;&#125;</span></span><br><span class="line">	<span class="comment">// 단 return undefined를 return 값으로 할당할 수는 있다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> r = <span class="title function_">name</span>(<span class="string">&quot;No Return&quot;</span>);</span><br><span class="line"><span class="comment">// r의 타입은 void</span></span><br><span class="line"><span class="comment">// r: undefined를 입력해도 오류가 나온다.</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="타입-스크립트의-타입-시스템"><a href="#타입-스크립트의-타입-시스템" class="headerlink" title="타입 스크립트의 타입 시스템"></a>타입 스크립트의 타입 시스템</h2><ul>
+<li>타입스크립트는 타입을 명시해야한다.</li>
+<li>타입을 명시하지 않으면 컴파일러가 자동으로 추론한다.</li>
+<li>즉 타입이란 해당 변수가 할 수 있는 일을 결정한다.</li>
+</ul>
+<h2 id="Structural-Type-System-VS-Nominal-Type-System"><a href="#Structural-Type-System-VS-Nominal-Type-System" class="headerlink" title="Structural Type System VS Nominal Type System"></a>Structural Type System VS Nominal Type System</h2><ul>
+<li>Structural type : 구조가 같으면 같은 타입이다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Iperson</span> &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">	<span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">PersonType</span> = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">	<span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">personInterface</span>: <span class="title class_">Iperson</span> = &#123;&#125; <span class="keyword">as</span> <span class="built_in">any</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">personType</span>: <span class="title class_">PerosonType</span> = &#123;&#125; <span class="keyword">as</span> <span class="built_in">any</span>;</span><br><span class="line"></span><br><span class="line">personInerface = personType;</span><br><span class="line">personType = personInterface;</span><br><span class="line"><span class="comment">// 구조가 같기 때문에 오류가 나지 않는다.</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Nominal type : 구조가 같아도 이름이 다르면, 다른 타입이다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">Person</span> <span class="title class_">Id</span> = <span class="built_in">string</span> &amp; &#123;<span class="keyword">readonly</span> <span class="attr">brand</span>: unique <span class="built_in">symbol</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">PersonID</span>(<span class="params">id: <span class="built_in">string</span></span>): <span class="title class_">PersonID</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> id <span class="keyword">as</span> <span class="title class_">PersonID</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getPersonById</span>(<span class="params">id: PersonID</span>)&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">getPersonById</span>(<span class="title class_">PersonID</span>(<span class="string">&#x27;id-aaaaa&#x27;</span>));</span><br><span class="line"><span class="title function_">getPersonById</span>(<span class="string">&#x27;id-aaaaa&#x27;</span>);</span><br><span class="line"><span class="comment">// Error</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="타입의-호환성"><a href="#타입의-호환성" class="headerlink" title="타입의 호환성"></a>타입의 호환성</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">sub1</span>: <span class="number">1</span> = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup1</span>: <span class="built_in">number</span> = sub1;</span><br><span class="line">sub1 = sup1;</span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="comment">// Type number는 리터럴인 1에 넣을 수 없다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sub2</span>: <span class="built_in">number</span>[] = [<span class="number">1</span>];</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup2</span>: <span class="built_in">object</span> = sub2;</span><br><span class="line">sub2 = sup2;</span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="comment">// 단위가 number[], 리터럴보다 sup2의 포괄 범위가 더 크다</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sub3</span>: [<span class="built_in">number</span>, <span class="built_in">number</span>] = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup3</span>: <span class="built_in">number</span>[] = sub3;</span><br><span class="line">sub3 = sup3;</span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="comment">// 위와 동일하게 sup3이 더 크다</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sub4</span>: <span class="built_in">number</span> = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup4</span>: <span class="built_in">any</span> = sub4;</span><br><span class="line">sub4 = sup4;</span><br><span class="line"><span class="comment">// any라 무엇이든지 할당될 수 있다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sub5</span>: <span class="built_in">never</span> = <span class="number">0</span> <span class="keyword">as</span> <span class="built_in">never</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup5</span>: <span class="built_in">number</span> = sub5;</span><br><span class="line">sub5 = sup5;</span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="comment">// never는 이런데 넣는게 아니다...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span> &#123;&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Animal</span> &#123;</span><br><span class="line">	<span class="title function_">eat</span>(<span class="params"></span>)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sub6</span>: <span class="title class_">Dog</span> = <span class="keyword">new</span> <span class="title class_">Dog</span>();</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup6</span>: <span class="title class_">Animal</span> = sub6;</span><br><span class="line">sub6 = sup6;</span><br><span class="line"><span class="comment">// Error</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>같거나 서브 타입의 경우 할당이 가능하다. &#x3D; 공변</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">sub7</span>: <span class="built_in">string</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup7</span>: <span class="built_in">string</span> | <span class="built_in">number</span> = sub7;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 더 커야지만 가능하다</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>함수의 매개변수 타입만 같거나 슈퍼타입인 경우 할당이 가능하다. &#x3D; 반병</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dev</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Person</span>&#123;</span><br><span class="line">	<span class="title function_">coding</span>(<span class="params"></span>)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">StartupDev</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Dev</span>&#123;</span><br><span class="line">	<span class="title function_">burning</span>(<span class="params"></span>)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">funtion <span class="title function_">tellme</span>(<span class="params">f: (d: Dev) =&gt; Dev</span>)&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Dev =&gt; Dev에다가 Dev =&gt; Dev를 할당하는 경우</span></span><br><span class="line"><span class="title function_">tellme</span>(<span class="keyword">function</span> <span class="title function_">dToD</span>(<span class="params">d: Dev</span>): <span class="title class_">Dev</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Dev</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Dev =&gt; Dev에다가 Person =&gt; Dev를 할당하는 경우</span></span><br><span class="line"><span class="title function_">tellme</span>(<span class="keyword">function</span> <span class="title function_">pToD</span>(<span class="params">d: Person</span>): <span class="title class_">Dev</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Dev</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Dev =&gt; Dev에다가 StartupDev =&gt; Dev를 할당하는 경우</span></span><br><span class="line"><span class="title function_">tellme</span>(<span class="keyword">function</span> <span class="title function_">sToD</span>(<span class="params">d: StartupDev</span>): <span class="title class_">Dev</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Dev</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="타입-별칭"><a href="#타입-별칭" class="headerlink" title="타입 별칭"></a>타입 별칭</h2><ul>
+<li>interface와 비슷하다</li>
+<li>Primitive, Union Type, Tuple, Function</li>
+<li>직접 작성해야하는 타입을 다른 이름으로 지정할 수 있다.</li>
+<li>만들어진 타입의 refer로 사용하는 것이며 타입을 만드는 것은 아니다.</li>
+<li>즉 타입 제한을 변수로 만들어서 사용할 수 있다는 것이다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Primitive</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">MyString</span> = <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">&quot;world&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">myStr</span>: <span class="title class_">MyString</span> = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line">meyStr = str</span><br><span class="line"></span><br><span class="line"><span class="comment">// Union</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">person</span>: <span class="built_in">string</span> | <span class="built_in">number</span> = <span class="number">0</span>;</span><br><span class="line">person = <span class="string">&#x27;Mark&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">StringOrNumber</span> = <span class="built_in">string</span> | <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">another</span>: <span class="title class_">StringOrNumber</span> = <span class="number">0</span>;</span><br><span class="line">another = <span class="string">&quot;Anna&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Tuple</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">person</span>: [<span class="built_in">string</span>, <span class="built_in">number</span>] = [<span class="string">&quot;Mark&quot;</span>, <span class="number">35</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> personTuple = [<span class="built_in">string</span>, <span class="built_in">number</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">another</span>: personTuple = [<span class="string">&quot;Anna&quot;</span>, <span class="number">20</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//Function</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">EatType</span> = <span class="function">(<span class="params">food: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘은 처음으로 타입 스크립트에 대해서 배웠습니다. 이 부분에 대해선 항상 미지의 영역이였습니다. 다수의 기업의 채용 공고에 우대사항으로 늘 적혀있던 타입 스크립트를 배워보니 왜 우대사항에 두는지 알 수 있었습니다. 기존 자바스크립트의 추가적인 요소가 많았고 무엇보다 타입을 선언함으로써 보안적인 문제나 코드의 꼬임을 방지할 수 있는 것이 매력적으로 보였습니다. 강의가 두세번 밖에 없어서 아쉬울 정도였습니다. 이후 시간이 남는다면 타입스크립트만으로 하나정도 결과물을 만들어봐도 좋을 것 같습니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1262,106 +1483,6 @@
 <h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>금주부터 하루 수업에 대한 회고를 하려합니다. </p>
 <p>금일의 경우 알고 있던 내용들을 주류로 h1~h6, 변수 생성 방법, 태그에 대한 설명들이 주류라 많은 내용을 기록하진 않았습니다. 이후 되돌아 보았을 때 종종 잊을만한 것들을 주로 기록하였습니다.</p>
 <p>매일 배운 것을 잊지않도록 기록하며 추후 참고에 이용하는 것도 좋다고 생각하지만, 추가로 이 수업을 하며 무엇을 배워 어디에 쓸 수 있거나, 어떤 점이 어려웠는지 등을 기록해 가는 것도 좋다 생각하였습니다.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/15/TIL-2022-04-15/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Yun Seong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/15/TIL-2022-04-15/" class="post-title-link" itemprop="url">2022 04 15 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-04-15 21:03:25 / Modified: 21:14:40" itemprop="dateCreated datePublished" datetime="2022-04-15T21:03:25+09:00">2022-04-15</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="프로그램-언어의-역사"><a href="#프로그램-언어의-역사" class="headerlink" title="프로그램 언어의 역사"></a>프로그램 언어의 역사</h2><p>기존 2진법이나 16진법같은 머신코드로 프로그램을 짜기 어려워서 <code>**어셈블러**</code>란 것을 만들게됨</p>
-<h2 id="어셈블러"><a href="#어셈블러" class="headerlink" title="어셈블러"></a>어셈블러</h2><ul>
-<li>머신 코드를 오브젝트 코드로 해석해주는 번역 프로그램</li>
-<li>기존 엄청 긴 머신코드로 더하기란 기능을 쳐야했으면 a&#x3D;1; 만 쳐도 머신코드를 컴파일하여 메모리에 입력하게됨</li>
-<li>진행 방식<br>Code → Token → AST → 머신코드</li>
-<li>해당 방식을 쓰는 언어 : C, JAVA …</li>
-</ul>
-<blockquote>
-<p>AST explorer Link :  <a target="_blank" rel="noopener" href="https://astexplorer.net/">https://astexplorer.net/</a></p>
-</blockquote>
-<h2 id="HTML-HTTP-Browser"><a href="#HTML-HTTP-Browser" class="headerlink" title="HTML, HTTP, Browser"></a>HTML, HTTP, Browser</h2><p>어셈블리 이후 나타난 것이 <code>**HTML, HTTP, Browser</code>** 이다.</p>
-<ul>
-<li>HTML &#x3D; 쉽게 코드를 작성할 수 있고</li>
-<li>HTTP &#x3D; 쉽게 요청을 보내거나 받을 수 있고</li>
-<li>Browser &#x3D; HTTP를 통해 전달받은 정보를 사용자에게 보여줄 수 있다.</li>
-</ul>
-<p>Browser 주소창에 넣는 문장이나 요청의 형식은 <code>URL(Uniform Resource Locator)</code>이라고 불리며 작성에 대한 약속된 기준이 있다.</p>
-<h2 id="URL의-작성-방식"><a href="#URL의-작성-방식" class="headerlink" title="URL의 작성 방식"></a>URL의 작성 방식</h2><ul>
-<li>scheme: 약속된 방식의 이름 (ftp, http …)</li>
-<li>host: 접속하려는 페이지의 주소</li>
-<li>port: 접속하거나 정보를 주고 받는데 쓰이는 통로의 구분</li>
-<li>path: 해당 주소의 어떠한 파일로 통하는 경로</li>
-<li>query: 추가로 요청할 때 무엇을 요청할지에 대한 정보</li>
-</ul>
-<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><ul>
-<li>DOM을 구성하는 가장 기본적인 언어</li>
-<li><html> 태그 안에 생성되어야하며, <head>태그와 <body> 태그 내에서 내용을 작성</li>
-<li>약속된 의미에 맞도록 태그를 사용해야 컴퓨터가 처리하기 좋음</li>
-</ul>
-<h2 id="DOCTYPE"><a href="#DOCTYPE" class="headerlink" title="DOCTYPE"></a>DOCTYPE</h2><p>마크업 언어에서 문서 형식을 정의하며, 웹 브라우저가 <strong>어떤 HTML 버전</strong>의 해석 방식으로 페이지를 이해하면 되는지 알려주는 용도</p>
-<h2 id="META"><a href="#META" class="headerlink" title="META"></a>META</h2><p>HTML문서의 제작자, 내용, 키워드, 화면 정보 등 여러 정보를 <strong>검색 엔진이나 브라우저</strong>에게 제공</p>
 
       
     </div>
