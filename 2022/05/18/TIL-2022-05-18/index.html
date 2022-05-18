@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dbstjddbwls.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="수업 내용Mocking 라이브러리  모의 데이터(Mock)을 만들어서 활용하는 방식이다. 통상적으로 data fetch를 해야하는 경우 통신을 통해 응답을 내려주는 서버가 있어야한다. 서버가 없는 경우엔 API 요청으로 받을 데이터를 프론트에서 모킹하거나 서버의 역할의 해주는 무언가가 필요하다. REST API나 GraphQL 또한 모킹이 가능하다.  Re">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022 05 18 TIL">
+<meta property="og:url" content="https://dbstjddbwls.github.io/2022/05/18/TIL-2022-05-18/index.html">
+<meta property="og:site_name" content="프론트엔드에 깃발 세우기">
+<meta property="og:description" content="수업 내용Mocking 라이브러리  모의 데이터(Mock)을 만들어서 활용하는 방식이다. 통상적으로 data fetch를 해야하는 경우 통신을 통해 응답을 내려주는 서버가 있어야한다. 서버가 없는 경우엔 API 요청으로 받을 데이터를 프론트에서 모킹하거나 서버의 역할의 해주는 무언가가 필요하다. REST API나 GraphQL 또한 모킹이 가능하다.  Re">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-18T13:04:55.000Z">
+<meta property="article:modified_time" content="2022-05-18T13:06:12.163Z">
+<meta property="article:author" content="Kim Yun Seong">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dbstjddbwls.github.io/2022/05/18/TIL-2022-05-18/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://dbstjddbwls.github.io/2022/05/18/TIL-2022-05-18/","path":"2022/05/18/TIL-2022-05-18/","title":"2022 05 18 TIL"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>2022 05 18 TIL | 프론트엔드에 깃발 세우기</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">프론트엔드에 깃발 세우기</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%88%98%EC%97%85-%EB%82%B4%EC%9A%A9"><span class="nav-number">1.</span> <span class="nav-text">수업 내용</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mocking-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC"><span class="nav-number">1.1.</span> <span class="nav-text">Mocking 라이브러리</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redux"><span class="nav-number">1.2.</span> <span class="nav-text">Redux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MobX"><span class="nav-number">1.3.</span> <span class="nav-text">MobX</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kim Yun Seong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/05/18/TIL-2022-05-18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="2022 05 18 TIL | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2022 05 18 TIL
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-18 22:04:55 / Modified: 22:06:12" itemprop="dateCreated datePublished" datetime="2022-05-18T22:04:55+09:00">2022-05-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="Mocking-라이브러리"><a href="#Mocking-라이브러리" class="headerlink" title="Mocking 라이브러리"></a>Mocking 라이브러리</h2><hr>
+<ul>
+<li>모의 데이터(Mock)을 만들어서 활용하는 방식이다.</li>
+<li>통상적으로 data fetch를 해야하는 경우 통신을 통해 응답을 내려주는 서버가 있어야한다.</li>
+<li>서버가 없는 경우엔 API 요청으로 받을 데이터를 프론트에서 모킹하거나 서버의 역할의 해주는 무언가가 필요하다.</li>
+<li>REST API나 GraphQL 또한 모킹이 가능하다.</li>
+</ul>
+<h2 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h2><hr>
+<ul>
+<li>컴포넌트 사이의 전역 상태간 상태관리 시스템이다.</li>
+<li>사용법은 npx create-react-app my-app —template redux를 작성하여 사용</li>
+<li>typescript를 사용하고 싶다면 redux부분에 redux-typescript를 덧붙힌다.</li>
+<li>이후 npm install react-redux를 실행시키거나 npm install @types&#x2F;react-redux를 입력한다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Provider</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react-redux&#x27;</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&#x27;./store&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">App</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></span>,</span><br><span class="line">	rootElement</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>useSelect() : Provider로 감싼 store에서 state 데이터를 가져올 수 있다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">Counter</span> = (<span class="params"></span>)=&gt;&#123;</span><br><span class="line">	<span class="keyword">const</span> counter = <span class="title function_">useSelector</span>(<span class="function"><span class="params">state</span> =&gt;</span> state.<span class="property">counter</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>useDispatch() : useDispatch()란 함수 안에 넣으면 dispatch 함수를 만들 수 있다. 액션 객체나 속성값 자체를 전달하며 작동시킨다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dispatch = <span class="title function_">useDispatch</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">counterHandel</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">	<span class="title function_">dispatch</span>(&#123;<span class="attr">type</span>: <span class="string">&#x27;ADD&#x27;</span>&#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 일종의 함수의를 실행시키기 위해선 dispatch로 감싸거나 인자로 줘야한다 보면 된다.</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Provider : react에 store를 손쉽게 연동할 수 있게 해주는 <strong>컴포넌트</strong>이다. 해당 컴포넌트로 React 컴포넌트들을 감싸준다면 하위 컴포넌트들이 Provider을 통해 Redux의 store를 조정할 수 있다.</li>
+</ul>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(reducers);</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">&lt;<span class="title class_">Provider</span> store=&#123;store&#125;&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span></span><br><span class="line">&lt;/<span class="title class_">Provider</span>&gt;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>store : 스토어는 사태가 관리되는 공간이다. 컴포넌트와 스토어는 별개의 공간이 있어, 스토어 안에 앱에 필요한 정보나 상태를 저장한 뒤 이후 필요할 때 꺼내서 사용한다.</li>
+</ul>
+<h2 id="MobX"><a href="#MobX" class="headerlink" title="MobX"></a>MobX</h2><hr>
+<ul>
+<li>MobX는 redux와 다르게 코드의 양을 획기적이게 줄이기 위해 나왔다.</li>
+<li>심플한 형태로 이루어지기 위하여 보일러플레이트의 형식을 버렸다.</li>
+<li>Action을 통하여 Derivative를 바꾸는 유일한 수단으로 사용된다.</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/17/TIL-2022-05-17/" rel="prev" title="2022 05 17 TIL">
+                  <i class="fa fa-chevron-left"></i> 2022 05 17 TIL
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kim Yun Seong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
