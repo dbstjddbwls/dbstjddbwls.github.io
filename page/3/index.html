@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,197 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/21/TIL-2022-04-21/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/21/TIL-2022-04-21/" class="post-title-link" itemprop="url">2022 04 21 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-04-21 20:34:55 / Modified: 20:43:45" itemprop="dateCreated datePublished" datetime="2022-04-21T20:34:55+09:00">2022-04-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="요소-쌓임-순서-Stack-order"><a href="#요소-쌓임-순서-Stack-order" class="headerlink" title="요소 쌓임 순서 (Stack order)"></a>요소 쌓임 순서 (Stack order)</h2><p>어떤 요소가 사용자와 더 가깝게 있는지(위에 쌓이는지) 결정</p>
+<ul>
+<li>요소에 position 속성의 값이 있는 경우 위에 쌓임</li>
+<li>1번 조건이 같은 경우 (요소 중 position 속성이 다양하게 있는 경우) z-index 속성의 숫자 값이 높을 수록 위에 쌓임</li>
+<li>z-index조차 같으면 html 구조 상 아래에 있는 요소가 더 위에 쌓임</li>
+</ul>
+<h2 id="FLEX"><a href="#FLEX" class="headerlink" title="FLEX"></a>FLEX</h2><ul>
+<li>특정한 요소에 display : flex를 추가하면 하위 요소가 수평정렬이 된다.</li>
+<li>부모 요소에 display : flex를 추가하면 해당 부모 요소는 flex container로 지정이 된다.</li>
+<li>자식 요소의 경우엔 flex items라고 지정이 되며, flex를 추가할 시 2가지 개념이 각 요소에 지정이 된다고 보면 된다.</li>
+</ul>
+<h2 id="Flex-Container의-특성"><a href="#Flex-Container의-특성" class="headerlink" title="Flex Container의 특성"></a>Flex Container의 특성</h2><ul>
+<li><p><code>display</code> : <strong>flex</strong>와 <strong>inline-flex</strong>를 부모요소에 부여할 수 있다. flex는 <strong>flex-container</strong>들이 block 형식으로 쌓이고, inline-flex는 인라인 요소처럼 inline 형식으로 쌓인다.</p>
+</li>
+<li><p><code>flex-direction</code> : <strong>row, row-reverse, column, column-reverse</strong> 란 속성을 사용하여 <strong>flex-item</strong>들이 어떤 정렬 형식으로 될지 결정한다.</p>
+</li>
+<li><p><code>flex-wrap</code> : <strong>nowrap, wrap</strong>란 속성을 사용하여 <strong>flex-item</strong>의 주 바꿈의 여부를 결정할 수 있다. nowrap(기본값)을 사용하면 한 줄 내로 모든 item을 보여주려해서 width를 설정한 flex-item의 width를 강제로 줄이게 된다. 만약 해당 부분이 문제가 된다면 wrap을 사용하여 줄바꿈 할 수 있께 설정해야한다.</p>
+</li>
+<li><p><code>justify-content</code> : <strong>flex-start, flex-end, center</strong>를 사용하여 <strong>flex-item</strong>을 어디서부터 시작할지 정할 수 있다. start의 경우 시작점, 즉 왼쪽부터 정렬하고 end는 오른쪽 정렬, center는 가운데에 정렬한다</p>
+</li>
+<li><p><code>align-content</code> : <strong>stretch, flex-start, flex-end, center</strong>를 사용하여 <strong>flex-item</strong>를 여러 줄에 대한 수직 정렬에 관한 속성이다.<br>align-content를 쓰지 않으면 container의 높이에 맞춰 여러 줄의 공간을 동일하게 분배하는데, align-content를 사용하면 item 높이에 맞춰 바로 밑에 위치할 수 있게 작동한다.</p>
+</li>
+<li><p><code>align-items</code> : align-content가 여러 줄이라면 align-items는 한 줄에 대한 정렬 방법이다. content와 동일한 기능을 사용 가능하다.</p>
+</li>
+</ul>
+<h2 id="Flex-items에-관한-속성"><a href="#Flex-items에-관한-속성" class="headerlink" title="Flex items에 관한 속성"></a>Flex items에 관한 속성</h2><ul>
+<li><p><code>order</code> : 숫자를 사용할 수 있으며 <strong>flex item</strong>들의 순서를 정할 수 있다.<br>기본적으로 ABCDE의 순서라면 각 항목에 order를 -3, 2, -5, 14, 7 이렇게 부여하면 순서가 CABED 이렇게 변경된다. 즉, 숫자가 작을 수록 앞쪽에 위치된다.</p>
+</li>
+<li><p><code>flex-grow</code> : 숫자를 사용할 수 있으며 <strong>flex-item</strong>의 증가되는 width 비율을 정할 수 있다.</p>
+</li>
+<li><p><code>flex-shrink</code> : 숫자를 사용할 수 있으며 <strong>flex-item</strong>의 감소되는 width 비율을 정할 수 있다.</p>
+</li>
+<li><p><code>flex-basis</code> : auto와 각 단위로 지정할 수 있으며 <strong>flex-item</strong>의 공간 배분 전 기본 너비를 지정할 수 있다.</p>
+</li>
+</ul>
+<h2 id="전환-효과"><a href="#전환-효과" class="headerlink" title="전환 효과"></a>전환 효과</h2><ul>
+<li><code>transition-property</code> : all, 속성 이름을 사용하며 width, height 등 도 사용할 수 있다.<br>transition : width 1s고  hover하면 width와 bgcolor가 바뀐다면 width만 1초동안 바뀌고 bgcolor는 즉시 바뀌게 된다.</li>
+<li><code>transition-duration</code> : 1s, .5s, 10s… 등을 사용 가능하며 전환이 되기까지의 시간을 사용할 수 있다.<br>transition : width .5s, background-color 2s 처럼 여러가지 속성을 동시에 쓸 수 있다.</li>
+<li><code>transition-timing-function</code> : ease(느리게→빠르게→느리게), linear(일정하게), ease-in(느리게→빠르게), ease-out(빠르게→느리게), ease-in-out(느리게→빠르게→느리게) 등을 사용할 수 있으며 전환 효과의 타이밍을 조정할 수 있다.<br>trasition: all .5s ease-in 이렇게 사용할 수 있다.</li>
+</ul>
+<h2 id="원근법-사용"><a href="#원근법-사용" class="headerlink" title="원근법 사용"></a>원근법 사용</h2><p><code>transform : perspective</code>를 사용하며 해당 요소에 원근범 함수를 사용할 수 있다. perspective의 경우 모든 transform 함수에서 가장 앞에 있어야만 한다.</p>
+<p>다만 perspective는 자체적인 속성과 transform 내에 있는 속성 두 가지가 있다. perspective의 경우 관찰 대상의 부모 요소에 적용하고, transform : persperctove의 경우 관찰 대상 자체에게 원근법을 부여한다.</p>
+<h2 id="기울임-사용"><a href="#기울임-사용" class="headerlink" title="기울임 사용"></a>기울임 사용</h2><p>transform : skew를 사용하며 해당 요소에 기울임을 줄 수 있다.</p>
+<h2 id="3D-변환으로-회전된-요소의-뒷면을-숨기는-법"><a href="#3D-변환으로-회전된-요소의-뒷면을-숨기는-법" class="headerlink" title="3D 변환으로 회전된 요소의 뒷면을 숨기는 법"></a>3D 변환으로 회전된 요소의 뒷면을 숨기는 법</h2><p>backface-visibility : 기본은 visible이며 hidden으로 숨길 수 있다.</p>
+<h2 id="Background-attachment"><a href="#Background-attachment" class="headerlink" title="Background-attachment"></a>Background-attachment</h2><p>background image가 실제 웹 페이지 높이보다 적을 경우 해당 백그라운드 이미지를 스크롤 되어도 fixed되거나 변경되거나를 정할 수 있다.</p>
+<h2 id="오버워치-캐릭터-선택창-클론-코딩"><a href="#오버워치-캐릭터-선택창-클론-코딩" class="headerlink" title="오버워치 캐릭터 선택창 클론 코딩"></a>오버워치 캐릭터 선택창 클론 코딩</h2><p>URL : <a target="_blank" rel="noopener" href="https://github.com/dbstjddbwls/Overwatch-Champion-Select/tree/main">https://github.com/dbstjddbwls/Over</a></p>
+<h2 id="SCSS"><a href="#SCSS" class="headerlink" title="SCSS"></a>SCSS</h2><ul>
+<li>SCSS란 CSS를 좀 더 활용하기 위한 도구이다.</li>
+<li>기존 SASS에서 조금 더 보완을하여 나온 것이 SCSS</li>
+<li>둘의 차이는 중괄호와 세미콜론(;)의 차이</li>
+<li>.scss로 작업을 하면 npm 파일에서 자동으로 css 문법으로 컴파일하여 적용된다.</li>
+<li>기존 길어지던 선택자가 변수로 통합하거나 배경색, 폰트 사이즈 등을 변수로 지정할 수 있어 작업에 혼동이 덜하게 된다.</li>
+</ul>
+<h2 id="SCSS-기능"><a href="#SCSS-기능" class="headerlink" title="SCSS 기능"></a>SCSS 기능</h2><ul>
+<li>.scss 파일 내엔 css 요소를 변수로 설정할 수 있다. 또한 선택자 안에서 선언하면 해당 선택자 안에서만 사용 가능하다</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$color</span> = red;</span><br><span class="line"><span class="selector-tag">h1</span>&#123;<span class="attribute">color</span>=<span class="variable">$color</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//유효범위 변수</span></span><br><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">	<span class="variable">$size</span>:<span class="number">200px</span>;</span><br><span class="line">	<span class="selector-class">.item</span>&#123;</span><br><span class="line">		<span class="attribute">width</span>:<span class="variable">$size</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.list</span>&#123;</span><br><span class="line">	<span class="attribute">font-size</span>:<span class="variable">$size</span>(X)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>선택자를 중첩하여 사용할 수 있다.</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">    <span class="selector-tag">ul</span>&#123;</span><br><span class="line">        &gt; <span class="selector-tag">li</span>&#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">// .container ul &gt; li</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>상위 선택자 참조 (&amp;)를 통하여 hover, active, last-child등을 사용할 수 있다.</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.btn</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>:red;</span><br><span class="line">    &amp;<span class="selector-class">.hover</span>&#123;</span><br><span class="line">        <span class="attribute">color</span>:blue</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//선택자 내 이름으로도 설정이 가능하다</span></span><br><span class="line"><span class="selector-class">.fs</span>&#123;</span><br><span class="line">	&amp;-small &#123;<span class="attribute">font-size</span>: <span class="number">12px</span>&#125;</span><br><span class="line">	&amp;-large &#123;<span class="attribute">font-size</span>: <span class="number">18px</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// .fs-small &#123;font-size: 12px&#125;</span></span><br><span class="line"><span class="comment">// .fs-large &#123;font-size: 18px&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>동일한 이름의 속성은 중첩되는 이름 부분(name space)을 같이 쓸 수 있다.</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">	<span class="attribute">font</span>:&#123;</span><br><span class="line">		weight: bold;</span><br><span class="line">		size: <span class="number">10px</span>;</span><br><span class="line">		family: sans-serif;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="attribute">margin</span>&#123;</span><br><span class="line">		<span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">		<span class="attribute">bottom</span>: <span class="number">40px</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>+, -, *, % 등 사칙연산을 할 수 있다. 다만 &#x2F;의 나누기는 사용할 수 없다. 대신 해당 연산을 괄호로 묶거나 변수에 값을 할당 후 엔 사용 가능하다.<br>기존 사칙연산처럼 곱하기, 나누기, ( )부터 진행된다.</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">	<span class="variable">$size</span>: <span class="number">30px</span></span><br><span class="line">	width: <span class="number">20px</span> + <span class="number">20px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">40px</span> - <span class="number">10px</span>;</span><br><span class="line">	<span class="attribute">font-size</span>:<span class="number">10px</span> * <span class="number">2px</span></span><br><span class="line">	margin: <span class="number">30px</span> / <span class="number">2</span>;(X)</span><br><span class="line">	<span class="attribute">padding</span>:<span class="number">20px</span> % <span class="number">7</span>;</span><br><span class="line">	<span class="attribute">font</span>: <span class="number">10px</span> / <span class="number">10px</span> serif</span><br><span class="line">	// /가 들어가면 앞에 있는 숫자는 line-height로 취급하여 연산하지 않는다.</span><br><span class="line"></span><br><span class="line">	padding: (<span class="number">30px</span> / <span class="number">2</span>);</span><br><span class="line">	<span class="attribute">left</span>: <span class="variable">$size</span> / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 100% - 200px같이 단위가 다르면 작동하지 않는다. 대신 **calc** 함수를 사용하면 가능하다.</span></span><br><span class="line">	<span class="attribute">top</span>: calc(<span class="number">100%</span> - <span class="number">200px</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Mixin"><a href="#Mixin" class="headerlink" title="Mixin"></a>Mixin</h2><p>재활용할 수 있는  타입의 구조이다. <code>@include</code>를 통해 불러올 수 있으며, 불러오면 설정한 속성을 붙여넣을 수 있다. 동시에 함수처럼 인자를 받아서 넣을 수 있으며 기본 값도 줄 수 있다.</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> center&#123;</span><br><span class="line">	<span class="attribute">display</span>:flex</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@mixin</span> box(<span class="variable">$size</span>)&#123;</span><br><span class="line">	<span class="attribute">width</span>:<span class="variable">$size</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@mixin</span> box2(<span class="variable">$size</span>: <span class="number">80px</span>, <span class="variable">$color</span>:blue)&#123;</span><br><span class="line">	<span class="attribute">height</span>: <span class="variable">$size</span>;</span><br><span class="line">	<span class="attribute">color</span>:<span class="variable">$color</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">	<span class="keyword">@include</span> center;</span><br><span class="line">	<span class="selector-class">.item</span>&#123;</span><br><span class="line">		<span class="keyword">@include</span> center;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">	<span class="keyword">@include</span> box(<span class="number">100px</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box2</span>&#123;</span><br><span class="line">	<span class="keyword">@include</span> box2;</span><br><span class="line">	<span class="selector-class">.item</span>&#123;</span><br><span class="line">		<span class="keyword">@include</span> box2(<span class="number">40px</span>, red)</span><br><span class="line">	.item2&#123;</span><br><span class="line">		<span class="keyword">@include</span> box2(<span class="variable">$color</span>: tomato);</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="반복문-for"><a href="#반복문-for" class="headerlink" title="반복문 @for"></a>반복문 @for</h2><p><code>@for</code>을 통하여 반복문을 사용할 수 있다. js가 아니기 때문에 숫자는 1부터 시작된다. 다만 반복되는 변수 i는 <code>#&#123;$i&#125;</code> 라고 보간하여 적어야 인자로 쓸 수 있다.</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@for</span> <span class="variable">$i</span> from <span class="number">1</span> through <span class="number">10</span>&#123;</span><br><span class="line">	<span class="selector-class">.box</span><span class="selector-pseudo">:nth-child</span>(#&#123;$i&#125;)&#123;</span><br><span class="line">		<span class="attribute">width</span>: <span class="number">100px</span> * <span class="variable">$i</span>;</span><br><span class="line">		<span class="comment">// 값을 넣는 부분이라 보간 필요 X</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="함수"><a href="#함수" class="headerlink" title="함수"></a>함수</h2><p><code>@mixin, @function</code> 을 통하여 함수를 사용할 수 있다. <code>@mixin</code>의 경우 css 코드의 모음이고, <code>@function</code>의 경우 여러 연산에 관련되었을 때 사용한다.</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> center&#123;</span><br><span class="line">	<span class="attribute">text-align</span>: center</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@function</span> ratio(<span class="variable">$size</span>, <span class="variable">$ratio</span>)&#123;</span><br><span class="line">	<span class="keyword">@return</span> <span class="variable">$size</span> * <span class="variable">$ratio</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box&#123;</span><br><span class="line">	<span class="variable">$width</span>:<span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">width</span>: <span class="variable">$width</span>;</span><br><span class="line">	<span class="attribute">height</span>: ratio(<span class="variable">$width</span>, <span class="number">1</span>/<span class="number">2</span>);</span><br><span class="line">	<span class="comment">// 100px * 1/2 = 50px</span></span><br><span class="line">	<span class="keyword">@include</span> center</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="색상-내장-함수"><a href="#색상-내장-함수" class="headerlink" title="색상 내장 함수"></a>색상 내장 함수</h2><ul>
+<li><code>mix(a,b)</code> : a색상과 b색상을 섞어서 색이 나온다</li>
+<li><code>lighten(a, num%)</code> : a색상을 num%만큼 밝게 해준다</li>
+<li><code>darken(a, num%)</code> : a색상을 num%만큼 어둡게 해준다.</li>
+<li><code>saturate(a, num%)</code> : a색상을 num%만큼 채도를 밝게 한다.</li>
+<li><code>desaturate(a, num%)</code> : a색상을 num%만큼 채도를 어둡게 한다.</li>
+<li><code>grayscale(a)</code> : a색상을 회색으로 만든다.</li>
+<li><code>invert(a)</code> : a색상을 반전된 색상으로 만든다.</li>
+<li><code>rgba(a, .num)</code> : a색상을 .num만큼 투명하게 한다.</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">	<span class="variable">$color</span>: red;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="variable">$color</span>;</span><br><span class="line">	&amp;<span class="selector-class">.built-in</span>&#123;</span><br><span class="line">		<span class="attribute">color</span>: mix(<span class="variable">$color</span>, blue)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="가져오기"><a href="#가져오기" class="headerlink" title="가져오기"></a>가져오기</h2><p><code>@import</code>를 통해 .scss 파일에서 다른 .scss 파일을 가져와 사용할 수 있으며 해당 함수나 mixin도 사용 가능하다. 확장자를 쓰지 않고 파일명만 적어도 되며 ,를 통해 여러 파일을 가져올 수 있다.</p>
+<h2 id="데이터-종류"><a href="#데이터-종류" class="headerlink" title="데이터 종류"></a>데이터 종류</h2><ul>
+<li>String (bold, relative, “<a target="_blank" rel="noopener" href="https://url.com”/">https://url.com”</a>…)</li>
+<li>Number (1, 2px, 100%, 5em…)</li>
+<li>Color (red, #ff000f, rgba(0,0,0,.4)</li>
+<li>Boolean</li>
+<li>Null</li>
+<li>List (orange, royalblue, yell …)</li>
+<li>Map (o: orange, r: royalblue, y: yello…)</li>
+</ul>
+<h2 id="반복문2-each"><a href="#반복문2-each" class="headerlink" title="반복문2 @each"></a>반복문2 @each</h2><p><code>@for</code>과 동일하게 반복문을 진행할 수 있다.</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$map</span>:(</span><br><span class="line">		o: orange,</span><br><span class="line">		r: royalblue,</span><br><span class="line">		y: yellow</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">@each <span class="variable">$k</span>, <span class="variable">$v</span> in <span class="variable">$map</span>&#123;</span><br><span class="line">	<span class="selector-class">.box-</span>#&#123;<span class="variable">$k</span>&#125;&#123;</span><br><span class="line">		<span class="attribute">color</span>: <span class="variable">$v</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//결과물</span></span><br><span class="line"><span class="selector-class">.box-o</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>: orange</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box-r</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>: royalblue</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box-y</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>: yello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="재활용하기"><a href="#재활용하기" class="headerlink" title="재활용하기"></a>재활용하기</h2><p><code>@mixin</code>을 통하여 만든 변수에 추가로 중괄호를 넣어 내용을 더 추가할 수 있다.</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> left-top&#123;</span><br><span class="line">	<span class="attribute">padding</span>:&#123;</span><br><span class="line">		<span class="attribute">top</span>: <span class="number">40px</span>;</span><br><span class="line">		<span class="attribute">left</span>: <span class="number">0px</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">	<span class="keyword">@include</span> left-top</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box&#123;</span><br><span class="line">	<span class="keyword">@include</span> left-top &#123;</span><br><span class="line">		<span class="attribute">bottom</span>: <span class="number">40px</span>;</span><br><span class="line">		<span class="attribute">right</span>: <span class="number">0px</span>;</span><br><span class="line">		<span class="attribute">margin</span>: auto</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘은  css의 flex와 transform,  scss에 관한 내용 위주로 진행을 하였습니다.</p>
+<p>어느정도 css의 사전 지식은 있어 flex란 기술에 대해서 알고는 있었지만 내가 어떤 작업을 할 때 어떠한 속성을 써야하는지까지는 잘 알지 못하였으나 이번 수업으로 인해 확실하게 container와 items에 대하여 어떤 기능을 써야 원하는 결과가 나오는지 배우게 되었습니다.</p>
+<p>또한 transform도 이전 퍼블리싱을 해보며 많이 써왔다고 생각하였으나 아직 몰랐던 부분도 있었도 특히 원근법에 대해서는 처음 아는 부분이라 매우 신기하였습니다.</p>
+<p>이후 오버워치란 게임의 캐릭터 선택창을 만들어보며 작업을 하였고 이를 이후에 배운 scss 파일로 리팩토링하였습니다.</p>
+<p>scss의 경우 이름은 알고 있었으나, 이전 직장에서 쓰지 않았어서 흥미는 있었습니다. 정작 배우고나니 이렇게 편한걸 나는 왜 지금 알았을까?란 생각부터 들었습니다. 진작에 반으로 줄일 수 있는 코드들이 떠올랐고 조금은 아쉬운 기분도 들었습니다.</p>
+<p>특히 변수 선언과 <code>@for</code> 이 가장 신기하였는데,  예전에 퍼블리싱을 할 땐 중복되는 텍스트가 아주 많았습니다. 같은 코드를 반복하며 더러워지는 css파일이 싫었는데 이것을 사용하면 획기적으로 파일을 간소화시킬 수 있었습니다.</p>
+<p>어제까지는 이미 알고있는 지식에 대하여 복습하는 느낌이였다면 이제부터는 모르는 부분을 향해 조금씩 배워가는 느낌입니다. 언제나 새로운 언어를 배울 때는 무서움도 있지만 신기함도 같이 있어 오늘은 매우 즐겁게 수업을 들었던 것 같습니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
