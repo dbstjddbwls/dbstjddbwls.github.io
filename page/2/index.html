@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,85 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/05/09/TIL-2022-05-09/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/09/TIL-2022-05-09/" class="post-title-link" itemprop="url">2022 05 09 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-09 21:22:18 / Modified: 21:22:48" itemprop="dateCreated datePublished" datetime="2022-05-09T21:22:18+09:00">2022-05-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="작업-내용"><a href="#작업-내용" class="headerlink" title="작업 내용"></a>작업 내용</h1><h2 id="토이-프로젝트-2"><a href="#토이-프로젝트-2" class="headerlink" title="토이 프로젝트(2)"></a>토이 프로젝트(2)</h2><p>이번 토이 프로젝트는 최대한 메인 홈 화면의 js 구조 작업에 집중하였습니다. 다만 코드를 보았을 때 너무 중복되는 코드가 많습니다. 하나의 function으로 만들고 인자를 2~3개를 받아 구분하여 작업하였으면 훨씬 좋지 않을까란 생각이 듭니다. 지금 다시 코드를 짠다면 특정 구간을 date, month, year로 구분하여 인자를 하나 주고, 두번 째 인자로는 해당 날짜의 값을 넣어 사용한다면 좀 더 간결하게 줄일 수 있을 것 같습니다.</p>
+<p>항상 함수의 재활용성을 간과하고 코드를 짜는 것 같습니다. 이후 시간이 난다면 다시 리팩토링하여 이전 코드와 이후 코드를 비교하여 확인해보려합니다.</p>
+<ul>
+<li><strong>해결해야할 기능 구조</strong><ol>
+<li>드래그 이벤트를 작성해야합니다. 지금은 클릭 이벤트로 바꾸었으나 이후 mouseup, mousedown을 사용하여 마우스의 screenY의 값을 추적하여 사용하고 싶습니다. 다만 이 기능의 경우 우선순위가 떨어지므로 이후 다른 페이지를 먼저 작업하고 후 순위로 작업하려 합니다.</li>
+<li>코드의 리팩토링을 원하나 남은 기간이 적고 제출물이 남은 상황이므로 드래그 이벤트까지 작성 후 리팩토링을 진행할 예정입니다.</li>
+<li>이후 chart.js를 사용하여 차트 페이지를 제작하고 이체하는 화면도 제작해야합니다.</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1565,94 +1644,6 @@
 
 <h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>이제 패스트캠퍼스 부트캠프를 시작한지 3주가 되었습니다. 지금까지는 아는 내용들을 복습하는 것이였다면 오늘은 모르는 것을 잘 알게된 날인 것 같습니다.</p>
 <p>기존 퍼블리셔 작업을 하면서 JS의 구조나 스코프의 경우 알지도 못한 채 그냥 쓰고 있었습니다. 그것을 쓰고 있으면서도 블록 스코프가 무엇인지, 함수 스코프가 무엇인지, var나 let의 차이나 Global Context 등 누군가 이것이 무엇인지 물어보면 답하지 못 하는 상황이였습니다. 허나 오늘 수업으로 인해 이에대한 대답을 할 수 있게 된 것만으로도 아주 유익했던 수업이였던 것 같습니다.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/22/TIL-2022-04-22/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Yun Seong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/22/TIL-2022-04-22/" class="post-title-link" itemprop="url">2022 04 22 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-04-22 21:21:26 / Modified: 21:22:09" itemprop="dateCreated datePublished" datetime="2022-04-22T21:21:26+09:00">2022-04-22</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="Javascript의-메모리"><a href="#Javascript의-메모리" class="headerlink" title="Javascript의 메모리"></a>Javascript의 메모리</h2><p>메모리는 크게 4가지 영역으로 분류되어있다.</p>
-<ul>
-<li>코드 영역 : 유저가 입력한 코드가 들어있는 영역</li>
-<li>스택 영역 : 입력한 코드에 따라 처리해야할 항목들을 순서대로 쌓아두는 영역</li>
-<li>데이터 영역 : 메모리의 주소가 담겨있고 데이터를 구조화시키는 영역</li>
-<li>힙(heap) 영역 :  데이터 영역에서 실행할 기능들이 담겨있는 영역<br>버튼을 클릭시 객체를 생성하는 기능같은 기능들이 모여있다.</li>
-</ul>
-<h2 id="메모리-순서도"><a href="#메모리-순서도" class="headerlink" title="메모리 순서도"></a>메모리 순서도</h2><ul>
-<li>스택 영역에 하나씩 콜을 해온다. &#x3D; 콜스택</li>
-<li>코드를 실행할 환경을 셋팅한다.</li>
-<li>프로그램을 하는데 필요한 메모리 객체를 생성할 환경을 셋팅한다. (var, const, let, this)</li>
-<li>window에 관련된 속성이나 기능을 셋팅한다. (console, alert, var b &#x3D; {age:’20’} …)</li>
-<li>function에 관련된 속성이나 기능을 셋팅한다. (prototype …)</li>
-</ul>
-<h2 id="그룹스터디"><a href="#그룹스터디" class="headerlink" title="그룹스터디"></a>그룹스터디</h2><p><a target="_blank" rel="noopener" href="https://www.notion.so/f39dacf362ad4339a6ba3de85ab6b6cd">https://www.notion.so/f39dacf362ad4339a6ba3de85ab6b6cd</a></p>
-<p>위 노션에 정리한 내용들을 위주로 발표하였습니다.</p>
-<p>참고 원문 : <a target="_blank" rel="noopener" href="https://yozm.wishket.com/magazine/detail/1294/">https://yozm.wishket.com/magazine/detail/1294/</a></p>
-<p>위 내용을 조금 정리하여 본인의 생각과 경험을 첨가하여 이야기를 하였습니다. 다른 조원들은 부트캠프 시작 후 어려웠던 점이나 블로그 작성한 후기 등을 공유함과 동시에 각자 분야에서 겪었던 일들과 같이 간단한 이야기를 나누었습니다.</p>
-<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘은 이전 CSS강의에서 position에 대한 마무리 설명과 JS의 기초 수업을 진행했습니다. 기본적인 데이터 타입부터 메모리에 관한 내용을 진행하였는데, 알던 것을 다시 한 번 들으니 아 맞다 이랬었지란 생각만이 들었습니다. 사람의 기억은 휘발성이라는데 맞는 말인 것 같습니다. 다만 오늘은 JS의 위주 강의로 생각했는데 기존 CSS의 마지막 단계라 그런가 복습 차원의 기본 속성이나 개념만 설명이 주된 내용이였어서 조금 아쉬운 감은 있던 것 같습니다.</p>
 
       
     </div>
