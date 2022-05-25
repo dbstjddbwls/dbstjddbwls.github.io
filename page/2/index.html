@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,85 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/05/11/TIL-2022-05-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/11/TIL-2022-05-11/" class="post-title-link" itemprop="url">2022 05 11 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-11 22:05:18 / Modified: 22:05:58" itemprop="dateCreated datePublished" datetime="2022-05-11T22:05:18+09:00">2022-05-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="boiler-plate"><a href="#boiler-plate" class="headerlink" title="boiler-plate"></a>boiler-plate</h2><p>변경 없이 계속하여 재사용을 할 수 있는 저작물을 말한다. 개발 환경에서 사용되면 CRA, Next.js나 Gatsby 등이 존재한다.</p>
+<h2 id="CRA로-react-시작하기"><a href="#CRA로-react-시작하기" class="headerlink" title="CRA로 react 시작하기"></a>CRA로 react 시작하기</h2><ol>
+<li>터미널 실행</li>
+<li>npx create-react-app {folder-name} —template typescript<br>(타입 스크립트로 진행)</li>
+<li>설치 확인</li>
+</ol>
+<h2 id="TypeScript를-컴파일하기"><a href="#TypeScript를-컴파일하기" class="headerlink" title="TypeScript를 컴파일하기"></a>TypeScript를 컴파일하기</h2><p>CRA로 TypeScript, .tsx를 사용하면 굳이 기존 ts를 사용했던 것 처럼 npm를 별도로 받아 컴파일할 필요가 없다. CRA도 보일러 플레이트이기 때문에 자동으로 tsc 변환과 적용을 해준다.</p>
+<h2 id="TSC로-React-작성하기"><a href="#TSC로-React-작성하기" class="headerlink" title="TSC로 React 작성하기"></a>TSC로 React 작성하기</h2><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// App.tsx</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./App.css&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Div</span> <span class="keyword">from</span> <span class="string">&#x27;./test/Div&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Span</span> <span class="keyword">from</span> <span class="string">&#x27;./test/Span&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&#x27;App&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Div</span> <span class="attr">name1</span>=<span class="string">&quot;name1&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Span</span> <span class="attr">name2</span>=<span class="string">&quot;name2&quot;</span> <span class="attr">name3</span>=<span class="string">&quot;name3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">Span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Span</span> <span class="attr">name2</span>=<span class="string">&quot;name2&quot;</span> <span class="attr">name3</span>=<span class="string">&quot;name3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">Span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Div</span> <span class="attr">name1</span>=<span class="string">&quot;name1&quot;</span> <span class="attr">spans</span>=<span class="string">&#123;</span>&lt;&gt;</span><span class="tag">&lt;<span class="name">Span</span> <span class="attr">name2</span>=<span class="string">&quot;name!&quot;</span> <span class="attr">name3</span>=<span class="string">&quot;name@&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">			// 위와 같이 Children이 아닌 Props로도 넣을 수 있다.</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">p</span>&gt;</span>안녕하세요<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/&gt;</span>&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>안녕하세요 Children<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Div</span>&gt;</span></span></span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Div.tsx</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> , &#123;<span class="variable constant_">FC</span>, <span class="title class_">ReactNode</span> &#125;<span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Div</span> = (<span class="params">&#123;children, name1, spans&#125; : &#123;name1: <span class="built_in">string</span>, spans?:ReactNode, children?: ReactNode&#125;</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>div: &#123;name1&#125; <span class="tag">&lt;<span class="name">br</span> /&gt;</span>&#123;children&#125; <span class="tag">&lt;<span class="name">br</span> /&gt;</span>   &#123;spans&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Div</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Span.tsx</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> , &#123;<span class="variable constant_">FC</span>, <span class="title class_">ReactNode</span> &#125;<span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Span</span>(<span class="params">props: &#123;name2: <span class="built_in">string</span>, name3: <span class="built_in">string</span>, children?: ReactNode&#125;</span>):<span class="built_in">any</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>Span1: &#123;props.name2&#125; &#123;props.name3&#125; <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Span</span>;</span><br></pre></td></tr></table></figure>
+
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘은 토이프로젝트 발표를 끝내고 저녁 식사 이후 실시간 리액트 강의를 진행하였습니다. 이전 tsc를 조금 더 파보고 싶다는 생각이 있었는데 마침 강사님께서 React 수업은 tsc를 사용하여 작업한다 하셔서 매우 만족하였습니다. 다만 tsc의 경우 온라인 수업으로 한 두번 들은게 끝이라 이후 별도로 tsc에 대해 복습이 필요할 것 같습니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1503,117 +1582,6 @@
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = [&#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>&#125;, &#123;<span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> deep = _.<span class="title function_">cloneDeep</span>(obj);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(deep[<span class="number">0</span>] === obj[<span class="number">0</span>]);</span><br><span class="line"><span class="comment">// false : 값은 같게 변경되나 다른 변수이다.</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘 실시간 수업은 좀 아쉬운 느낌이 있었습니다. 전반적으로 내용에 대한 진도가 아닌 slider 라이브러리를 만드는 수업을 며칠 째 하고 있는데, 진도 속도도 그렇고 개념에 대한 설명이 너무 추상적이고 시간에 쫒기시는 느낌을 받았습니다. 그에 비해 온라인 수업은 매우 유익했습니다. 잘 몰랐던 부분 중 하나인 깊은 복사에 대해서나 전개 연산자에 대해 잘 알게되어 기쁩니다.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/26/TIL-2022-04-26/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Yun Seong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/26/TIL-2022-04-26/" class="post-title-link" itemprop="url">2022 04 26 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-04-26 21:37:29 / Modified: 21:38:52" itemprop="dateCreated datePublished" datetime="2022-04-26T21:37:29+09:00">2022-04-26</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="ECMA-스크립트"><a href="#ECMA-스크립트" class="headerlink" title="ECMA 스크립트"></a>ECMA 스크립트</h2><p>통칭 ES라고 불리며 자바스크립트에 대한 버전이나 기술 규격이라고 생각하면 된다.</p>
-<h2 id="화살표-함수와-일반-함수의-차이"><a href="#화살표-함수와-일반-함수의-차이" class="headerlink" title="화살표 함수와 일반 함수의 차이"></a>화살표 함수와 일반 함수의 차이</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">Arrow</span> = (<span class="params">x</span>)=&gt;&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(x);</span><br><span class="line">	<span class="keyword">return</span> x * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Arrow2</span> = (<span class="params">x,y</span>) =&gt; x * y;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Arrow3</span> = x =&gt; x * <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>화살표 함수는 일부 문자를 생략하여 사용할 수 있다.</li>
-<li>단 return이 필시 들어가야하며 없으면 에러가 난다.</li>
-<li>축약으로 중괄호 없이 사용하면 자동으로 return이 된다.<br>즉 fn &#x3D; x ⇒ x 을 하면 x값으로 받은 인자가 자동으로 return된다</li>
-<li>Object도 return이 가능하다. 단 소괄호로 먼저 감싸야한다.</li>
-</ul>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">Objects</span> = x =&gt;(&#123;<span class="attr">name</span>:<span class="string">&#x27;YS&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="IIFE-Immediately-Invoked-Function-Expression-즉시-실행-함수"><a href="#IIFE-Immediately-Invoked-Function-Expression-즉시-실행-함수" class="headerlink" title="IIFE (Immediately-Invoked Function Expression), 즉시 실행 함수"></a>IIFE (Immediately-Invoked Function Expression), 즉시 실행 함수</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">7</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">double</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(a * <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">double</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 위와 같이 한 번만 쓰이는 함수를 일일히 선언하면 메모리가 소요된다.</span></span><br><span class="line"></span><br><span class="line">(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(a * <span class="number">2</span>);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">//익명 함수를 소괄호에 감싸서 선언하면 따로 호출이 없어도 실행이 된다.</span></span><br><span class="line"></span><br><span class="line">(<span class="keyword">function</span> (<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(a * <span class="number">2</span>);</span><br><span class="line">&#125;())</span><br><span class="line"></span><br><span class="line"><span class="comment">// 맨 뒤의 소괄호는 가장 앞의 소괄호 안에 넣을 수 있다. 다만 가장 마지막 형태가 더욱 깔끔해보인다.</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="생성자-prototype"><a href="#생성자-prototype" class="headerlink" title="생성자 (prototype)"></a>생성자 (prototype)</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">User</span>(<span class="params">first, last</span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">firstName</span> = first;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">lastName</span> = last;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">User</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">getFullName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.firstName&#125;</span> <span class="subst">$&#123;<span class="variable language_">this</span>.lastName&#125;</span>`</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Kim YunSeong</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> people = <span class="keyword">new</span> <span class="title class_">User</span>(<span class="string">&#x27;Kim&#x27;</span>, <span class="string">&#x27;YunSeong&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(people);</span><br><span class="line"><span class="comment">// user &#123;firstName :&#x27;Kim&#x27;, lastName : &#x27;YunSeong&#x27;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(people.<span class="title function_">getFullName</span>());</span><br><span class="line"><span class="comment">// Kim YunSeong</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> people2 = <span class="keyword">new</span> <span class="title class_">User</span>(<span class="string">&#x27;Lee&#x27;</span>, <span class="string">&#x27;YunSeong&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(people2);</span><br><span class="line"><span class="comment">// user &#123;firstName :&#x27;Lee&#x27;, lastName : &#x27;YunSeong&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>메모리의 관리와 동일한 내용의 함수 중복 선언을 방지하기 위해 자주 쓰는 함수는 위와 같이 new를 붙혀서 생성자로 만들어 반복 실행시키면 좋다.</p>
-<p>이러한 함수는 구분을 위해 parscal 표기법을 사용하여 앞 글자를 대문자로 사용한다.</p>
-<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">	name : <span class="string">&#x27;YS&#x27;</span>,</span><br><span class="line">	normal : <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">	&#125;,</span><br><span class="line">	arrow : <span class="function">()=&gt;</span>&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">user.<span class="title function_">normal</span>(); <span class="comment">// &#x27;YS&#x27;</span></span><br><span class="line">user.<span class="title function_">arrow</span>(); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> user2 = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&#x27;SY&#x27;</span>,</span><br><span class="line">	normal : user.<span class="property">normal</span>,</span><br><span class="line">	arrow : user.<span class="property">arrow</span></span><br><span class="line">&#125;</span><br><span class="line">user2.<span class="title function_">normal</span>(); <span class="comment">//&#x27;SY&#x27;</span></span><br><span class="line">user2.<span class="title function_">arrow</span>(); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>this는 해당 최상위 함수나 변수명을 가리키는 선택자 개념의 요소이다. 위 코드의 경우 this는 user인 것.</p>
-<p>console.log(this.name)을 하면 user안의 name 속성을 가져오는 것이니 ‘YS’가 출력된다.</p>
-<p>그러나 user.normal()과 .arrow()는 값이 차이가 나는데, 화살표 함수를 사용할 경우 화살표 함수는 자신이 선언된 함수 범위에서만 작용하기 때문에 undefined가 발생한다.</p>
-<p>다른 변수에 합쳐 사용하여도 동일하게 화살표 함수 내에서 작동하기 때문에 동일한 결과값이 나온다.</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> timer = &#123;</span><br><span class="line">	name : <span class="string">&#x27;YS&#x27;</span>,</span><br><span class="line">	<span class="attr">timeout</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">			<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">		&#125;, <span class="number">2000</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">timer.<span class="title function_">timeout</span>(); <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>다만 위와 같은 경우 console.log(this.name)의 부분에는 setTimeout()의 로직에서 실행되는 것이라 undefined가 나온다. 해당 name이 나오고 싶다면 아래와 같이 코드를 수정해야한다.</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> timer = &#123;</span><br><span class="line">	name : <span class="string">&#x27;YS&#x27;</span>,</span><br><span class="line">	<span class="attr">timeout</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">			<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>)</span><br><span class="line">		&#125;, <span class="number">2000</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">timer.<span class="title function_">timeout</span>(); <span class="comment">//2초 뒤 &#x27;YS&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="ES6-Classes"><a href="#ES6-Classes" class="headerlink" title="ES6 Classes"></a>ES6 Classes</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">	name : <span class="string">&#x27;YS&#x27;</span>,</span><br><span class="line">	normal : <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">	&#125;,</span><br><span class="line">	arrow : <span class="function">()=&gt;</span>&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//위와 같은 코드를 아래처럼 바꿀 수 있다.</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">normal</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">user.<span class="title function_">normal</span>();</span><br><span class="line">user.<span class="title function_">arrow</span>()</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">User</span>(<span class="params">first, last</span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">firstName</span> = first;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">lastName</span> = last;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">User</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">getFullName</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.firstName&#125;</span> <span class="subst">$&#123;<span class="variable language_">this</span>.lastName&#125;</span>`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 위와 같은 코드는 아래처럼 바꿀 수 있다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">User</span>&#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">first, last</span>)&#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">firstName</span> = first</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">lastName</span> = last</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="title function_">getFullName</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.firstName&#125;</span> <span class="subst">$&#123;<span class="variable language_">this</span>.lastName&#125;</span>`</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// prototype을 통해 따로 선언하지 않아도 기본값 설정 후 메소드 함수를 생성할 수 있다. 실제로 이러한 방법을 주로 사용한다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> people = <span class="keyword">new</span> <span class="title class_">User</span>(<span class="string">&#x27;Kim&#x27;</span>, <span class="string">&#x27;YunSeong&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(people.<span class="title function_">getFullName</span>());</span><br><span class="line"><span class="comment">// Kim YunSeong</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="상속-확장"><a href="#상속-확장" class="headerlink" title="상속,확장"></a>상속,확장</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">name, wheel</span>)&#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">name</span> = name</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">wheel</span> = wheel</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">MyA</span> = <span class="keyword">new</span> <span class="title function_">A</span>(<span class="string">&#x27;운송수단&#x27;</span>, <span class="number">2</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">MyA</span>);</span><br><span class="line"><span class="comment">//A&#123;name:&quot;운송수단&quot;, wheel:2&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> <span class="keyword">extends</span> <span class="title class_ inherited__">A</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">name, wheel</span>)&#123;</span><br><span class="line">		<span class="variable language_">super</span>(name, wheel)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">MyB</span> = <span class="keyword">new</span> <span class="title function_">B</span>(<span class="string">&#x27;자전거&#x27;</span>,<span class="number">2</span>)</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">MyB2</span> = <span class="keyword">new</span> <span class="title function_">B</span>(<span class="string">&#x27;세발자전거&#x27;</span>,<span class="number">3</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">MyB</span>);</span><br><span class="line"><span class="comment">// B&#123;name:&quot;자전거&quot;, wheel:2&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">MyB2</span>);</span><br><span class="line"><span class="comment">// B&#123;name:&quot;세발자전거&quot;, wheel:3&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span> <span class="keyword">extends</span> <span class="title class_ inherited__">A</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">name, wheel, license</span>)&#123;</span><br><span class="line">		<span class="variable language_">super</span>(name, wheel)</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">license</span> = license</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">MyC</span> = <span class="keyword">new</span> <span class="title function_">B</span>(<span class="string">&#x27;차&#x27;</span>,<span class="number">4</span>,<span class="literal">true</span>)</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">MyC2</span> = <span class="keyword">new</span> <span class="title function_">B</span>(<span class="string">&#x27;차2&#x27;</span>,<span class="number">4</span>,<span class="literal">false</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">MyC</span>);</span><br><span class="line"><span class="comment">//C&#123;name:&quot;차&quot;, wheel:4, license:true&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">MyC2</span>);</span><br><span class="line"><span class="comment">//C&#123;name:&quot;차2&quot;, wheel:4, license:false&#125;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>extends는 확장이나 상속이란 뜻을 가지고 있는 기능이다.</li>
-<li>super() 내에서 가지고 있는 인자는 extends의 대상(A)의 기본값인 constructor 내 인자에서 값을 상속받아서 가져온다.</li>
-<li>super 아래에 this.속성을 통해 값을 확장할 수 있다.</li>
-</ul>
-<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>온라인강의만 있는 날은 지루하기도 하지만 오늘은 생각보다 많은 것을 배운 날이였습니다.</p>
-<p>이전에 퍼블리셔 일을 하면서 어떠한 원리나 개념인지 모르고 사용만했던 기능들이 있는데 그 중에 오늘 배운 것들이 있습니다. 바로 this와 생성자였습니다. 화살표 함수에 this를 넣으면 안되는건 알아도 왜 안되는건지는 몰랐고, new는 어쩔 때 사용하는 것이며를 모른채 그냥 있으니까 쓰기만 했었습니다.</p>
-<p>그러나 오늘 온라인 강의로 인하여 이러한 개념들을 알게되어서 솔직히 매우 기쁜 심정입니다. 이제 누군가가 이러한 것이 무슨 차이나 원리냐고 물어보면 당당하게 대답해줄 수 있는 것이 오늘의 가장 큰 수확이 아닐까합니다.</p>
 
       
     </div>
