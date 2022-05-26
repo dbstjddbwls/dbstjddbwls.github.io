@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,163 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/27/TIL-2022-04-27/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/27/TIL-2022-04-27/" class="post-title-link" itemprop="url">2022 04 27 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-04-27 21:28:30 / Modified: 21:29:01" itemprop="dateCreated datePublished" datetime="2022-04-27T21:28:30+09:00">2022-04-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="JS-데이터의-기능들"><a href="#JS-데이터의-기능들" class="headerlink" title="JS 데이터의 기능들"></a>JS 데이터의 기능들</h2><ul>
+<li>String.match() : 정규표현식을 인자로 받으며, 해당 표현식에 맞는 문자 앞까지 추출한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;abc@naver.com&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/.+(?=@)/</span>)[<span class="number">0</span>];</span><br><span class="line"><span class="comment">// &#x27;abc&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>String.trim() : 해당 문자열 안에 포함된 공백 문자를 제거하여 반환한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;   abc   &#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">trim</span>());</span><br><span class="line"><span class="comment">// &#x27;abc&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Number.toFixed() :  해당 숫자값에 소수점이 있다면 인자로 받는 소숫점 자리에서 끊어서 문자형으로 반환한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num = <span class="number">3.1415952</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num.<span class="title function_">toFixed</span>(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// 3.14 (String)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>parseInt() : 문자열을 받으면 숫자형만 추출하여 반환한다. 단 이 과정에서 소숫점은 사라지고 정수만 반환한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num = <span class="number">3.1415952</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num.<span class="title function_">toFixed</span>(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// 3.14 (String)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> num2 = <span class="built_in">parseInt</span>(num);</span><br><span class="line"><span class="comment">// 3 (Number)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>parseFloat() : parseInt와 같으나 소숫점 자리까지 보여준다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num = <span class="number">3.1415952</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num.<span class="title function_">toFixed</span>(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// 3.14 (String)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> num2 = <span class="built_in">parseFloat</span>(num);</span><br><span class="line"><span class="comment">// 3.14 (Number)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Math() : 수학적인 상수와 함수를 위한 내장 객체이다.</li>
+<li>Math.abs() : 주어진 숫자의 절대값을 반환</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num = -<span class="number">23</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num.<span class="title function_">abs</span>());</span><br><span class="line"><span class="comment">// 23</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Math.ceil() : 주어진 숫자값을 올림처리를 함</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num = <span class="number">3.14</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num.<span class="title function_">ceil</span>());</span><br><span class="line"><span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Math.floor() : 주어진 숫자값을 내림처리를 함</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num = <span class="number">3.14</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num.<span class="title function_">floor</span>());</span><br><span class="line"><span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Math.round() : 주어진 숫자값을 반올림처리를 함</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num = <span class="number">3.14</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num.<span class="title function_">round</span>());</span><br><span class="line"><span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> num2 = <span class="number">3.5</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num.<span class="title function_">round</span>());</span><br><span class="line"><span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Math.random() : 0~1 사이의 랜덤한 난수를 추출한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num = <span class="title class_">Math</span>.<span class="title function_">random</span>();</span><br><span class="line"><span class="comment">// 0.51426987263</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">random</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">10</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 5 (0~9)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Array.find() : 주어진 판별 함수나 조건에 의해 매칭되는 첫 요소를 반환한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> find = arr.<span class="title function_">find</span>( <span class="function"><span class="params">e</span>=&gt;</span> e &gt; <span class="number">3</span> );</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(find);</span><br><span class="line"><span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Array.forEach() : 주어진 배열의 item 갯수만큼 특정한 콜백 함수를 반복 실행한다.</p>
+</li>
+<li><p>Array.map() : 주어진 배열의 item 갯수만큼 특정한 콜백 함수를 반복 실행하여 해당 값을 배열로 반환한다.</p>
+</li>
+<li><p>Array.filter() : 주어진 배열의 item 갯수만큼 특정한 콜백 함수를 반복 실행하여 해당 함수 조건에 맞는 item을 배열로 새롭게 만들어 반환한다.</p>
+</li>
+<li><p>Array.findIndex() : 주어진 배열의 item 갯수만큼 특정한 콜백 함수를 반복 실행하여 해당 배열 내 조건에 맞는 item의 첫 번째 요소의 index number를 찾는다.</p>
+</li>
+<li><p>Array.includes() : 주어진 배열 내 인자로 받은 데이터가 존재하는지 확인한다.</p>
+</li>
+<li><p>Object.assign() : 인자로 받은 객체 데이터를 합쳐서 비교 또는 서술할 때 사용할 수 있다.</p>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">User</span> = &#123;</span><br><span class="line">	name : <span class="string">&#x27;YS&#x27;</span>,</span><br><span class="line">	email : <span class="string">&#x27;dbstjddbwls1@gmail.com&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">assign</span>(<span class="title class_">User</span>));</span><br><span class="line"><span class="comment">// &#123;name : &#x27;YS&#x27;, email : &#x27;dbstjddbwls1@gmail.com&#x27;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, <span class="title class_">USer</span>));</span><br><span class="line"><span class="comment">// 위와 같이 사용하면 인자로 받은 객체를 맨 앞 객체에 합쳐 새로운 객체를 만들게 된다.</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="구조-분해-할당"><a href="#구조-분해-할당" class="headerlink" title="구조 분해 할당"></a>구조 분해 할당</h2><p>어떠한 객체의 구조를 분해햐여 변수로 할당한다. 정의되어있지 않은 속성을 할당하면 undefined를 반환하게 된다. 또한 따로 값을 지정하여 추가할 수 있고, 만약 기존에 값이 있는 경우 변수에 할당한 값은 무효처리 된다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">User</span> = &#123;</span><br><span class="line">	name : <span class="string">&#x27;YS&#x27;</span>,</span><br><span class="line">	email : <span class="string">&#x27;dbstjddbwls1@gmail.com&#x27;</span>,</span><br><span class="line">	height : <span class="number">180</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123;name, email, age = <span class="string">&#x27;30&#x27;</span>, height = <span class="number">180</span>&#125; = <span class="title class_">User</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(age);</span><br><span class="line"><span class="comment">// 30</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(height);</span><br><span class="line"><span class="comment">// 180</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> list = [<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;C&#x27;</span>,<span class="string">&#x27;D&#x27;</span>]</span><br><span class="line"><span class="keyword">const</span> [a,b, ,d] = list;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line"><span class="comment">// A</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line"><span class="comment">// B</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c);</span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(d);</span><br><span class="line"><span class="comment">// D</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="전개-연산자"><a href="#전개-연산자" class="headerlink" title="전개 연산자"></a>전개 연산자</h2><p>어떠한 배열의 값을 전부 가져오는 방법이다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list = [<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(...list);</span><br><span class="line"><span class="comment">// = console.log(&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> item = ...list;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(item);</span><br><span class="line"><span class="comment">// &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">item2</span> = (<span class="params">a, b, ...c</span>) =&gt; (&#123;a, b, c&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(item2);</span><br><span class="line"><span class="comment">// &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="데이터의-불변성"><a href="#데이터의-불변성" class="headerlink" title="데이터의 불변성"></a>데이터의 불변성</h2><p>원시타입에 한해서 카피된 값이 변경되어도 영향을 받지 않음을 뜻한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line">b = a;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line"><span class="comment">// 1;</span></span><br><span class="line"></span><br><span class="line">a = <span class="number">7</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a,b);</span><br><span class="line"><span class="comment">//7, 1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="얕은-복사와-깊은-복사"><a href="#얕은-복사와-깊은-복사" class="headerlink" title="얕은 복사와 깊은 복사"></a>얕은 복사와 깊은 복사</h2><p>원시타입이 아닌 데이터의 경우 위와 같이 하면 값이 변경되게 된다. 이를 방지하기 위해선 Object.assign() 또는 전개연산자를 이용하자.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 얕은 복사</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">	<span class="attr">a</span>: <span class="string">&#x27;a&#x27;</span>,</span><br><span class="line">	<span class="attr">b</span>: <span class="string">&#x27;b&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> user2 = user;</span><br><span class="line"></span><br><span class="line">user.<span class="property">b</span> = user.<span class="property">a</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user, user2)</span><br><span class="line"><span class="comment">// &#123;a:&#x27;a&#x27;, b:&#x27;b&#x27;&#125;, &#123;a:&#x27;a&#x27;, b:&#x27;b&#x27;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//깊은 복사</span></span><br><span class="line"><span class="keyword">const</span> user3 = &#123;...user&#125;</span><br><span class="line"></span><br><span class="line">user.<span class="property">c</span>.<span class="title function_">push</span>(<span class="string">&#x27;c&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user, user3)</span><br><span class="line"><span class="comment">// &#123;a:&#x27;a&#x27;, b:&#x27;b&#x27;, c:&#x27;c&#x27;&#125;, &#123;a:&#x27;a&#x27;, b:&#x27;b&#x27;, c:&#x27;c&#x27;&#125;</span></span><br><span class="line"><span class="comment">// user3를 수정하지 않아도 전개연산자를 통해 원본의 값을 변경하면 같이 복사된다. 얕은 복사는 현재 값만 복사해온다.</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-lodash"><a href="#npm-lodash" class="headerlink" title="npm lodash"></a>npm lodash</h2><p>깊은 복사를 쉽게 사용하게 해주는 패키지</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = [&#123;<span class="string">&#x27;a&#x27;</span>:<span class="number">1</span>&#125;, &#123;<span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>&#125;]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> deep = _.<span class="title function_">cloneDeep</span>(obj);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(deep[<span class="number">0</span>] === obj[<span class="number">0</span>]);</span><br><span class="line"><span class="comment">// false : 값은 같게 변경되나 다른 변수이다.</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘 실시간 수업은 좀 아쉬운 느낌이 있었습니다. 전반적으로 내용에 대한 진도가 아닌 slider 라이브러리를 만드는 수업을 며칠 째 하고 있는데, 진도 속도도 그렇고 개념에 대한 설명이 너무 추상적이고 시간에 쫒기시는 느낌을 받았습니다. 그에 비해 온라인 수업은 매우 유익했습니다. 잘 몰랐던 부분 중 하나인 깊은 복사에 대해서나 전개 연산자에 대해 잘 알게되어 기쁩니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1162,146 +1319,6 @@
 - 이전에 commit했던 commit message를 수정할 때 사용
 - Git commit —amend
 </code></pre>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/13/TIL_2022-04-13/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Yun Seong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/13/TIL_2022-04-13/" class="post-title-link" itemprop="url">2022 04 13 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-04-13 20:44:46" itemprop="dateCreated datePublished" datetime="2022-04-13T20:44:46+09:00">2022-04-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-14 21:52:18" itemprop="dateModified" datetime="2022-04-14T21:52:18+09:00">2022-04-14</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="GIT"><a href="#GIT" class="headerlink" title="GIT"></a>GIT</h1><p>Git은 공식 사이트가 아닌 gitforwindow.org에서 다운받는게 여러 기능이 포함된 상태로 다운받을 수 있다</p>
-<h1 id="git-bash-간단-사용법"><a href="#git-bash-간단-사용법" class="headerlink" title="git bash 간단 사용법"></a>git bash 간단 사용법</h1><ul>
-<li>cd : 경로이동을 할 때 사용</li>
-<li>ls : 현재 경로에 있는 파일 목록이나 정보를 확인</li>
-<li>mkdir : 현재 경로에 폴더를 생성</li>
-<li>touch : 현재 경로에 파일을 생성</li>
-<li>mv : 파일 이동에 사용. 파일의 이름 변경도 가능함</li>
-<li>cp : 파일의 복사</li>
-<li>rm : 파일의 제거</li>
-</ul>
-<h1 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h1><p>Git에 관련된 GUI를 사용 안한다면 git bash에선 vim을 사용하여 파일의 관리를 진행</p>
-<h1 id="Markdown-systax"><a href="#Markdown-systax" class="headerlink" title="Markdown systax"></a>Markdown systax</h1><ul>
-<li>hashtag(#) : heading text</li>
-<li>huphen (-) : unorder list</li>
-<li>numbers(1.) : order list</li>
-<li>plain text : paragraph</li>
-</ul>
-<h1 id="Git-commit시-주의할-점"><a href="#Git-commit시-주의할-점" class="headerlink" title="Git commit시 주의할 점"></a>Git commit시 주의할 점</h1><ol>
-<li>git commit -m “Text” 사용금지</li>
-<li>git add . 사용금지<br> &#x3D;&gt; 모두 작업 시 이슈가 생기면 처리하기 힘들어진다</li>
-</ol>
-<h1 id="Git-commit시-선호-규칙"><a href="#Git-commit시-선호-규칙" class="headerlink" title="Git commit시 선호 규칙"></a>Git commit시 선호 규칙</h1><ol>
-<li>commit의 제목은 해당 commit을 설명하는 하나의 구나 절로 완성</li>
-<li>casebycase(X) &#x3D;&gt; Case by Case(O)</li>
-<li>prefix<ul>
-<li>feat : 기능 개발 관련</li>
-<li>fix : 오류 개선, 디버깅</li>
-<li>docs : 문서화 파일 추가</li>
-<li>test : test 내용</li>
-<li>conf : 환경설정에 관한 내용</li>
-<li>BREAKING CHANCE : 특정 일자부터 막히는 서비스에 대해</li>
-<li>refactor : 기존 작동되는 작업을 특정 목적애 의해 재수정</li>
-<li>build : build에 대한 안내</li>
-</ul>
-</li>
-</ol>
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p> Hexo를 사용하여 Github 블로그 생성</p>
-<h1 id="Hexo-사용해보기"><a href="#Hexo-사용해보기" class="headerlink" title="Hexo 사용해보기"></a>Hexo 사용해보기</h1><ol>
-<li><p>npm install hexo를 통하여hexo 설치</p>
-</li>
-<li><p>hexo init으로 hexo 환경 설치</p>
-</li>
-<li><p>hexo generate로 기본 설정</p>
-</li>
-<li><p>hexo server를 실행하여 localhost로 확인</p>
-</li>
-<li><p>hexo new post{filename}으로 포스트 생성</p>
-</li>
-<li><p>vi source&#x2F;_posts&#x2F;{filename}에 접속하여 포스트 내용 및 수정</p>
-</li>
-<li><p>hexo clean&amp;&amp;hexo generate로 수정 업데이트</p>
-</li>
-<li><p>_config.yml에 접속하여 title, author, url, deploy… 수정</p>
-</li>
-<li><p>npm install hexo-deployer-git –save를 설치하여 deploy 기능 활성화</p>
-</li>
-<li><p>npm install hexo-theme-next –sabe를 설치하여 next theme 활성화</p>
-</li>
-<li><p>_config.yml에 theme를 수정</p>
-</li>
-<li><p>hexo clean&amp;&amp;hexo generate를 실행</p>
-</li>
-<li><p>hexo deploy로 url 및 repo github에 업로드</p>
-</li>
-</ol>
 
       
     </div>
