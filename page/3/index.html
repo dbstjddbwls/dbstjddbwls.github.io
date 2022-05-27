@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,203 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/28/TIL-2022-04-28/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/28/TIL-2022-04-28/" class="post-title-link" itemprop="url">2022 04 28 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-04-28 22:06:31 / Modified: 22:07:21" itemprop="dateCreated datePublished" datetime="2022-04-28T22:06:31+09:00">2022-04-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="가져오기-내보내기"><a href="#가져오기-내보내기" class="headerlink" title="가져오기, 내보내기"></a>가져오기, 내보내기</h2><ul>
+<li>어떠한 파일의 기능을 내보내서 다른 파일에서도 사용할 수 있는 것을 모듈이라고 한다.</li>
+<li>export default ~ : 해당 파일 내 어떠한 데이터를 내보낼 때 expor를 사용한다. default 형식이기 때문에 별도의 이름을 설정할 필요는 없고 import 하는 부분에서도 이름을 변경하여 사용할 수 있다. 단 기본 통로를 통해 보내는 것이기 때문에 하나의 데이터만 보낼 수 있다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//export.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> (<span class="params">data</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> data</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//other.js</span></span><br><span class="line"><span class="keyword">import</span> export2 <span class="keyword">from</span> <span class="string">&#x27;./export&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//other2.js</span></span><br><span class="line"><span class="keyword">import</span> export3 <span class="keyword">from</span> <span class="string">&#x27;./export&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>export name ~ : 위와 동일한 기능이지만 Name 형식이기 때문에 별도의 이름을 설정할 필요가 있다. 또한 import 하는 파일에서도 {}로 감싼 뒤, 동일한 이름을 사용해야하나, 이름을 import 파일에서도 A as B로 A란 이름을 B라고 바꿀 수는 있다. 단 이름을 설정하여 보내는 데이터기때문에 하나하나 지정하거나 *를 통하여 여러 데이터를 보낼 수 있다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//export.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">name</span>(<span class="params">data</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> data</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> user = &#123; <span class="attr">age</span>: <span class="string">&#x27;40&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;YS&#x27;</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//other.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;name, user <span class="keyword">as</span> people&#125; <span class="keyword">from</span> <span class="string">&#x27;./export&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//other2.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;name2, user2&#125; <span class="keyword">from</span> <span class="string">&#x27;./export&#x27;</span> (X)</span><br><span class="line"><span class="comment">//Error</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//other3.js</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> <span class="title class_">ReName</span> <span class="keyword">from</span> <span class="string">&#x27;./export&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Lodash-사용해보기"><a href="#Lodash-사용해보기" class="headerlink" title="Lodash 사용해보기"></a>Lodash 사용해보기</h2><ul>
+<li>_.uniqBy() : 데이터로 받은 배열 내 중복되는 값을 제거해준다.</li>
+<li>_.unionBy() : 데이터로 받은 배열 내 중복되는 값을 제거해주는 건 동일하나, 여러 배열을 넣을 수 있다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> _ <span class="keyword">from</span> <span class="string">&#x27;lodash&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> A = [</span><br><span class="line">	&#123; <span class="attr">id</span>:<span class="string">&#x27;1&#x27;</span>, <span class="attr">name</span>:<span class="string">&#x27;YS&#x27;</span> &#125;,</span><br><span class="line">	&#123; <span class="attr">id</span>:<span class="string">&#x27;2&#x27;</span>, <span class="attr">name</span>:<span class="string">&#x27;YS2&#x27;</span> &#125;</span><br><span class="line">]</span><br><span class="line"><span class="keyword">const</span> B = [</span><br><span class="line">	&#123; <span class="attr">id</span>:<span class="string">&#x27;1&#x27;</span>, <span class="attr">name</span>:<span class="string">&#x27;YS&#x27;</span> &#125;,</span><br><span class="line">	&#123; <span class="attr">id</span>:<span class="string">&#x27;3&#x27;</span>, <span class="attr">name</span>:<span class="string">&#x27;YS3&#x27;</span> &#125;</span><br><span class="line">]</span><br><span class="line"><span class="keyword">const</span> C = A.<span class="title function_">concat</span>(B);</span><br><span class="line"><span class="comment">// A에 B를 추가하여 C라는 이름으로 새롭게 데이터를 만든다.</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;concat&#x27;</span>, C);</span><br><span class="line"><span class="comment">/*	&#123; id:&#x27;1&#x27;, name:&#x27;YS&#x27; &#125;,</span></span><br><span class="line"><span class="comment">		&#123; id:&#x27;2&#x27;, name:&#x27;YS2&#x27; &#125;,</span></span><br><span class="line"><span class="comment">		&#123; id:&#x27;1&#x27;, name:&#x27;YS&#x27; &#125;,</span></span><br><span class="line"><span class="comment">		&#123; id:&#x27;3&#x27;, name:&#x27;YS3&#x27; &#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;uniqBy&#x27;</span>, _.<span class="title function_">uniqBy</span>(C,<span class="string">&#x27;id&#x27;</span>);</span><br><span class="line"><span class="comment">// 인자를 2개를 받는데, 첫 번째 인자로는 체크할 데이터를, 두번째는 중복체크의 대상이 되는 값을 넣으면 된다.</span></span><br><span class="line"><span class="comment">/*  &#123; id:&#x27;1&#x27;, name:&#x27;YS&#x27; &#125;,</span></span><br><span class="line"><span class="comment">		&#123; id:&#x27;2&#x27;, name:&#x27;YS2&#x27; &#125;,</span></span><br><span class="line"><span class="comment">		&#123; id:&#x27;3&#x27;, name:&#x27;YS3&#x27; &#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> D = _.<span class="title function_">unionBy</span>(A, B, <span class="string">&#x27;id&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;unionBy&#x27;</span>, D)</span><br><span class="line"><span class="comment">/*  &#123; id:&#x27;1&#x27;, name:&#x27;YS&#x27; &#125;,</span></span><br><span class="line"><span class="comment">		&#123; id:&#x27;2&#x27;, name:&#x27;YS2&#x27; &#125;,</span></span><br><span class="line"><span class="comment">		&#123; id:&#x27;3&#x27;, name:&#x27;YS3&#x27; &#125; */</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>find() : 첫 번째 인자로 받은 배열 내에 두 번째로 받은 데이터를 찾는데 사용한다.</li>
+<li>findIndex() : find와 기능 자체는 동일하나 찾은 데이터를 반환하는 것이 아닌 해당 데이터의 index를 반환한다.</li>
+<li>remove(): 첫 번째로 받은 배열 내에 두 번째로 받은 데이터가 있다면 해당 배열에서 데이터를 삭제한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> _ <span class="keyword">from</span> <span class="string">&#x27;lodash&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> user = [</span><br><span class="line">	&#123; <span class="attr">id</span>:<span class="string">&#x27;1&#x27;</span>, <span class="attr">name</span>:<span class="string">&#x27;YS&#x27;</span> &#125;,</span><br><span class="line">	&#123; <span class="attr">id</span>:<span class="string">&#x27;2&#x27;</span>, <span class="attr">name</span>:<span class="string">&#x27;YS2&#x27;</span> &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(_.<span class="title function_">find</span>(user,&#123; <span class="attr">name</span>:<span class="string">&#x27;YS2&#x27;</span>&#125;);</span><br><span class="line"><span class="comment">// &#123; id:&#x27;2&#x27;, name:&#x27;YS2&#x27; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(_.<span class="title function_">find</span>(user,&#123; <span class="attr">name</span>:<span class="string">&#x27;YS2&#x27;</span>&#125;);</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">_.<span class="title function_">remove</span>(user, &#123;<span class="attr">name</span>:<span class="string">&#x27;YS&#x27;</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user);</span><br><span class="line"><span class="comment">// &#123; id:&#x27;2&#x27;, name:&#x27;YS2&#x27; &#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ul>
+<li>데이터 타입 중 하나이며 Object 타입의 데이터이다.</li>
+<li>기본적으로 key와 value로 되어있으며 {key: value}로 작성한다.</li>
+<li>주로 비동기 브라우저나 서버 통신에 사용하며, 인터넷에서 자료를 주고 받을 때 주로 표현한다.</li>
+<li>JSON.stringify() : 인자로 받은 data를 String 타입으로 하여 서술하여 보여질 수 있다. String 타입이 아니면 Object 타입이라 실제로 화면에 출력했을 때 오류가 날 수 있다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//data.json</span></span><br><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">	name : <span class="string">&#x27;YS&#x27;</span>,</span><br><span class="line">	age : <span class="number">27</span>,</span><br><span class="line">	email : <span class="string">&#x27;dbstjddbwls1@gmail.com&#x27;</span>,</span><br><span class="line">	skill : [<span class="string">&#x27;html&#x27;</span>, <span class="string">&#x27;css&#x27;</span>, <span class="string">&#x27;js&#x27;</span>],</span><br><span class="line">	money : <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//other.js</span></span><br><span class="line"><span class="keyword">import</span> data <span class="keyword">from</span> <span class="string">&#x27;./data.json&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line"><span class="comment">/* &#123;</span></span><br><span class="line"><span class="comment">			name : &#x27;YS&#x27;,</span></span><br><span class="line"><span class="comment">			age : 27,</span></span><br><span class="line"><span class="comment">			email : &#x27;dbstjddbwls1@gmail.com&#x27;,</span></span><br><span class="line"><span class="comment">			skill : [&#x27;html&#x27;, &#x27;css&#x27;, &#x27;js&#x27;],</span></span><br><span class="line"><span class="comment">			money : null</span></span><br><span class="line"><span class="comment">		&#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> str = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(data);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line"><span class="comment">/* &#123;</span></span><br><span class="line"><span class="comment">			&quot;name&quot; : &#x27;YS&#x27;,</span></span><br><span class="line"><span class="comment">			&quot;age&quot; : 27,</span></span><br><span class="line"><span class="comment">			&quot;email&quot; : &#x27;dbstjddbwls1@gmail.com&#x27;,</span></span><br><span class="line"><span class="comment">			&quot;skill&quot; : [&#x27;html&#x27;, &#x27;css&#x27;, &#x27;js&#x27;],</span></span><br><span class="line"><span class="comment">			&quot;money&quot; : null</span></span><br><span class="line"><span class="comment">		&#125; */</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h2><ul>
+<li>Document나 window에 자체적으로 내장되있는 일종의 저장소이다.</li>
+<li>크게 local Storage와 session Storage가 있다.</li>
+<li>local Storage : 페이지의 정보를 보관할 수 있다. 페이지를 닫아도 사라지지 않는다. 다만 사생활 보호 모드, 즉 시크릿 모드 중 생성된 local Storage는 해당 탭이 닫힐 때 사라진다.</li>
+<li>session Storage : 페이지의 정보를 보관하는 기능은 동일하나 페이지를 닫으면 해당 정보는 사라진다.</li>
+<li>만약 한 번 코드에 넣고 실행한 뒤 setItem() 함수를 제거하여도 이미 localStorage에 정보가 들어갔기 때문에 제거되지 않는다.</li>
+<li>만약 정보를 수정하고싶다면 다른 변수를 만들어 정보를 넣고 setItem()으로 동일한 key를 설정한 뒤 변경될 값이 있는 데이터를 넣으면 된다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;keyName&#x27;</span>, <span class="string">&#x27;ValueName&#x27;</span>);</span><br><span class="line"><span class="comment">// String 타입으로 저장하는 것이 좋으며, .stringify를 활용하여 문자형식으로 저장하고 이후엔 parse나 split 등을 통하여 형식을 바꿔 불러내는 것이 좋다.</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;keyName&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">removeItem</span>(<span class="string">&#x27;keyItem&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//local.js</span></span><br><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">	name : <span class="string">&#x27;YS&#x27;</span>,</span><br><span class="line">	age : <span class="number">27</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;user&#x27;</span>, user);</span><br><span class="line"><span class="comment">// &#x27;user&#x27; : [Object Object]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;user&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(user));</span><br><span class="line"><span class="comment">// &#x27;user&#x27;: &#123;name : &#x27;YS&#x27;, age: 27&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;user&#x27;</span>));</span><br><span class="line"><span class="comment">// &#123;&quot;name&quot; : &quot;YS&quot;, &quot;age&quot;: &quot;27&quot;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;user&#x27;</span>)));</span><br><span class="line"><span class="comment">// &#123;name : &#x27;YS&#x27;, age: 27&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;user&#x27;</span>));</span><br><span class="line">obj.<span class="property">age</span> = <span class="number">22</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj);</span><br><span class="line"><span class="comment">// &#123;name : &#x27;YS&#x27;, age: 22&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;user&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj));</span><br><span class="line"><span class="comment">// &#x27;user&#x27;: &#123;name : &#x27;YS&#x27;, age: 22&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Query-String"><a href="#Query-String" class="headerlink" title="Query String"></a>Query String</h2><ul>
+<li>String 타입의 데이터를 사용하여 페이지 내에서 검색이나 특정 값을 요청 때 사용한다.</li>
+<li>host 주소?속성&#x3D;값&amp;속성2&#x3D;값2&amp;속성3&#x3D;값3</li>
+<li>host.com?key&#x3D;value&amp;s&#x3D;name&amp;date&#x3D;2022</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">https</span>:<span class="comment">//www.omdbapi.com/?apikey=7035c60c&amp;s=frozen</span></span><br><span class="line"><span class="comment">//omdbapi 사이트에서 요청을 하는데 api인증키는 7035c60이고, 시리즈는 겨울이란 이름이 들어간 영화의 데이터를 요청한다.</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h2><ul>
+<li>api로 전달받은 정보를 js에서 활용할 수 있게 정리하여 데이터로 받을 수 있게 해주는 npm이다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// axios.js</span></span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span></span><br><span class="line"><span class="comment">// npm start 등 개발 서버를 열어둔 상태여야한다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fetchMovies</span>(<span class="params"></span>)&#123;</span><br><span class="line">	axios</span><br><span class="line">		.<span class="title function_">get</span>(<span class="string">&#x27;https://www.omdbapi.com/?apikey=7035c60c&amp;s=frozen&#x27;</span>)</span><br><span class="line">		<span class="comment">//.get을 통해 받아온 데이터를 .then에서 처리한다.</span></span><br><span class="line">		.<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">			<span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">			<span class="comment">/*</span></span><br><span class="line"><span class="comment">				...</span></span><br><span class="line"><span class="comment">				data :</span></span><br><span class="line"><span class="comment">					...</span></span><br><span class="line"><span class="comment">					Search: Array(10)</span></span><br><span class="line"><span class="comment">						0: &#123;Title : &#x27;Frozen&#x27;, Year : &#x27;2013&#x27;, Poster: &#x27;img link&#x27; ...&#125;</span></span><br><span class="line"><span class="comment">						1: &#123;Title : &#x27;Frozen, &#x27;Year : &#x27;2019&#x27;, Poster: &#x27;img link&#x27; ...&#125;</span></span><br><span class="line"><span class="comment">						...</span></span><br><span class="line"><span class="comment">					...</span></span><br><span class="line"><span class="comment">				...</span></span><br><span class="line"><span class="comment">			*/</span></span><br><span class="line">			<span class="keyword">const</span> h1El = <span class="variable language_">document</span>.<span class="title function_">querySelect</span>(<span class="string">&#x27;h1&#x27;</span>);</span><br><span class="line">			<span class="keyword">const</span> imgEl = <span class="variable language_">document</span>.<span class="title function_">querySelect</span>(<span class="string">&#x27;img&#x27;</span>);</span><br><span class="line">			h1E1.<span class="property">textContent</span> = res.<span class="property">data</span>.<span class="property">Search</span>[<span class="number">0</span>].<span class="property">Title</span>;</span><br><span class="line">			imgEl.<span class="property">src</span> = res.<span class="property">data</span>.<span class="property">Search</span>[<span class="number">0</span>].<span class="property">Poster</span></span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.html</span></span><br><span class="line">&lt;script src=<span class="string">&quot;./axios.js&quot;</span> /&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span> =<span class="string">&quot;&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span> <span class="attr">width</span>=<span class="string">&quot;200px&quot;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="정규표현식"><a href="#정규표현식" class="headerlink" title="정규표현식"></a>정규표현식</h2><ul>
+<li>정규표현식이란 문자열을 검색하고 대체, 추출하는데 사용 가능한 일종의 언어 패턴</li>
+<li>간단한 문자 검색부터 이메일, 패스워드 검사 등 복잡한 일치 기능을 빠르게 수행 가능하다.</li>
+<li>단 패턴이 수행 내용과 매칭이 되지 않아 가독성이 떨어지는 경우가 있어 어려워하는 경우가 많다.</li>
+<li>정규표현식 테스트 사이트<ul>
+<li><a target="_blank" rel="noopener" href="https://regex101.com/">https://regex101.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://regexr.com/">https://regexr.com/</a> (★)</li>
+<li><a target="_blank" rel="noopener" href="https://regexper.com/">https://regexper.com/</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="정규표현식-생성-방법"><a href="#정규표현식-생성-방법" class="headerlink" title="정규표현식 생성 방법"></a>정규표현식 생성 방법</h2><ul>
+<li>생성자 함수 방식 : new를 사용하여 생성한다.</li>
+<li>리터럴 방식 : &#x2F;패턴&#x2F; 을 사용하여 생성한다. (주로 사용되는 방식)</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 생성자 함수 방식</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&#x27;표현&#x27;</span>, <span class="string">&#x27;옵션&#x27;</span>)</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&#x27;[a-z]&#x27;</span>, <span class="string">&#x27;gi&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 리터럴 방식</span></span><br><span class="line">/[표현]/옵션</span><br><span class="line">/[a-z]/gi</span><br><span class="line"></span><br><span class="line"><span class="comment">//main.js</span></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">`</span></span><br><span class="line"><span class="string">	010-1234-5678</span></span><br><span class="line"><span class="string">	the@gmail.com</span></span><br><span class="line"><span class="string">	&#x27;https://www.omdbapi.com/?apikey=7035c60c&amp;s=frozen&#x27;</span></span><br><span class="line"><span class="string">	The quick over the lazy</span></span><br><span class="line"><span class="string">	abbcccdddd</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> regexp = <span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&#x27;the&#x27;</span>,<span class="string">&#x27;g&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(regexp));</span><br><span class="line"><span class="comment">// (2) [&quot;the&quot;, &quot;the&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> regexp2 = <span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&#x27;the&#x27;</span>,<span class="string">&#x27;gi&#x27;</span>);</span><br><span class="line"><span class="comment">// i를 사용할 경우 첫 번째 인자 텍스트 중 대소문자를 구분하지 않는 식이다.</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(regexp2));</span><br><span class="line"><span class="comment">// (3) [&quot;the&quot;, &quot;The&quot;, &quot;the&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> regexp3 = <span class="regexp">/the/gi</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(regexp3));</span><br><span class="line"><span class="comment">// (3) [&quot;the&quot;, &quot;The&quot;, &quot;the&quot;]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="정규표현식-메소드"><a href="#정규표현식-메소드" class="headerlink" title="정규표현식 메소드"></a>정규표현식 메소드</h2><ul>
+<li>RegExp.test() : <strong>정규식 내 인자로 받은 문자열</strong>이 있는지 일치 여부를 반환한다.</li>
+<li>String.match() : <strong>문자열 내 인자로 받은 정규식</strong>을 확인하여 매칭되는 배열을 반환한다.</li>
+<li>String.replace() :  <strong>문자열 내 인자로 받은 정규식</strong>을 확인하여 해당 문자열을 대체할 두 번째로 인자로 받은 데이터로 변환 후 반환한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">`</span></span><br><span class="line"><span class="string">	010-1234-5678</span></span><br><span class="line"><span class="string">	the@gmail.com</span></span><br><span class="line"><span class="string">	&#x27;https://www.omdbapi.com/?apikey=7035c60c&amp;s=frozen&#x27;</span></span><br><span class="line"><span class="string">	The quick over the lazy</span></span><br><span class="line"><span class="string">	abbcccdddd</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//main.js</span></span><br><span class="line"><span class="keyword">const</span> reqexp = <span class="regexp">/1234/gi</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(reqexp.<span class="title function_">test</span>(str));</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">replace</span>(reqexp, <span class="string">&#x27;1111&#x27;</span>))</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	010-1111-5678</span></span><br><span class="line"><span class="comment">	...</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str)</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	010-1234-5678</span></span><br><span class="line"><span class="comment">	...</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// 만약 str의 선언이 const가 아니라 let이라면 원본 값도 변경이 된다.</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="플래그-Option"><a href="#플래그-Option" class="headerlink" title="플래그(Option)"></a>플래그(Option)</h2><ul>
+<li>g : 모든 문자가 일치해야한다.</li>
+<li>i : 영어 대소문자를 구분하지 않고 일치한다.</li>
+<li>m : 여러 줄이 일치해야한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">`</span></span><br><span class="line"><span class="string">	010-1234-5678</span></span><br><span class="line"><span class="string">	the@gmail.com</span></span><br><span class="line"><span class="string">	&#x27;https://www.omdbapi.com/?apikey=7035c60c&amp;s=frozen&#x27;</span></span><br><span class="line"><span class="string">	The quick over the lazy.</span></span><br><span class="line"><span class="string">	abbcccdddd</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/the/</span>));</span><br><span class="line"><span class="comment">// [&quot;the&quot;, index: 15, input:&quot;...&quot;, groups:undefined ...]</span></span><br><span class="line"><span class="comment">// 따로 조건이 갖춰져있지 않아 정규식에 맞는 첫 단어의 정보를 가져온다</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/the/g</span>));</span><br><span class="line"><span class="comment">//(2)[&quot;the&quot;,&quot;the&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/the/gi</span>));</span><br><span class="line"><span class="comment">//(3)[&quot;the&quot;,&quot;The&quot;,&quot;the&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/\./m</span>));</span><br><span class="line"><span class="comment">// \를 사용시 다음 문자의 기능을 벗어나 상태가 바뀌게 함</span></span><br><span class="line"><span class="comment">// m을 사용 시 backtick을 사용하여도 엔터마다 한 줄로 판단하여 값을 추출해낸다.</span></span><br><span class="line"><span class="comment">// (4)[&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/\.$/gi</span>));</span><br><span class="line"><span class="comment">// null</span></span><br><span class="line"><span class="comment">// 문자열 뒤에 $를 붙히면 해당 문자가 어떠한 String 데이터의 끝에 있는지 체크한다.</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/\.$/gim</span>));</span><br><span class="line"><span class="comment">// (1)[&quot;.&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="패턴"><a href="#패턴" class="headerlink" title="패턴"></a>패턴</h2><ul>
+<li><p>^ab :  줄 시작에 있는 ab와 일치해야 한다.</p>
+</li>
+<li><p>ab$ :  줄 끝에 있는 ab와 일치해야 한다.</p>
+</li>
+<li><p>. : 임의의 한 문자와 일치. 문자로 사용하고 싶다면 \를 사용해야한다.</p>
+</li>
+<li><p>a&amp;verbar;b : a 또는 b와 일치해야 한다.</p>
+</li>
+<li><p>ab? : b가 없거나 b와 일치해야한다.</p>
+</li>
+<li><p>{n} : n개 연속 일치</p>
+</li>
+<li><p>{n, } : n개 이상 연속 일치</p>
+</li>
+<li><p>{n, m} : n개 이상 m개 이하 연속 일치</p>
+</li>
+<li><p>[abc] : a 또는 b 또는 c</p>
+</li>
+<li><p>[a-z] : a부터 z 사이의 문자 구간에 일치 (영어 소문자)</p>
+</li>
+<li><p>[A-Z] : A부터 Z 사이의 문자 구간에 일치 (영어 대문자)</p>
+</li>
+<li><p>[0-9] : 0부터 9 사이의 문자 구간에 일치</p>
+</li>
+<li><p>[가-힣] : 가부터 힣 사이의 문자 구간에 일치</p>
+</li>
+<li><p>\w : 63개 문자(대소영문자 52개, 숫자 10개, _)에 일치</p>
+</li>
+<li><p>\b : 63개 문자에 일치하지 않는 문자 (특수 문자)</p>
+</li>
+<li><p>\d : 숫자에 일치</p>
+</li>
+<li><p>\s : 공백에 일치 (탭, 스페이스바)</p>
+</li>
+<li><p>(?&#x3D;) : 어떠한 값의 앞쪽이 일치해야 한다</p>
+</li>
+<li><p>(?&lt;&#x3D;) :  어떠한 값의 뒤쪽이 일치해야 한다.</p>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">`</span></span><br><span class="line"><span class="string">	010-1234-5678</span></span><br><span class="line"><span class="string">	the@gmail.com</span></span><br><span class="line"><span class="string">	&#x27;https://www.omdbapi.com/?apikey=7035c60c&amp;s=frozen&#x27;</span></span><br><span class="line"><span class="string">	The quick over the lazy.</span></span><br><span class="line"><span class="string">	abbcccdddd</span></span><br><span class="line"><span class="string">	http://localhost:1234</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/d$/g</span>));</span><br><span class="line"><span class="comment">// null</span></span><br><span class="line"><span class="comment">// 문자열 맨 마지막에 abbcccddd더라도, 정규표현식의 파악 구조에 의해 `의 앞부분, 즉 공백이 가장 마지막이기 때문에 null이 나온다.</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/d$/gm</span>));</span><br><span class="line"><span class="comment">// (1) [&quot;d&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/^t/gim</span>));</span><br><span class="line"><span class="comment">// (2) [&quot;t&quot;,&quot;T&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/./g</span>));</span><br><span class="line"><span class="comment">// [&quot;0&quot;,&quot;1&quot;,&quot;0&quot;,&quot;-&quot;,&quot;1&quot;,&quot;2&quot;...]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/h..p/g</span>));</span><br><span class="line"><span class="comment">// (1) [&quot;http&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/quick|lazy/g</span>));</span><br><span class="line"><span class="comment">// (2) [&quot;quick&quot;, &quot;lazy&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/https?/g</span>));</span><br><span class="line"><span class="comment">// (2) [&quot;https&quot;, &quot;http&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/d&#123;2&#125;/g</span>));</span><br><span class="line"><span class="comment">// (2) [&quot;dd&quot;,&quot;dd&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/d&#123;2, &#125;/g</span>));</span><br><span class="line"><span class="comment">// (1) [&quot;dddd&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/d&#123;2,3&#125;/g</span>));</span><br><span class="line"><span class="comment">// null;</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/\w&#123;2,3&#125;/g</span>));</span><br><span class="line"><span class="comment">// [&quot;010&quot;, &quot;-50&quot;, &quot;28-&quot;, &quot;398&quot; ...]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/\b\w&#123;2,3&#125;\b/g</span>));</span><br><span class="line"><span class="comment">// [&quot;010&quot;, &quot;com&quot;, &quot;www&quot;, &quot;com&quot; ...]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/[the]/g</span>));</span><br><span class="line"><span class="comment">// [&quot;t&quot;,&quot;h&quot;,&quot;e&quot;,&quot;T&quot;,&quot;h&quot;...]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/[0-9]&#123;1,&#125;/g</span>));</span><br><span class="line"><span class="comment">// [&quot;010&quot;, &quot;1234&quot;, &quot;5678&quot;...]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/[가-힣]&#123;1,&#125;/g</span>));</span><br><span class="line"><span class="comment">// null</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/\w/g</span>);</span><br><span class="line"><span class="comment">// [&quot;0&quot;,&quot;1&quot;,&quot;0&quot;,&quot;1&quot;,&quot;2&quot;...]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="regexp">/\bf\w&#123;1,&#125;\b/g</span>));</span><br><span class="line"><span class="comment">// 63개 문자가 1개 이상의 문자와 일치해야하는데 소문자 f로 시작하는 단어를 반환한다.</span></span><br><span class="line"><span class="comment">// (1) [&quot;frozen&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">match</span>(<span class="string">&#x27;/\s/g));</span></span><br><span class="line"><span class="string">// [&quot;enter&quot;, &quot;enter&quot;, &quot; &quot;, &quot; &quot; ...]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">const h = `  the hello  world   !</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">console.log(h.replace(/\s/g, &#x27;</span><span class="string">&#x27;));</span></span><br><span class="line"><span class="string">// thehelloworld!</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">console.log(str.match(/.&#123;1,&#125;(?=@)/g));</span></span><br><span class="line"><span class="string">// 1개 이상의 단어 중 @란 문자 앞에 있는 단어를 반환한다.</span></span><br><span class="line"><span class="string">// (1) [&quot;the&quot;]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">console.log(str.match(/(?&lt;=@).&#123;1,&#125;/g));</span></span><br><span class="line"><span class="string">// 1개 이상의 단어 중 @란 문자 뒤에 있는 단어를 반환한다.</span></span><br><span class="line"><span class="string">// (1) [&quot;gmail&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘의 온라인 강의도 매우 만족스러웠습니다. 특히 가장 약했던 부분인 정규표현식에 대해 잘 설명되있고 많이 알아가서 좋았습니다. 항상 그저 검색 후 붙혀넣기만 했었는데 이젠 어느정도 파악을 할 수 있어서 기쁩니다. 이후에도 주기적으로 보며 알아갈 수 있도록 노력하겠습니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1165,160 +1362,6 @@
 </ul>
 <h2 id="DOCTYPE"><a href="#DOCTYPE" class="headerlink" title="DOCTYPE"></a>DOCTYPE</h2><p>마크업 언어에서 문서 형식을 정의하며, 웹 브라우저가 <strong>어떤 HTML 버전</strong>의 해석 방식으로 페이지를 이해하면 되는지 알려주는 용도</p>
 <h2 id="META"><a href="#META" class="headerlink" title="META"></a>META</h2><p>HTML문서의 제작자, 내용, 키워드, 화면 정보 등 여러 정보를 <strong>검색 엔진이나 브라우저</strong>에게 제공</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/04/14/TIL-2022-04-14/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Yun Seong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/14/TIL-2022-04-14/" class="post-title-link" itemprop="url">2022 04 14 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-04-14 22:26:06" itemprop="dateCreated datePublished" datetime="2022-04-14T22:26:06+09:00">2022-04-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-15 14:58:02" itemprop="dateModified" datetime="2022-04-15T14:58:02+09:00">2022-04-15</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h1><ul>
-<li>프로젝트와 Repository를 설명하는 책의 표지와 같은 문서</li>
-<li>나와 동료, 이 repo의 사용자를 위한 문서</li>
-</ul>
-<h1 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h1><p>git에 업로드를 할 때 gitignore에 적힌 내부 파일은 git에서 추적하지 않음</p>
-<h1 id="Git-branch"><a href="#Git-branch" class="headerlink" title="Git branch"></a>Git branch</h1><ul>
-<li><p>branch 이동</p>
-<ul>
-<li>git switch {branchname} ⇒ branch만을 이동</li>
-<li>git checkout {branchname} ⇒ commit간이나 branch간이나 모든 요소들을 이동</li>
-</ul>
-</li>
-<li><p>branch 삭제</p>
-<ul>
-<li>git branch -D {branchname} ⇒ 해당 {branchname}을 삭제</li>
-</ul>
-</li>
-<li><p>branch 병합</p>
-<p>  git merger {branchname} ⇒ 현재 있는 branch로 {branchname}의 내용을 가져옴</p>
-</li>
-</ul>
-<aside>
-💡 막간 취업 코테 팁!
-
-<p>Python의 경우 웹 언어로써의 능력은 떨어지지만 코딩 테스트용으로는 좋다</p>
-</aside>
-
-<h1 id="Git-Flow"><a href="#Git-Flow" class="headerlink" title="Git Flow"></a>Git Flow</h1><pre><code>## branch models
-
-- **git flow (★) : 현재 강의에서는 주로 git flow를 다룰 것임**
-- github flow
-- gitlab flow
-</code></pre>
-<p>#Git Flow</p>
-<pre><code>## Git flow 작업 순서
-
-- git flow init ⇒ git flow 초기화 셋팅
-- git flow feature start &#123;branch name&#125; ⇒ 기능 branch를 생성 후 기능 개발 시작
-- 개발이 끝나면 git flow feature finish &#123;branch name&#125;로 branch 제거
-- git flow release start &#123;release name&#125; ⇒ 릴리즈 기능 시작
-- git flow release finish &#123;release name&#125; ⇒ 릴리즈에 대한 확인 후 commit 메세지 작성, 해당 branch는 삭제되니 merge 메세지 작성
-- 작업한 내용을 push를 안하면 github는 모르기때문에 git push -u origin &#123;branch name&#125; (여기서는 main branch가 아닌 작업했던 branch name을 기입)
-- 이후 main branch로 가서 똑같이 git push origin main
-- tag를 알리기 위해 git tag  를 입력 후 git push —tags로 버전도 같이 push
-**ex) 첫 git flow tags link :** [https://github.com/dbstjddbwls/branch-practice/tags](https://github.com/dbstjddbwls/branch-practice/tags)
-
-## Git Rename
-
-- mv &#123;file&#125; &#123;rename file&#125;을 하고 git status를 하면 rename이 아니라 delete라고 인식한다.
-- 이를 방지하고싶다면 git mv &#123;file&#125; &#123;rename file&#125;이라고 앞에 git을 넣어줘야함
-
-## Git Restore
-
-- 수정 후 commit까지 했는데 다시 되돌려야할때
-- git restore &#123;file name&#125; 를 통해 바로 이전버전 커밋으로 되돌림
-
-## Git Unstaging
-
-- add를 취소하기
-- add한 파일을 다시 unstaging하려면 git reset HEAD &#123;file name&#125;
-    - 수정한 내용이 사라진건 아님
-
-- restore와 reset의 차이점은 내용을 이전 버전으로 수정 하냐안하냐의 차이로 나뉘어진다
-- 단 reset은 내 repo에서 삭제해도 다른 팀원의 repo에는 살아있을 수 있기 때문에 쓰지 않는걸 권장
-    - reset의 대안은 **revert**를 사용
-
-## Git Revert
-
-- git revert —no-commit HEAD~&#123;num&#125;
-- &#123;num&#125; 수 만큼 가장 최근 기준으로 이전에 커밋한 내용을 되돌림
-- reset과의 다른 점은 revert의 경우 가장 최근의 커밋 내역까지 되돌리며 삭제까지 진행.
-- 즉 파일 생성→ add→ status→ commit  순으로 보통 진행했다면 commit →status →add →파일 삭제로 되돌아감
-- revert했다면 꼭 사유를 commit 메세지에 적을 것
-
-## Git Commit —amend
-
-- 이전에 commit했던 commit message를 수정할 때 사용
-- Git commit —amend
-</code></pre>
 
       
     </div>

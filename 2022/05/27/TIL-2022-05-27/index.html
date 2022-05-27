@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dbstjddbwls.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="수업 내용SDLC(Software Development Life Cycle)  소프트웨어를 계획하고, 개발하고, 시험 및 배포하는 과정 전체를 뜻한다. 요구사항의 분석 → 설계 → 구현 → 테스트 → 운영 또는 유지보수  Model  Build &amp; Fix : 다른 코스 없이 일단 만들고 고치고하는 방법 Prototype : 최소한의 요구사항 분석 후">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022 05 27 TIL">
+<meta property="og:url" content="https://dbstjddbwls.github.io/2022/05/27/TIL-2022-05-27/index.html">
+<meta property="og:site_name" content="프론트엔드에 깃발 세우기">
+<meta property="og:description" content="수업 내용SDLC(Software Development Life Cycle)  소프트웨어를 계획하고, 개발하고, 시험 및 배포하는 과정 전체를 뜻한다. 요구사항의 분석 → 설계 → 구현 → 테스트 → 운영 또는 유지보수  Model  Build &amp; Fix : 다른 코스 없이 일단 만들고 고치고하는 방법 Prototype : 최소한의 요구사항 분석 후">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-27T13:01:36.000Z">
+<meta property="article:modified_time" content="2022-05-27T13:02:44.779Z">
+<meta property="article:author" content="Kim Yun Seong">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dbstjddbwls.github.io/2022/05/27/TIL-2022-05-27/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://dbstjddbwls.github.io/2022/05/27/TIL-2022-05-27/","path":"2022/05/27/TIL-2022-05-27/","title":"2022 05 27 TIL"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>2022 05 27 TIL | 프론트엔드에 깃발 세우기</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">프론트엔드에 깃발 세우기</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%88%98%EC%97%85-%EB%82%B4%EC%9A%A9"><span class="nav-number">1.</span> <span class="nav-text">수업 내용</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SDLC-Software-Development-Life-Cycle"><span class="nav-number">1.1.</span> <span class="nav-text">SDLC(Software Development Life Cycle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">1.2.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scrum"><span class="nav-number">1.3.</span> <span class="nav-text">Scrum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wireframe"><span class="nav-number">1.4.</span> <span class="nav-text">Wireframe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usecase"><span class="nav-number">1.5.</span> <span class="nav-text">Usecase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wildcard-amp-Navigate"><span class="nav-number">1.6.</span> <span class="nav-text">Wildcard &amp; Navigate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-in-CSS"><span class="nav-number">1.7.</span> <span class="nav-text">React in CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Styled"><span class="nav-number">1.8.</span> <span class="nav-text">Styled</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Props"><span class="nav-number">1.9.</span> <span class="nav-text">Props</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Animation"><span class="nav-number">1.10.</span> <span class="nav-text">Animation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%9A%8C%EA%B3%A0"><span class="nav-number">2.</span> <span class="nav-text">회고</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kim Yun Seong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/05/27/TIL-2022-05-27/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="2022 05 27 TIL | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2022 05 27 TIL
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-27 22:01:36 / Modified: 22:02:44" itemprop="dateCreated datePublished" datetime="2022-05-27T22:01:36+09:00">2022-05-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="SDLC-Software-Development-Life-Cycle"><a href="#SDLC-Software-Development-Life-Cycle" class="headerlink" title="SDLC(Software Development Life Cycle)"></a>SDLC(<strong>Software Development Life Cycle)</strong></h2><hr>
+<ul>
+<li>소프트웨어를 계획하고, 개발하고, 시험 및 배포하는 과정 전체를 뜻한다.</li>
+<li>요구사항의 분석 → 설계 → 구현 → 테스트 → 운영 또는 유지보수</li>
+</ul>
+<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><hr>
+<ul>
+<li>Build &amp; Fix : 다른 코스 없이 일단 만들고 고치고하는 방법</li>
+<li><strong>Prototype</strong> : 최소한의 요구사항 분석 후 임시 모델을 만들어 고객의 요구를 개발에 도입. 임시적으로 주 기능과 디자인을 어느정도 해놓고 클라이언트에게 보내 확인을 받는 법</li>
+<li><strong>Waterfall</strong> : 요구사항 분석 → 설계 → 구현 → 운용 이 순차적으로 진행되는 방식. 대규모 팀에 적합하며 각 단계를 완전히 완료하기 전까지 다음 단계로 넘어가지 않음.</li>
+<li><strong>Spiral</strong> : 어떠한 작업의 목표설정 → 위험분석 → 개발 및 검증 → 고객 평가 및 다음 단계 진행을 반복한다. 점진적으로 단계를 반복하여 위험을 최소화하며 대형 시스템의 구축에 유리하다.</li>
+<li><strong>Agile</strong> : 프로젝트의 생명주기동안 반복적인 개발을 촉진하는 모델이다. Waterfall의 과정을 짧게 짧게 반복하는 것인데 Waterfall이 전체 결과물이 대상이라면 Agile은 한 컴포넌트나 기능을 대상으로 하여 Waterfall 형식을 반복하는 것이다.</li>
+</ul>
+<h2 id="Scrum"><a href="#Scrum" class="headerlink" title="Scrum"></a>Scrum</h2><hr>
+<ul>
+<li>전체 기능 중 개발할 기능과 수정사항에 우선 순위를 부여한 뒤, 이 순서대로 Task 진행</li>
+<li>매일 15분의 일일 회의 진행</li>
+<li>1~4주 간의 기획, 개발, 리뷰 진행</li>
+<li>Daily Scrum : 어제 한 일과 오늘 할 일, 이슈 등 매일 공유</li>
+<li>TDD(Test Driven Development) : 테스트코드 먼저 작성 후 본 코드 작성</li>
+</ul>
+<h2 id="Wireframe"><a href="#Wireframe" class="headerlink" title="Wireframe"></a>Wireframe</h2><hr>
+<p>Section 별로 구분을 하여 UI를 어떻게 구성할지 대략적으로 그린 구조도 이미지</p>
+<h2 id="Usecase"><a href="#Usecase" class="headerlink" title="Usecase"></a>Usecase</h2><hr>
+<p>사용자가 어떠한 경로나 링크를 통해 홈페이지의 각 페이지에 접근할 수 있는지를 보여주는 간단한 그림 구조</p>
+<h2 id="Wildcard-amp-Navigate"><a href="#Wildcard-amp-Navigate" class="headerlink" title="Wildcard &amp; Navigate"></a>Wildcard &amp; Navigate</h2><hr>
+<ul>
+<li><p>props.path로 *를 넘겨주는 경우 모든 url이나 파일에 대응하는 것을 뜻한다.</p>
+</li>
+<li><p><Navigage /> : 해당 URL로 페이지를 이동시켜주는 컴포넌트</p>
+</li>
+<li><p>props.replace가 false인 경우</p>
+<ul>
+<li>&#x2F;로 접속</li>
+<li>Main을 render</li>
+<li><Link to='/abc' /> 클릭</li>
+<li>Navigate에 의해 &#x2F;hi로 이동</li>
+<li>뒤로가기 클릭</li>
+<li>&#x2F;로 이동</li>
+</ul>
+</li>
+<li><p>props.replace가 true인 경우</p>
+<ul>
+<li>&#x2F;로 접속</li>
+<li>Main을 render</li>
+<li><Link to='/abc' /> 클릭</li>
+<li>Navigate에 의해 &#x2F;hi로 이동</li>
+<li>뒤로가기 클릭</li>
+<li>&#x2F;abc로 이동</li>
+</ul>
+</li>
+<li><p>즉 props.replace는 browser history에 영향을 끼친다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  <span class="title class_">BrowserRouter</span>, <span class="title class_">Route</span>,</span><br><span class="line">  <span class="title class_">Routes</span>, <span class="title class_">Link</span>, <span class="title class_">Navigate</span>,</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&quot;react-router-dom&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Main</span> = (<span class="params"></span>) =&gt; (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&#x27;/abc&#x27;</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">BrowserRouter</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Routes</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;/&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">Main</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;/hi&quot;</span> <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">Main</span> /&gt;</span>&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Route</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">path</span>=<span class="string">&quot;*&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">element</span>=<span class="string">&#123;</span>&lt;<span class="attr">Navigate</span> <span class="attr">to</span>=<span class="string">&quot;/hi&quot;</span> /&gt;</span>&#125;</span></span><br><span class="line"><span class="language-xml">        /&gt;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Routes</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">BrowserRouter</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="React-in-CSS"><a href="#React-in-CSS" class="headerlink" title="React in CSS"></a>React in CSS</h2><hr>
+<ul>
+<li><strong>CSS In JS</strong> : Javascript 코드로 css처럼 스타일링을 하는 방식</li>
+<li>왜 CSS In JS를 써야하는가<ul>
+<li><p>Global Namespace</p>
+<ul>
+<li><p>모든 스타일이 Global에 선언되어 중복되지 않는 Class 이름을 적용해야한다.</p>
+</li>
+<li><p>A.css 에서 div 태그 자체에 정의를 하면 해당 css 파일을 import 하지 않아도 적용됨</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// A.css</span></span><br><span class="line">div &#123;</span><br><span class="line">	<span class="attr">width</span>:100px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// A.tsx</span></span><br><span class="line"><span class="keyword">import</span> style <span class="keyword">from</span> <span class="string">&#x27;./A.css&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> defualt () =&gt; <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> /&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// B.tsx</span></span><br><span class="line"><span class="keyword">export</span> defualt () =&gt; <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> /&gt;</span></span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Dependencies</p>
+<ul>
+<li>CSS에서 에러를 감지하기 어려움</li>
+<li>css class의 이름을 변경할 때  js에서 알 방법이 없음</li>
+<li>파일간 css 코드를 이동하면 놓칠 수 있음</li>
+<li>class name을 부여 후 css 코드 작성을 까먹을 수 있음</li>
+</ul>
+</li>
+<li><p>Dead Code Elimination</p>
+<ul>
+<li>사용하지 않는 코드 관리가 어려움</li>
+<li>css는 js&#x2F;html 과 직접적으로 연결되어 있지 않아 상대적 어려움</li>
+</ul>
+</li>
+<li><p>Minification</p>
+<ul>
+<li>css 명이 string으로 관리되어 짧게 만들기 어렵다</li>
+<li>해결하기 위해선 webpack css module을 사용해야한다.</li>
+</ul>
+</li>
+<li><p>Sharing Constans</p>
+<ul>
+<li><p>css와 js간 variable 공유가 어렵다</p>
+</li>
+<li><p>js 변수를 css 변수로 활용 시 불편함</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// A.css</span></span><br><span class="line">input&#123;</span><br><span class="line">	<span class="attr">width</span>:&#123;input에서 입력값&#125;px;</span><br><span class="line">	<span class="attr">height</span>:50px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// A.tsx</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">	<span class="keyword">const</span> [width, setWidth] = <span class="title function_">useState</span>(<span class="number">50</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">onChange</span>=<span class="string">&#123;</span> <span class="attr">e</span> =&gt;</span> setWidth(e.target.value) &#125; /&gt;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Non-Deeterministic Resolution</p>
+<ul>
+<li>css import가 비동기적으로 이루어짐</li>
+<li>import 순서에 맞지 않게 작동할 수 있는 가능성이 있음</li>
+</ul>
+</li>
+<li><p>Breaking Isolation</p>
+<ul>
+<li>css Selector 작성 시 안쪽의 component style까지 영향을 끼침</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Styled"><a href="#Styled" class="headerlink" title="Styled"></a>Styled</h2><hr>
+<ul>
+<li><p>npm install styled-components</p>
+</li>
+<li><p>백틱을 이용한 활용</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> styled <span class="keyword">from</span> <span class="string">&#x27;styled-components&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Sample</span> = styled.<span class="property">div</span><span class="string">`</span></span><br><span class="line"><span class="string">	width: 100px;</span></span><br><span class="line"><span class="string">	height: 100px;</span></span><br><span class="line"><span class="string">	background-color: red;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Sample2</span> = <span class="title function_">styled</span>(<span class="title class_">Samsple</span>)<span class="string">`</span></span><br><span class="line"><span class="string">	background-color: blue;</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> () =&gt; &#123;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">Sample</span>&gt;</span> 안녕하세요 <span class="tag">&lt;/<span class="name">Sample</span>&gt;</span></span></span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">Sample2</span>&gt;</span> Hello <span class="tag">&lt;/<span class="name">Sample2</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>이렇게 만든 styled는 Component가 된다.</p>
+</li>
+</ul>
+<h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><hr>
+<ul>
+<li><p>해당 컴포넌트에도 props를 넘길 수 있다.</p>
+</li>
+<li><p>${} 문법을 이용한다.</p>
+</li>
+<li><p>styled 자체에서 문법 검사를 해주어서 undefined나 잘못된 값이 있다면 자동으로 제거해준다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> styled <span class="keyword">from</span> <span class="string">&#x27;styled-components&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Sample</span> = styled.<span class="property">div</span><span class="string">`</span></span><br><span class="line"><span class="string">	width: 100px;</span></span><br><span class="line"><span class="string">	height: 100px;</span></span><br><span class="line"><span class="string">	background-color: <span class="subst">$&#123;props =&gt; &#123; <span class="keyword">return</span> props.testProps&#125; &#125;</span>;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> () =&gt; &#123;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">Sample</span> <span class="attr">testProps</span>=<span class="string">&quot;violet&quot;</span>&gt;</span> 안녕하세요 <span class="tag">&lt;/<span class="name">Sample</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Animation"><a href="#Animation" class="headerlink" title="Animation"></a>Animation</h2><hr>
+<ul>
+<li><p>css keyframes와 유사하나 keyframes도 함수로 제공한다</p>
+</li>
+<li><p>0% 50% 100%, from, to등 속성도 사용 가능하다</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ani = keyframes<span class="string">`</span></span><br><span class="line"><span class="string">	0%&#123;</span></span><br><span class="line"><span class="string">		background-color: black;</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">	50% &#123;</span></span><br><span class="line"><span class="string">		background-color: pink;</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">	100% &#123;</span></span><br><span class="line"><span class="string">		background-color: yellow;</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Sample</span> = styled.<span class="property">div</span><span class="string">`</span></span><br><span class="line"><span class="string">	width: 100px;</span></span><br><span class="line"><span class="string">	height: 100px;</span></span><br><span class="line"><span class="string">	animation: <span class="subst">$&#123;ani&#125;</span> 0.5s linear infinite;</span></span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><hr>
+<p>오늘은 실제 개발은 어떤 방식으로 이뤄지는가와 React의 styled를 메인으로 강의를 들었습니다. 이전 회사에선 시간 남는 사람에게 일을 할당하는 제도라 특정 인물 몇몇이 일을 많이 하게되는 구조였는데 오늘 강의를 듣고나선 다른 방식으로도 업무를 해보고 싶다 느꼈습니다. 그만큼 git에 대한 이해도가 높아야 될 것 같아서 조금 부담되기는 합니다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/26/TIL-2022-05-26/" rel="prev" title="2022 05 26 TIL">
+                  <i class="fa fa-chevron-left"></i> 2022 05 26 TIL
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kim Yun Seong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
