@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,158 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/05/28/TIL-2022-05-28/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/28/TIL-2022-05-28/" class="post-title-link" itemprop="url">2022 05 28 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-28 16:19:05 / Modified: 16:19:43" itemprop="dateCreated datePublished" datetime="2022-05-28T16:19:05+09:00">2022-05-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><hr>
+<ul>
+<li>특정 조건에서 시스템이나 구성 요소가 실행되고 결과가 관찰되고 기록하며 평가를 하는 활동</li>
+<li>테스트를 해야하는 이유<ul>
+<li>이번 작업이 잘 작동하는지 검증</li>
+<li>기존 작업에 대한 side effect 검사</li>
+<li>Reviewer이나 후임을 위한 가이드</li>
+</ul>
+</li>
+</ul>
+<h2 id="unit-Test"><a href="#unit-Test" class="headerlink" title="unit Test"></a>unit Test</h2><hr>
+<ul>
+<li>일반적으로 함수나 컴포넌트 단위의 테스트를 작성</li>
+<li>props 등 다른 컴포넌트 영향을 받는 경우 직접 주입해서 테스트<br>&#x3D; 함수의 인자를 직접 넣어서 호출하는 방식</li>
+<li>예) props로 특정 값을 넣었을 때 원하는 결과값이 나오는지</li>
+</ul>
+<h2 id="Integration-Test"><a href="#Integration-Test" class="headerlink" title="Integration Test"></a>Integration Test</h2><hr>
+<ul>
+<li><p>단위 모듈이 결합되어있는 형태를 테스트</p>
+</li>
+<li><p>unit Test가 완료되었다면 해당 컴포넌트를 리턴하는 상위 컴포넌트에 props를 전달하여 컴포넌트끼리 정보를 받을 수 있는지 확인</p>
+</li>
+<li><p>예)</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">ShowName</span> = (<span class="params">props</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Show</span> = (<span class="params">props</span>) =&gt; (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">ShowName</span> <span class="attr">name</span>=<span class="string">&#123;props.name&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">);</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="jest"><a href="#jest" class="headerlink" title="jest"></a>jest</h2><hr>
+<ul>
+<li>unit &#x2F; Intergration Test 작성 및 실행, 결과 출력을 도와주는 <strong>테스팅 프레임 워크</strong></li>
+<li>CRA를 설치 시 자동 설치됨</li>
+</ul>
+<h2 id="expect"><a href="#expect" class="headerlink" title="expect"></a>expect</h2><hr>
+<ul>
+<li><p>jest의 문법</p>
+</li>
+<li><p>expect 안에 무언가를 넣으면 다양한 메소드를 이용 가능하다. (jest, jest-dom)</p>
+</li>
+<li><p>CRA가 자동으로 babel 세팅을 해둬서, *.test.ts 파일에 대해 자동으로 넣어줌</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">test</span>(<span class="string">&quot;1 + 3은 4다&quot;</span>,<span class="function">() =&gt;</span> &#123;</span><br><span class="line">	<span class="title function_">expect</span>(<span class="number">1</span> + <span class="number">3</span>).<span class="title function_">toBe</span>(<span class="number">4</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="React-Testing-Library"><a href="#React-Testing-Library" class="headerlink" title="React-Testing-Library"></a>React-Testing-Library</h2><hr>
+<ul>
+<li><p>React 컴포넌트를 test할 수 있도록 renderer 등 함수 제공</p>
+</li>
+<li><p>CRA에 이미 설치되어 있다.</p>
+</li>
+<li><p>scripts에서 확인 가능하다</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">test</span>(<span class="string">&#x27;App5가 render되면 Hello World가 출력되어야한다.&#x27;</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App5</span> /&gt;</span></span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> helloText = screen.<span class="title function_">queryByText</span>(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(helloText)</span><br><span class="line">  <span class="title function_">expect</span>(helloText).<span class="title function_">toBeInTheDocument</span>();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="render-container"><a href="#render-container" class="headerlink" title="render, container"></a>render, container</h2><hr>
+<ul>
+<li>render는 react-testing-library의 함수</li>
+<li>container는 render를 통해 생성된 최상위 부모 DOM</li>
+<li>일방적으로 js에서 다루는 HTML Element이므로 innerHTML같은 것도 활용 가능</li>
+</ul>
+<h2 id="Fire-event"><a href="#Fire-event" class="headerlink" title="Fire event"></a>Fire event</h2><hr>
+<ul>
+<li><p>fireEvent는 react-testing-library의 함수</p>
+</li>
+<li><p>특정 dom에 event 객체와 함께 event를 발생시킴</p>
+</li>
+<li><p>아래와 같은 경우 idInput의 change event handler가 받는 event 객체는 {target: {value: ‘aaaaaa’}}가 된다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">test</span>(<span class="string">&#x27;input에 change event가 잘 동작하는지 확인&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; container, queryByText &#125; = <span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> idInput = container.<span class="title function_">querySelector</span>(<span class="string">&#x27;input&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="title function_">expect</span>(idInput).<span class="title function_">toBeInTheDocument</span>();</span><br><span class="line"></span><br><span class="line">	  fireEvent.<span class="title function_">change</span>(idInput!, &#123;<span class="attr">target</span>: &#123;<span class="attr">value</span>: <span class="string">&#x27;aaaaaa&#x27;</span>&#125;&#125;)</span><br><span class="line">	  <span class="title function_">expect</span>(idInput!.<span class="property">value</span>).<span class="title function_">toBe</span>(<span class="string">&#x27;aaaaaa&#x27;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="title function_">expect</span>(idInput).<span class="title function_">toBe</span>(<span class="string">&#x27;asdf&#x27;</span>)</span><br><span class="line">	<span class="comment">// 에러</span></span><br><span class="line">	<span class="comment">// 위에서 change로 aaaaaa로 바뀌어서 asdf와는 맞지 않아 에러가 난다.</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="e2e-Test"><a href="#e2e-Test" class="headerlink" title="e2e Test"></a>e2e Test</h2><hr>
+<ul>
+<li>End to End 테스트</li>
+<li>사용법은 실제 브라우저에 페이지를 렌더하고 사용자의 입장에서 어떤 결과가 나오는지를 검증</li>
+<li>예) 폼을 채우고 로그인 버튼을 누른 경우 환영합니다! url이 바뀌면서 환영합니다!를 렌더 테스트</li>
+</ul>
+<h2 id="async-await"><a href="#async-await" class="headerlink" title="+) async, await"></a>+) async, await</h2><hr>
+<ul>
+<li>비동기화의 문법 중 하나</li>
+<li>기존 callback이나 promise then에서 벗어나기 위한 문법이다</li>
+<li>async로 함수를 감싸서 선언하면 return값이 promise의 형태로 전달되게 된다.</li>
+<li>이렇게 감싸진 값을 await를 통하여 불러올 수 있다.</li>
+<li>async는 promise를 return하기 때문에 뒤에 then을 붙혀서도 활용이 가능하다.</li>
+<li>async의 값이 나와야 await가 실행 가능하기 때문에 동기적인 구조가 되는 것이다.</li>
+</ul>
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><hr>
+<p>오늘은 별도로 주말 특강을 신청하게 받아보았습니다.</p>
+<p>현업에서도 실제로 자주 쓰는 Test에 관련한 내용이였고 기존 매번 값을 넣어가며 실행했어야 하였는데, 이번 수업에 배운 것으로 그럴 필요 없이 테스트 코드 작성 방법을 알게되었습니다.</p>
+<p>이런 방식을 좀 더 활용하면 에러를 획기적으로 줄일 수 있을 것 같지만, 개발 시간이 넉넉해야 저는 가능할 것 같습니다.</p>
+<p>추가적인 질문 시간에 async와 await에 대해 질문을 하여 짧게 설명을 들었는데 가끔 이러한 return 값을 동기적으로 써야할 때 써보면 좋을 것 같습니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1536,105 +1688,6 @@
 <figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@mixin</span> <span class="title function_">avatar</span>(<span class="params">$size, $circle:<span class="literal">false</span></span>)&#123;</span><br><span class="line">	<span class="attr">width</span>: $size;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@if</span> $circle&#123;</span><br><span class="line">		border-<span class="attr">radius</span>: $size</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.<span class="property">classA</span>&#123;</span><br><span class="line">	<span class="meta">@include</span> <span class="title function_">avatar</span>(100px, <span class="attr">$circle</span>: <span class="literal">false</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.<span class="property">classB</span>&#123;</span><br><span class="line">	<span class="meta">@include</span> <span class="title function_">avatar</span>(100px, <span class="attr">$circle</span>: <span class="literal">true</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘은 주로 css에 관한 수업이 진행된 것 같습니다. 날짜를 지정하는 dayjs나 date-fns, moment와 함께 css에 사용되는 styled부터 emmotion 등 까지 궁금했던 부분들에 대해 다뤘던 점이 좋았습니다. 특히 scss를 자주 사용하고 싶은 입장에선 매우 좋은 강의였던 것 같습니다.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/05/16/TIL-2022-05-16/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Yun Seong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/16/TIL-2022-05-16/" class="post-title-link" itemprop="url">2022 05 16 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-05-16 22:05:49 / Modified: 22:06:17" itemprop="dateCreated datePublished" datetime="2022-05-16T22:05:49+09:00">2022-05-16</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h2><ul>
-<li>Context란 컴포넌트 트리를 넘어 데이터를 공유할 수 있는 방법</li>
-<li>일일히 props를 넘겨지주 않고도 트리 전체에 데이터를 제공할 수 있다.</li>
-<li>주로 유저가 로그인을 했는지나 테마, 선호 언어 등에 이용된다.</li>
-<li>여러 레벨에 props를 넘기는걸 대체한다면 context보다 ㅋ컴포넌트 합성이 나을 수 있다.</li>
-</ul>
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ThemedContext.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> themes = &#123;</span><br><span class="line">	<span class="attr">light</span>: &#123;</span><br><span class="line">		<span class="attr">foreground</span>: <span class="string">&#x27;#000&#x27;</span>,</span><br><span class="line">		<span class="attr">background</span>: <span class="string">&#x27;#eee&#x27;</span>,</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">dark</span>: &#123;</span><br><span class="line">		<span class="attr">foreground</span>: <span class="string">&#x27;#fff&#x27;</span>,</span><br><span class="line">		<span class="attr">background</span>: <span class="string">&#x27;#222&#x27;</span>,</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">ThemeContext</span> = <span class="title class_">React</span>.<span class="title function_">createContext</span>(themes.<span class="property">dark</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//ThemedBtn.jsx</span></span><br><span class="line"><span class="comment">/* export default class ThemedBtn extends Component &#123;</span></span><br><span class="line"><span class="comment">	render()&#123;</span></span><br><span class="line"><span class="comment">		let props = this.props;</span></span><br><span class="line"><span class="comment">		let theme = this.context</span></span><br><span class="line"><span class="comment">		return(</span></span><br><span class="line"><span class="comment">			&lt;button &#123;...props&#125; onClick=&#123;props.changeTheme&#125; style=&#123;backgroundColor: theme.background, color: theme.foreground&#125;&gt;Button&lt;/button&gt;</span></span><br><span class="line"><span class="comment">		)</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">ThemedBtn.contextType = ThemeContext;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">export default ThemedBtn</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">ThemedBtn</span>(<span class="params">props</span>)&#123;</span><br><span class="line">	<span class="keyword">const</span> theme = <span class="title function_">useContext</span>(<span class="title class_">ThemeContext</span>);</span><br><span class="line">	<span class="keyword">return</span>(</span><br><span class="line">		<span class="language-xml"><span class="tag">&lt;<span class="name">button</span> &#123;<span class="attr">...props</span>&#125; <span class="attr">onClick</span>=<span class="string">&#123;props.changeTheme&#125;</span> <span class="attr">style</span>=<span class="string">&#123;backgroundColor:</span> <span class="attr">theme.background</span>, <span class="attr">color:</span> <span class="attr">theme.foreground</span>&#125;&gt;</span> Button2 <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">	)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Example.jsx</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> <span class="title class_">Example</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">props</span>)&#123;</span><br><span class="line">		<span class="variable language_">super</span>(props);</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">			<span class="attr">theme</span>: themes.<span class="property">light</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">toggleTheme</span> = <span class="function">()=&gt;</span>&#123;</span><br><span class="line">			<span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;prev&#125; =&gt; (&#123;</span><br><span class="line">				<span class="attr">theme</span>: prev.<span class="property">theme</span> === themes.<span class="property">dark</span> ? themes.<span class="property">light</span> : themes.<span class="property">dark</span></span><br><span class="line">			&#125;));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="title function_">render</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">ThemeContext.Provider</span> <span class="attr">value</span>=<span class="string">&#123;this.state.theme&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">ThemedBtn</span> <span class="attr">changeTheme</span>=<span class="string">&#123;this.toggleTheme&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">ThemeContext.Consumer</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					&#123;theme =&gt; <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;height:300,</span> <span class="attr">width:</span> <span class="attr">300</span>, <span class="attr">backgroundColor:theme.background</span>&#125;&gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;/<span class="name">ThemeContext.Consumer</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">ThemeContext.Provider</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			// Provider로 감싸져서 해당 태그 안 ThemedBtn의 경우 light 모드가 된다.</span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">ThemedBtn</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">			// 밖에 나와있는 ThemedBtn의 경우 default로 전달받은 React.createContext(themes.dark) 로 설정이 된다.</span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// App.js</span></span><br><span class="line"><span class="keyword">return</span>(</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">Example</span> /&gt;</span></span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h2 id="Portal"><a href="#Portal" class="headerlink" title="Portal"></a>Portal</h2><ul>
-<li>DOM 계층 구조 바깥에 있는 DOM 노드로 자식을 렌더링 하는 방법</li>
-<li>CreatePortal은 부모 컴포넌트 DOM 트리로부터 벗어나는 기능을 제공한다.</li>
-<li>이벤트의 경우 Portal이란 다른 컴포넌트에 있더라도 트리를 통해 전파된다.</li>
-</ul>
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//index.html</span></span><br><span class="line">&lt;div id=<span class="string">&quot;root&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;portal&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Example.jsx</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Portal</span> = (<span class="params">props</span>)=&gt;&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="title function_">creatPortal</span>(props.<span class="property">children</span>, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;portal&#x27;</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Example</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">return</span>(</span><br><span class="line">		<span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span>=&gt;</span> console.log(&#x27;div&#x27;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">Portal</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">Component</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">Portal</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;&#123;position:</span> &quot;<span class="attr">absoulte</span>&quot;&#125;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">button</span>&gt;</span> Button <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">	)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Portal의 경우 root 안에 없지만 Root안에 포함된 Example이란 컴포넌트 내 div onClick 이벤트가 버블링이 된다. root란 레이어를 벗어나도 내부의 기능을 전달받을 수 있다.</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Render-Props"><a href="#Render-Props" class="headerlink" title="Render Props"></a>Render Props</h2><ul>
-<li>코드의 재사용 방법 중 하나이다</li>
-<li>React 컴포넌트 간에 코드를 공유하기 위해 함수 props를 이용하는 것</li>
-<li>즉 무엇을 렌더링할 지 알려주는 함수이다.</li>
-<li>PureComponent가 이에 최적화 되어있다. props, state를 얕은 비교를 하여 성능을 최적화한다.</li>
-</ul>
-<h2 id="PropTypes"><a href="#PropTypes" class="headerlink" title="PropTypes"></a>PropTypes</h2><ul>
-<li>Props의 타입을 확인하기 위한 도구</li>
-<li>link, Flow, TypeScript 같은 정적인 타이핑 도구이다.</li>
-<li>개발 모드에서만 동작한다. 유효하지 않은 prop type에 대한 경고를 준다.</li>
-<li>정규식같은 것으로 if문을 쓰는 등 커스텀이 가능하다</li>
-</ul>
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">PropTypes</span> <span class="keyword">from</span> <span class="string">&#x27;prop-types&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">PropComponent</span>(<span class="params">props</span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">PropComponent</span>.<span class="property">defaultProps</span> = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;Jimmy&quot;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">7</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">PropComponent</span>.<span class="property">propTypes</span>= &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="title class_">PropTypes</span>.<span class="property">string</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="title class_">PropTypes</span>.<span class="property">number</span>.<span class="property">isRequired</span>,</span><br><span class="line">	<span class="attr">num</span>: <span class="keyword">function</span>(<span class="params">props, propName, componentName</span>)&#123;</span><br><span class="line">					<span class="keyword">if</span>(!<span class="regexp">/(7|8)/</span>.<span class="title function_">test</span>(props[propName]))&#123;</span><br><span class="line">						<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Error</span>(propName, props[propName], componentName)</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Component</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">PropComponent</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>React 공식 문서를 보고 진행하는 온라인 강의가 마무리 되었습니다. 실시간 강의의 경우 금일 클로저에 관한 부분이나 React로 함수 작성하여 interface를 쓰는 tsc화 까지 작업을 하고 나니 생각보다 재미 있는 수업이 된 것 같습니다. tsc를 좀 더 유연하게 사용하여 작업을 진행하는게 지금 당장의 목표라고 생각합니다.</p>
 
       
     </div>

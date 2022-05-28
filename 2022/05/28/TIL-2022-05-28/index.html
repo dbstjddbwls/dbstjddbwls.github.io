@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dbstjddbwls.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="수업 내용Test  특정 조건에서 시스템이나 구성 요소가 실행되고 결과가 관찰되고 기록하며 평가를 하는 활동 테스트를 해야하는 이유 이번 작업이 잘 작동하는지 검증 기존 작업에 대한 side effect 검사 Reviewer이나 후임을 위한 가이드    unit Test  일반적으로 함수나 컴포넌트 단위의 테스트를 작성 props 등 다른 컴포넌트 영향을">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022 05 28 TIL">
+<meta property="og:url" content="https://dbstjddbwls.github.io/2022/05/28/TIL-2022-05-28/index.html">
+<meta property="og:site_name" content="프론트엔드에 깃발 세우기">
+<meta property="og:description" content="수업 내용Test  특정 조건에서 시스템이나 구성 요소가 실행되고 결과가 관찰되고 기록하며 평가를 하는 활동 테스트를 해야하는 이유 이번 작업이 잘 작동하는지 검증 기존 작업에 대한 side effect 검사 Reviewer이나 후임을 위한 가이드    unit Test  일반적으로 함수나 컴포넌트 단위의 테스트를 작성 props 등 다른 컴포넌트 영향을">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-28T07:19:05.000Z">
+<meta property="article:modified_time" content="2022-05-28T07:19:43.664Z">
+<meta property="article:author" content="Kim Yun Seong">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dbstjddbwls.github.io/2022/05/28/TIL-2022-05-28/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://dbstjddbwls.github.io/2022/05/28/TIL-2022-05-28/","path":"2022/05/28/TIL-2022-05-28/","title":"2022 05 28 TIL"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>2022 05 28 TIL | 프론트엔드에 깃발 세우기</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">프론트엔드에 깃발 세우기</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%88%98%EC%97%85-%EB%82%B4%EC%9A%A9"><span class="nav-number">1.</span> <span class="nav-text">수업 내용</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Test"><span class="nav-number">1.1.</span> <span class="nav-text">Test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unit-Test"><span class="nav-number">1.2.</span> <span class="nav-text">unit Test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Integration-Test"><span class="nav-number">1.3.</span> <span class="nav-text">Integration Test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jest"><span class="nav-number">1.4.</span> <span class="nav-text">jest</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#expect"><span class="nav-number">1.5.</span> <span class="nav-text">expect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-Testing-Library"><span class="nav-number">1.6.</span> <span class="nav-text">React-Testing-Library</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#render-container"><span class="nav-number">1.7.</span> <span class="nav-text">render, container</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fire-event"><span class="nav-number">1.8.</span> <span class="nav-text">Fire event</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#e2e-Test"><span class="nav-number">1.9.</span> <span class="nav-text">e2e Test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#async-await"><span class="nav-number">1.10.</span> <span class="nav-text">+) async, await</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%9A%8C%EA%B3%A0"><span class="nav-number">2.</span> <span class="nav-text">회고</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kim Yun Seong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/05/28/TIL-2022-05-28/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="2022 05 28 TIL | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2022 05 28 TIL
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-28 16:19:05 / Modified: 16:19:43" itemprop="dateCreated datePublished" datetime="2022-05-28T16:19:05+09:00">2022-05-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><hr>
+<ul>
+<li>특정 조건에서 시스템이나 구성 요소가 실행되고 결과가 관찰되고 기록하며 평가를 하는 활동</li>
+<li>테스트를 해야하는 이유<ul>
+<li>이번 작업이 잘 작동하는지 검증</li>
+<li>기존 작업에 대한 side effect 검사</li>
+<li>Reviewer이나 후임을 위한 가이드</li>
+</ul>
+</li>
+</ul>
+<h2 id="unit-Test"><a href="#unit-Test" class="headerlink" title="unit Test"></a>unit Test</h2><hr>
+<ul>
+<li>일반적으로 함수나 컴포넌트 단위의 테스트를 작성</li>
+<li>props 등 다른 컴포넌트 영향을 받는 경우 직접 주입해서 테스트<br>&#x3D; 함수의 인자를 직접 넣어서 호출하는 방식</li>
+<li>예) props로 특정 값을 넣었을 때 원하는 결과값이 나오는지</li>
+</ul>
+<h2 id="Integration-Test"><a href="#Integration-Test" class="headerlink" title="Integration Test"></a>Integration Test</h2><hr>
+<ul>
+<li><p>단위 모듈이 결합되어있는 형태를 테스트</p>
+</li>
+<li><p>unit Test가 완료되었다면 해당 컴포넌트를 리턴하는 상위 컴포넌트에 props를 전달하여 컴포넌트끼리 정보를 받을 수 있는지 확인</p>
+</li>
+<li><p>예)</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">ShowName</span> = (<span class="params">props</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Show</span> = (<span class="params">props</span>) =&gt; (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">ShowName</span> <span class="attr">name</span>=<span class="string">&#123;props.name&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">);</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="jest"><a href="#jest" class="headerlink" title="jest"></a>jest</h2><hr>
+<ul>
+<li>unit &#x2F; Intergration Test 작성 및 실행, 결과 출력을 도와주는 <strong>테스팅 프레임 워크</strong></li>
+<li>CRA를 설치 시 자동 설치됨</li>
+</ul>
+<h2 id="expect"><a href="#expect" class="headerlink" title="expect"></a>expect</h2><hr>
+<ul>
+<li><p>jest의 문법</p>
+</li>
+<li><p>expect 안에 무언가를 넣으면 다양한 메소드를 이용 가능하다. (jest, jest-dom)</p>
+</li>
+<li><p>CRA가 자동으로 babel 세팅을 해둬서, *.test.ts 파일에 대해 자동으로 넣어줌</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">test</span>(<span class="string">&quot;1 + 3은 4다&quot;</span>,<span class="function">() =&gt;</span> &#123;</span><br><span class="line">	<span class="title function_">expect</span>(<span class="number">1</span> + <span class="number">3</span>).<span class="title function_">toBe</span>(<span class="number">4</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="React-Testing-Library"><a href="#React-Testing-Library" class="headerlink" title="React-Testing-Library"></a>React-Testing-Library</h2><hr>
+<ul>
+<li><p>React 컴포넌트를 test할 수 있도록 renderer 등 함수 제공</p>
+</li>
+<li><p>CRA에 이미 설치되어 있다.</p>
+</li>
+<li><p>scripts에서 확인 가능하다</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">test</span>(<span class="string">&#x27;App5가 render되면 Hello World가 출력되어야한다.&#x27;</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App5</span> /&gt;</span></span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> helloText = screen.<span class="title function_">queryByText</span>(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(helloText)</span><br><span class="line">  <span class="title function_">expect</span>(helloText).<span class="title function_">toBeInTheDocument</span>();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="render-container"><a href="#render-container" class="headerlink" title="render, container"></a>render, container</h2><hr>
+<ul>
+<li>render는 react-testing-library의 함수</li>
+<li>container는 render를 통해 생성된 최상위 부모 DOM</li>
+<li>일방적으로 js에서 다루는 HTML Element이므로 innerHTML같은 것도 활용 가능</li>
+</ul>
+<h2 id="Fire-event"><a href="#Fire-event" class="headerlink" title="Fire event"></a>Fire event</h2><hr>
+<ul>
+<li><p>fireEvent는 react-testing-library의 함수</p>
+</li>
+<li><p>특정 dom에 event 객체와 함께 event를 발생시킴</p>
+</li>
+<li><p>아래와 같은 경우 idInput의 change event handler가 받는 event 객체는 {target: {value: ‘aaaaaa’}}가 된다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">test</span>(<span class="string">&#x27;input에 change event가 잘 동작하는지 확인&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; container, queryByText &#125; = <span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> idInput = container.<span class="title function_">querySelector</span>(<span class="string">&#x27;input&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="title function_">expect</span>(idInput).<span class="title function_">toBeInTheDocument</span>();</span><br><span class="line"></span><br><span class="line">	  fireEvent.<span class="title function_">change</span>(idInput!, &#123;<span class="attr">target</span>: &#123;<span class="attr">value</span>: <span class="string">&#x27;aaaaaa&#x27;</span>&#125;&#125;)</span><br><span class="line">	  <span class="title function_">expect</span>(idInput!.<span class="property">value</span>).<span class="title function_">toBe</span>(<span class="string">&#x27;aaaaaa&#x27;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="title function_">expect</span>(idInput).<span class="title function_">toBe</span>(<span class="string">&#x27;asdf&#x27;</span>)</span><br><span class="line">	<span class="comment">// 에러</span></span><br><span class="line">	<span class="comment">// 위에서 change로 aaaaaa로 바뀌어서 asdf와는 맞지 않아 에러가 난다.</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="e2e-Test"><a href="#e2e-Test" class="headerlink" title="e2e Test"></a>e2e Test</h2><hr>
+<ul>
+<li>End to End 테스트</li>
+<li>사용법은 실제 브라우저에 페이지를 렌더하고 사용자의 입장에서 어떤 결과가 나오는지를 검증</li>
+<li>예) 폼을 채우고 로그인 버튼을 누른 경우 환영합니다! url이 바뀌면서 환영합니다!를 렌더 테스트</li>
+</ul>
+<h2 id="async-await"><a href="#async-await" class="headerlink" title="+) async, await"></a>+) async, await</h2><hr>
+<ul>
+<li>비동기화의 문법 중 하나</li>
+<li>기존 callback이나 promise then에서 벗어나기 위한 문법이다</li>
+<li>async로 함수를 감싸서 선언하면 return값이 promise의 형태로 전달되게 된다.</li>
+<li>이렇게 감싸진 값을 await를 통하여 불러올 수 있다.</li>
+<li>async는 promise를 return하기 때문에 뒤에 then을 붙혀서도 활용이 가능하다.</li>
+<li>async의 값이 나와야 await가 실행 가능하기 때문에 동기적인 구조가 되는 것이다.</li>
+</ul>
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><hr>
+<p>오늘은 별도로 주말 특강을 신청하게 받아보았습니다.</p>
+<p>현업에서도 실제로 자주 쓰는 Test에 관련한 내용이였고 기존 매번 값을 넣어가며 실행했어야 하였는데, 이번 수업에 배운 것으로 그럴 필요 없이 테스트 코드 작성 방법을 알게되었습니다.</p>
+<p>이런 방식을 좀 더 활용하면 에러를 획기적으로 줄일 수 있을 것 같지만, 개발 시간이 넉넉해야 저는 가능할 것 같습니다.</p>
+<p>추가적인 질문 시간에 async와 await에 대해 질문을 하여 짧게 설명을 들었는데 가끔 이러한 return 값을 동기적으로 써야할 때 써보면 좋을 것 같습니다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/27/TIL-2022-05-27/" rel="prev" title="2022 05 27 TIL">
+                  <i class="fa fa-chevron-left"></i> 2022 05 27 TIL
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kim Yun Seong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
