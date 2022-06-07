@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dbstjddbwls.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="수업 내용TypeScript Class  class ClassName{ }이란 문법을 통하여 생성한다. 하나의 객체로 취급된다. Class 내 요소 앞에 아무것도 적지 않으면 public이란 값이 자동으로 들어간다. 해당 객체 내 요소 앞에 private라는 값을 붙히면 해당 Class 내에서만 접근이 가능하고 외부에서 접근은 불가능해지며 상속도 불가능해진">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022 06 07 TIL">
+<meta property="og:url" content="https://dbstjddbwls.github.io/2022/06/07/TIL-2022-06-07/index.html">
+<meta property="og:site_name" content="프론트엔드에 깃발 세우기">
+<meta property="og:description" content="수업 내용TypeScript Class  class ClassName{ }이란 문법을 통하여 생성한다. 하나의 객체로 취급된다. Class 내 요소 앞에 아무것도 적지 않으면 public이란 값이 자동으로 들어간다. 해당 객체 내 요소 앞에 private라는 값을 붙히면 해당 Class 내에서만 접근이 가능하고 외부에서 접근은 불가능해지며 상속도 불가능해진">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-07T13:01:30.000Z">
+<meta property="article:modified_time" content="2022-06-07T13:02:13.668Z">
+<meta property="article:author" content="Kim Yun Seong">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dbstjddbwls.github.io/2022/06/07/TIL-2022-06-07/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://dbstjddbwls.github.io/2022/06/07/TIL-2022-06-07/","path":"2022/06/07/TIL-2022-06-07/","title":"2022 06 07 TIL"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>2022 06 07 TIL | 프론트엔드에 깃발 세우기</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">프론트엔드에 깃발 세우기</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%88%98%EC%97%85-%EB%82%B4%EC%9A%A9"><span class="nav-number">1.</span> <span class="nav-text">수업 내용</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeScript-Class"><span class="nav-number">1.1.</span> <span class="nav-text">TypeScript Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generic"><span class="nav-number">1.2.</span> <span class="nav-text">Generic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeScript%EC%9D%98-Type"><span class="nav-number">1.3.</span> <span class="nav-text">TypeScript의 Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Primitive-Type"><span class="nav-number">1.4.</span> <span class="nav-text">Primitive Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%EB%9E%80"><span class="nav-number">1.5.</span> <span class="nav-text">코딩테스트란?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B3%B5%EB%B6%80-%EC%88%9C%EC%84%9C"><span class="nav-number">1.6.</span> <span class="nav-text">코딩테스트 공부 순서</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%9D%98%EC%8B%9D-%ED%9D%90%EB%A6%84"><span class="nav-number">1.7.</span> <span class="nav-text">문제풀이를 위한 의식 흐름</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fs%EB%AA%A8%EB%93%88"><span class="nav-number">1.8.</span> <span class="nav-text">fs모듈</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%9A%8C%EA%B3%A0"><span class="nav-number">2.</span> <span class="nav-text">회고</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kim Yun Seong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/06/07/TIL-2022-06-07/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="2022 06 07 TIL | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2022 06 07 TIL
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-06-07 22:01:30 / Modified: 22:02:13" itemprop="dateCreated datePublished" datetime="2022-06-07T22:01:30+09:00">2022-06-07</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="TypeScript-Class"><a href="#TypeScript-Class" class="headerlink" title="TypeScript Class"></a>TypeScript Class</h2><hr>
+<ul>
+<li>class ClassName{ }이란 문법을 통하여 생성한다.</li>
+<li>하나의 객체로 취급된다.</li>
+<li>Class 내 요소 앞에 아무것도 적지 않으면 <strong>public</strong>이란 값이 자동으로 들어간다.</li>
+<li>해당 객체 내 요소 앞에 <strong>private</strong>라는 값을 붙히면 해당 Class 내에서만 접근이 가능하고 외부에서 접근은 불가능해지며 <strong>상속도 불가능</strong>해진다.</li>
+<li>해당 객체 내 요소 앞에 <strong>protected</strong>라는 값을 붙히면 해당 Class 내에만 접근이 가능하고 외부에서의 접근은 불가능해진다. 단 private와 다른 점은 <strong>상속은 가능</strong>해진다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">	protected <span class="attr">user</span>: object;</span><br><span class="line">	private <span class="attr">store</span>: object;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">put</span>(<span class="params">id: string, product: object</span>)&#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">store</span>[id] = product</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> <span class="keyword">extends</span> <span class="title class_ inherited__">A</span> &#123;</span><br><span class="line">	<span class="title function_">addB</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">user</span> = <span class="string">&#x27;B&#x27;</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// Error</span></span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">store</span> = <span class="string">&#x27;B2&#x27;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line">A.<span class="property">user</span></span><br><span class="line">A.<span class="property">store</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Pass</span></span><br><span class="line">A.<span class="title function_">put</span>(<span class="string">&#x27;A&#x27;</span>, &#123;&#125;)</span><br><span class="line">B.<span class="title function_">put</span>(<span class="string">&#x27;B3&#x27;</span>, &#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Class 내에서도 interface 구현이 가능하다. 단 사용하기 위해선 interface 내 명시된 값들이 모두 들어가야 오류가 나지 않는다.</li>
+<li>사용하기 위해선 ClassName 앞에 implements InterfaceName을 적어 사용한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">interface <span class="title class_">Person</span> &#123;</span><br><span class="line">	<span class="attr">name</span>: string;</span><br><span class="line">	<span class="title function_">say</span>(<span class="attr">msg</span>: string): <span class="keyword">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface <span class="title class_">Programmer</span>&#123;</span><br><span class="line">	<span class="title function_">writeCode</span>(<span class="attr">req</span>: string): string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Korean</span> implements <span class="title class_">Person</span>, <span class="title class_">Programmer</span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">public name: string</span>)&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">say</span>(<span class="attr">msg</span>: string): <span class="keyword">void</span>&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(msg);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">writeCode</span>(<span class="attr">req</span>: string): string &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(req);</span><br><span class="line">		<span class="keyword">return</span> req + <span class="string">&quot;...&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">removeCode</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;remove&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// name: jay</span></span><br><span class="line"><span class="keyword">const</span> jay = <span class="keyword">new</span> <span class="title class_">Korean</span>(<span class="string">&quot;jay&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>class 앞이나 class 내 요소 앞에 <strong>abstract</strong>라는 값을 주는 것으로 특정 속성이나 메서드를 상속받는 class에서 필수적인 값으로 만들게할 수 있다.<br>이를 <strong>추상 클래스</strong>라고 하며 이러한 클래스는 <strong>별도로 선언을 할 수 없고</strong> 다른 클래스의 하위 클래스로 들어가야한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">interface <span class="title class_">Person</span> &#123;</span><br><span class="line">	<span class="attr">name</span>: string;</span><br><span class="line">	<span class="title function_">say</span>(<span class="attr">msg</span>: string): <span class="keyword">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface <span class="title class_">Programmer</span>&#123;</span><br><span class="line">	<span class="title function_">writeCode</span>(<span class="attr">req</span>: string): string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">abstract <span class="keyword">class</span> <span class="title class_">Korean</span> implements <span class="title class_">Person</span> &#123;</span><br><span class="line">	public abstract <span class="attr">jumin</span>: number;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">public name: string</span>)&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	abstract <span class="title class_">KoreaFunc</span>(): <span class="keyword">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">KoreanPerson</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Korean</span> implements <span class="title class_">Programmer</span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">public name: string, public jumin: number</span>)&#123;</span><br><span class="line">		<span class="comment">// 부모 생성자 내 name의 값을 호출</span></span><br><span class="line">		<span class="variable language_">super</span>(name);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="title class_">KoreaFunc</span>(): <span class="keyword">void</span> &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Korea&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> jay = <span class="keyword">new</span> <span class="title class_">KoreanPerson</span>(<span class="string">&quot;jay&quot;</span>, <span class="number">22</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//Error</span></span><br><span class="line"><span class="keyword">const</span> jay2 = <span class="keyword">new</span> <span class="title class_">Korean</span>(<span class="string">&quot;jay&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Generic"><a href="#Generic" class="headerlink" title="Generic"></a>Generic</h2><hr>
+<ul>
+<li>Generic이란 함수에서 파라미터를 정의하듯이 타입을 파라미터처럼 정의할 수 있게된다.</li>
+<li>함수명 뒤에 <GenericName> 처럼 작성한 뒤 어떠한 인자의 값에 GenericName을 적으면 쓸 수 있다.</li>
+<li>이후 해당 함수를 호출할 때 GenericName 부분에 타입을 넣어서도 사용 가능하다.</li>
+<li>인자 뒤에 [type]을 적으면 반환 값의 type으로 지정해준다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> createPromis&lt;T&gt;(<span class="attr">x</span>:T, <span class="attr">nums</span>:number)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>&lt;T&gt;(<span class="function">(<span class="params">res, rej</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="built_in">setTimeout</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">			<span class="title function_">res</span>(x);</span><br><span class="line">		&#125;, nums);</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">createPromis</span>(<span class="number">10</span>, <span class="number">100</span>)</span><br><span class="line">	.<span class="title function_">then</span>(<span class="function"><span class="params">v</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(v));</span><br><span class="line"></span><br><span class="line"><span class="comment">// Tuple</span></span><br><span class="line"><span class="keyword">function</span> createTuple&lt;<span class="variable constant_">T1</span>, <span class="variable constant_">U1</span>&gt;(<span class="attr">v</span>: <span class="variable constant_">T1</span>, <span class="attr">v2</span>: <span class="variable constant_">U1</span>): [<span class="variable constant_">T1</span>, <span class="variable constant_">U1</span>] &#123;</span><br><span class="line">	<span class="keyword">return</span> [v, v2]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> t1 = <span class="title function_">createTuple</span>(<span class="string">&quot;String으로 반환&quot;</span>, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Generic은 inerface의 값을 넣어 사용할 수도 있다. 이 경우 inerface 내 정의된 값 외엔 인자로 줄 수가 없게된다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">localFunc</span>&lt;T&gt; &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">private localKey: string</span>)&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">add</span>(<span class="params">v: T</span>)&#123;</span><br><span class="line">		localstorage.<span class="title function_">setItem</span>(<span class="variable language_">this</span>.<span class="property">localKey</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(v));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface <span class="title class_">User</span> &#123;<span class="attr">name</span>: string&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> userDB = <span class="keyword">new</span> localFunc&lt;<span class="title class_">User</span>&gt;(<span class="string">&#x27;user&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Pass</span></span><br><span class="line">userDB.<span class="title function_">add</span>(&#123; <span class="attr">name</span>: <span class="string">&#x27;jay&#x27;</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Error</span></span><br><span class="line">userDB.<span class="title function_">add</span>(<span class="string">&quot;hello&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Generic은 inerface 자체에도 선언할 수 있다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">interface <span class="variable constant_">DB</span>&lt;T&gt;&#123;</span><br><span class="line">	<span class="title function_">add</span>(<span class="attr">v</span>: T): <span class="keyword">void</span>;</span><br><span class="line">	<span class="title function_">get</span>(): T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LocalDB</span>&lt;T&gt; implements <span class="variable constant_">DB</span>&lt;T&gt; &#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">D</span>&lt;T&gt; implements <span class="variable constant_">DB</span>&lt;T&gt;&#123;</span><br><span class="line">	<span class="title function_">add</span>(<span class="attr">v</span>: T): <span class="keyword">void</span>&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;add&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="title function_">get</span>():T&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;get&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface <span class="title class_">JSON</span>Serialier &#123;</span><br><span class="line">	<span class="title function_">serialize</span>(): string;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LocalDB2</span>&lt;T <span class="keyword">extends</span> <span class="title class_">JSON</span>Serialier&gt; implements <span class="variable constant_">DB</span>&lt;T&gt;&#123;</span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">	<span class="title function_">add</span>(<span class="params">v: T</span>)&#123;</span><br><span class="line">		localStrotage.<span class="title function_">setItem</span>(<span class="variable language_">this</span>.<span class="property">localKey</span>, v.<span class="title function_">serialize</span>());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Generic Type의 경우 실제 적용시 삼항 연산자도 사용이 가능하다.  이러한 경우 return 값의 반환으로 어떤 것을 주냐에 따라 달라진다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">interface <span class="title class_">Inter1</span> &#123;</span><br><span class="line">	<span class="attr">v</span>: string;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inerface <span class="title class_">Inter2</span> &#123;</span><br><span class="line">	<span class="attr">m</span>: string;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface <span class="title class_">Cart</span>&lt;T&gt;&#123;</span><br><span class="line">	<span class="title function_">getItem</span>(): T <span class="keyword">extends</span> <span class="title class_">Inter1</span> ? <span class="title class_">Inter1</span> : <span class="title class_">Inter2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">cart1</span>: <span class="title class_">Cart</span>&lt;string&gt; = &#123;</span><br><span class="line">	<span class="title function_">getItem</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			<span class="attr">m</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Cart2&lt;string&gt;.getItem(): Inter2</span></span><br><span class="line">cart1.<span class="title function_">getItem</span>()</span><br></pre></td></tr></table></figure>
+
+<h2 id="TypeScript의-Type"><a href="#TypeScript의-Type" class="headerlink" title="TypeScript의 Type"></a>TypeScript의 Type</h2><hr>
+<ul>
+<li>TypeScript의 Type은 Static Type으로 <strong>개발하는 중간 과정, 즉 코드 작성 때</strong> Type을 확인한다.</li>
+<li>Javascript의 Type은 Dynamic Type으로 <strong>개발할 때는 알 수 없고 런타임이 실행되야</strong> 확인할 수 있다.</li>
+<li>TypeScript에선 JS에서 사용 가능한 타입에 추가적으로 열거 타입을 쓸 수 있게되었다.</li>
+<li><strong>TypeScript에서 사용 가능한 Type</strong><ul>
+<li>기본 Type<ul>
+<li>Boolean</li>
+<li>Number</li>
+<li>String</li>
+<li>Null</li>
+<li>Undefined</li>
+<li>Symbol</li>
+<li>Array</li>
+</ul>
+</li>
+<li>TS에서 추가된 열거형 Type<ul>
+<li>Any, Void, Never, Unknown</li>
+<li>Enum</li>
+<li>Tuple: Object 형</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Primitive-Type"><a href="#Primitive-Type" class="headerlink" title="Primitive Type"></a>Primitive Type</h2><hr>
+<ul>
+<li><p>Object나 레퍼런스의 형태가 아닌 실제의 값을 저장하는 자료형을 뜻한다.</p>
+</li>
+<li><p>ES2015 기준 6가지가 있는데 Boolean, Number, String, Symbol, Null, Undefined가 있다.</p>
+</li>
+<li><p>Typescript의 Primitive Type은 모두 소문자로 작성한다.</p>
+</li>
+<li><p><strong>Symbol?</strong></p>
+<ul>
+<li>new Symbol로 사용 불가</li>
+<li>Symbol을 함수로 사용하여 Symbol Type을 만들 수 있다.</li>
+<li>Symbol을 쓰기 위해선 tsconfig.json 파일 내 lib 속성에 값으로 [ “ES2015”, “DOM” ] 값을 추가해줘야한다.</li>
+<li>해당 함수 내에 자료형 타입의 값을 담아 사용하며, 고유하고 수정 불가능한 값으로 만들어준다.</li>
+<li><strong>주로 접근을 제어</strong>하는데 쓰는 경우가 많다</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sym = <span class="title class_">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">	[sym]: <span class="string">&quot;value&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj[sym]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Tuple?</strong></p>
+<ul>
+<li>union은 둘 중 하나가 들어가는 합집합이라면 tuple은 동시에 선언할 수 있는 방법이다.</li>
+<li>선언한 타입 순서에 맞게 들어가야 오류가 나지 않으며 추가도 불가하다.</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">x</span>: [string, number]</span><br><span class="line"></span><br><span class="line">x = [<span class="string">&quot;hello&quot;</span>, <span class="number">30</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">//Error</span></span><br><span class="line">x = [<span class="number">30</span>, <span class="string">&quot;hello&quot;</span>]</span><br><span class="line">x[<span class="number">2</span>] = <span class="string">&quot;hi&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">person</span>: [sting, number] = [<span class="string">&quot;Mark&quot;</span>, <span class="number">40</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">//Error</span></span><br><span class="line"><span class="keyword">const</span> [first, second, third] = person</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>any?</strong></p>
+<ul>
+<li>어떠한 타입도 들어갈 수 있는 경우 사용한다.</li>
+<li>단 타입에 따른 예기치 않은 오류가 날 수 있어 조심히 사용해야한다.</li>
+<li>그만큼 최대한 쓰지 않는게 핵심이며 컴파일 타임에서 타입 체크가 정상적으로 이뤄지지 않기 때문이다.</li>
+</ul>
+</li>
+<li><p><strong>unknown?</strong></p>
+<ul>
+<li>any와 같이 무엇이 올 지 알수 없는 변수의 타입 선언에 쓴다.</li>
+<li>any와의 차이점은 string이나 number 등에 바로 사용은 불가능하다.</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="attr">maybe</span>: unknown;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Error</span></span><br><span class="line"><span class="keyword">const</span> <span class="attr">aNum</span>:number = maybe;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(maybe === <span class="literal">true</span>)&#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="attr">aBool</span>:boolean = maybe</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> maybe === <span class="string">&quot;string&quot;</span>)&#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="attr">aStr</span>: string = maybe</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>never?</strong></p>
+<ul>
+<li>함수를 선언할 때 사용하며, 아무것도 return 되지 않을 때 사용한다.</li>
+<li>nerver 타입은 모든 타입에 할당할 수 있다.</li>
+<li>하지만 never 자체에는 어떠한 것도 할당이 불가하다. any조차 불가하다.</li>
+<li>주로 잘못된 타입을 넣는 실수를 막을 때 사용된다.</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">error</span>(<span class="params">msg:string</span>): never&#123;</span><br><span class="line">	<span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(msg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fail</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="title function_">error</span>(<span class="string">&quot;failed&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">finiteLoop</span>(<span class="params"></span>):never&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="literal">true</span>)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">declare <span class="keyword">const</span> <span class="attr">a</span>:string | number</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> a !== <span class="string">&#x27;string&#x27;</span>)&#123;</span><br><span class="line">	<span class="comment">// a: number;</span></span><br><span class="line">	a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type <span class="title class_">Indexable</span>&lt;T&gt; = T <span class="keyword">extends</span> string ? T &amp; &#123; [<span class="attr">index</span>: string]: any &#125; : never;</span><br><span class="line"></span><br><span class="line"><span class="comment">// T에 객체가 들어가서 Indexable은 Object Type이 된다. 즉 string이 아니기 때문에 never가 됨.</span></span><br><span class="line"></span><br><span class="line">type <span class="title class_">ObjectIndexable</span> = <span class="title class_">Indexable</span>&lt;&#123;&#125;&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="keyword">const</span> <span class="attr">b</span>: <span class="title class_">Indexable</span>&lt;&#123;&#125;&gt; = <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>void?</strong></p>
+<ul>
+<li>return 되는 값이 없어야할 때 선언하는 type이다.</li>
+<li>같은 의미라하여 null을 넣어도 오류가 나나, return 값으로 undefined만을 넣을 수 있다.</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">returnvoid</span>(<span class="params">msg: string</span>):<span class="keyword">void</span> &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(msg);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<aside>
+💡 나동빈 강사님의 코딩테스트 강의 (1)
+
+</aside>
+
+<h2 id="코딩테스트란"><a href="#코딩테스트란" class="headerlink" title="코딩테스트란?"></a>코딩테스트란?</h2><hr>
+<ul>
+<li>기업이나 기관에서 인원 선발을 목적으로 시행되는 문제 풀이 시험</li>
+<li>문제 해결 역량 평가를 통하여 프로그래밍적 사고를 확인 가능하다.</li>
+<li>온라인 저지 (대회 또는 시험에 나올 문제를 시험해보는 곳) 사이트<ul>
+<li>백준 온라인 저지</li>
+<li>프로그래머스</li>
+<li>코드업</li>
+<li>구름</li>
+</ul>
+</li>
+<li>선생님 코딩테스트 깃허브 : <a target="_blank" rel="noopener" href="https://github.com/ndb796/Python-Competitive-Programming-Team-Notes">https://github.com/ndb796/Python-Competitive-Programming-Team-Notes</a></li>
+</ul>
+<h2 id="코딩테스트-공부-순서"><a href="#코딩테스트-공부-순서" class="headerlink" title="코딩테스트 공부 순서"></a>코딩테스트 공부 순서</h2><hr>
+<ul>
+<li>1단계 : 프로그래밍 언어 문법 공부</li>
+<li>2단계 : 코드업에서 쉬운 문제부터 풀기 (200문제 이상)</li>
+<li>3단계 : 유형별 알고리즘 이론과 핵심 풀이</li>
+<li>4단계 : 백준 온라인 저지에서 문제 풀이</li>
+<li>5단계 : 백준 온라인 저지 내 삼성,카카오 등 역량 테스트 문제집 풀기</li>
+<li>6단계 : 프로그래머스 카카오 문제 풀기</li>
+<li>7단계 : 주요 알고리즘 문제 복습</li>
+</ul>
+<h2 id="문제풀이를-위한-의식-흐름"><a href="#문제풀이를-위한-의식-흐름" class="headerlink" title="문제풀이를 위한 의식 흐름"></a>문제풀이를 위한 의식 흐름</h2><hr>
+<p>결과로부터 역순으로 생각해야 편하다. 처음부터 생각하면 실행 시간이 늦어지는 경우가 있어 우선 결과를 위해 어떤 순서를 지나쳐야 하는지 알아야한다.</p>
+<h2 id="fs모듈"><a href="#fs모듈" class="headerlink" title="fs모듈"></a>fs모듈</h2><hr>
+<ul>
+<li>코딩테스트에선 readline이 아닌 fs를 이용하여 파일 전체를 읽어 들여 처리한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// readline 모듈보다는 fs를 이용해 파일 전체를 읽어 들여 처리하기</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> input = fs.<span class="title function_">readFileSync</span>(<span class="string">&#x27;/dev/stdin&#x27;</span>).<span class="title function_">toString</span>().<span class="title function_">split</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// let input = fs.readFileSync(&#x27;input.txt&#x27;).toString().split(&#x27;\n&#x27;);</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘은 오랜만에 TypeScript의 복습과 코딩 테스트의 기초를 배웠습니다. TypeScript의 경우 평소 쓰고있고 React 수업으로도 사용 중이지만 여러번 복습이 필요한 스킬 같습니다. 코딩 테스트의 경우 어느정도 규모의 기업에 지원하기 위해선 필수로 봐야하기 때문에 좀 더 집중해서 들어야 할 것 같습니다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/06/03/TIL-2022-06-03/" rel="prev" title="2022 06 03 TIL">
+                  <i class="fa fa-chevron-left"></i> 2022 06 03 TIL
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kim Yun Seong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
