@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dbstjddbwls.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="수업 내용Type System  타입을 명시적으로 지정 가능하다. 타입을 명시적으로 지정하지 않으면, 타입스크립트 컴파일러가 자동으로 any라고 추론한다. 타입이란 해당 변수가 할 수 있는 일을 결정해주는 것이다.  Sub Type  작은 타입에는 큰 타입을 넣지 못한다. 하지만 반대로 큰 타입에는 작은 타입을 대입시킬 수 있다.  1234567891011">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022 06 08 TIL">
+<meta property="og:url" content="https://dbstjddbwls.github.io/2022/06/08/TIL-2022-06-08/index.html">
+<meta property="og:site_name" content="프론트엔드에 깃발 세우기">
+<meta property="og:description" content="수업 내용Type System  타입을 명시적으로 지정 가능하다. 타입을 명시적으로 지정하지 않으면, 타입스크립트 컴파일러가 자동으로 any라고 추론한다. 타입이란 해당 변수가 할 수 있는 일을 결정해주는 것이다.  Sub Type  작은 타입에는 큰 타입을 넣지 못한다. 하지만 반대로 큰 타입에는 작은 타입을 대입시킬 수 있다.  1234567891011">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-08T13:14:29.000Z">
+<meta property="article:modified_time" content="2022-06-08T13:15:17.342Z">
+<meta property="article:author" content="Kim Yun Seong">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dbstjddbwls.github.io/2022/06/08/TIL-2022-06-08/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://dbstjddbwls.github.io/2022/06/08/TIL-2022-06-08/","path":"2022/06/08/TIL-2022-06-08/","title":"2022 06 08 TIL"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>2022 06 08 TIL | 프론트엔드에 깃발 세우기</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">프론트엔드에 깃발 세우기</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%88%98%EC%97%85-%EB%82%B4%EC%9A%A9"><span class="nav-number">1.</span> <span class="nav-text">수업 내용</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Type-System"><span class="nav-number">1.1.</span> <span class="nav-text">Type System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sub-Type"><span class="nav-number">1.2.</span> <span class="nav-text">Sub Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeScript-Compilation-Context"><span class="nav-number">1.3.</span> <span class="nav-text">TypeScript Compilation Context</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interface-Indexable-Type"><span class="nav-number">1.4.</span> <span class="nav-text">Interface Indexable Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class-in-interface"><span class="nav-number">1.5.</span> <span class="nav-text">Class in interface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extends-TypeScript"><span class="nav-number">1.6.</span> <span class="nav-text">extends TypeScript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Middleware"><span class="nav-number">1.7.</span> <span class="nav-text">Middleware</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Middleware-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0"><span class="nav-number">1.8.</span> <span class="nav-text">Middleware 사용하기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redux-thunk"><span class="nav-number">1.9.</span> <span class="nav-text">Redux-thunk</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%9A%8C%EA%B3%A0"><span class="nav-number">2.</span> <span class="nav-text">회고</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kim Yun Seong</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/06/08/TIL-2022-06-08/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="2022 06 08 TIL | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2022 06 08 TIL
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-06-08 22:14:29 / Modified: 22:15:17" itemprop="dateCreated datePublished" datetime="2022-06-08T22:14:29+09:00">2022-06-08</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="Type-System"><a href="#Type-System" class="headerlink" title="Type System"></a>Type System</h2><hr>
+<ul>
+<li>타입을 명시적으로 지정 가능하다.</li>
+<li>타입을 명시적으로 지정하지 않으면, 타입스크립트 컴파일러가 자동으로 any라고 추론한다.</li>
+<li>타입이란 해당 변수가 할 수 있는 일을 결정해주는 것이다.</li>
+</ul>
+<h2 id="Sub-Type"><a href="#Sub-Type" class="headerlink" title="Sub Type"></a>Sub Type</h2><hr>
+<ul>
+<li>작은 타입에는 큰 타입을 넣지 못한다.</li>
+<li>하지만 반대로 큰 타입에는 작은 타입을 대입시킬 수 있다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1만 들어갈 수 있음</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sub1</span>: <span class="number">1</span> = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup1</span>: number = sub1;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="comment">// 1이 number란 타입보다 작기때문</span></span><br><span class="line">sub1 = sup1</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sub2</span>: number[] = [<span class="number">1</span>];</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup2</span>: object = sub2;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line">sub2 = sup2</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>단 any의 경우 에러가 발생하지 않는다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">sub3</span>: number = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup3</span>: any= sub3;</span><br><span class="line"></span><br><span class="line">sub3 = sup3</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>같은 타입이거나 서브타입 또는 공변( | )인 경우 할당이 가능하다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">sub4</span>: string = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup4</span>: string | number = sub4</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sub5</span>: &#123;<span class="attr">a</span>: string; <span class="attr">b</span>: number&#125; = &#123;<span class="attr">a</span>:<span class="string">&#x27;&#x27;</span>, <span class="attr">b</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup5</span>: &#123;<span class="attr">a</span>: string | number; <span class="attr">b</span>: number&#125; = sub5</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sub6</span>: <span class="title class_">Array</span>&lt;&#123;<span class="attr">a</span>: string; <span class="attr">b</span>: number&#125;&gt; = [&#123;<span class="attr">a</span>: <span class="string">&#x27;&#x27;</span>, <span class="attr">b</span>: <span class="number">1</span>&#125;];</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup6</span>: <span class="title class_">Array</span>&lt;&#123;<span class="attr">a</span>: string | number; <span class="attr">b</span>: number&#125;&gt; = sub6</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>함수의 매개변수 타입만 같거나 슈퍼타입인 경우 할당이 가능하다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Developer</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Person</span>&#123;</span><br><span class="line">	<span class="title function_">coding</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">StartupDeveloper</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Developer</span>&#123;</span><br><span class="line">	<span class="title function_">buring</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 인자로 함수를 받고, Developer을 인자로 받으며 Developer를 리턴함</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">tellme</span>(<span class="params">f: (d: Developer) =&gt; Developer</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Developer =&gt; Developer 에다가 Developer =&gt; Developer를 할당</span></span><br><span class="line"><span class="title function_">tellme</span>(<span class="keyword">function</span> <span class="title function_">dToD</span>(<span class="params">d: Developer</span>): <span class="title class_">Developer</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Developer</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 슈퍼타입</span></span><br><span class="line"><span class="comment">// Developer =&gt; Developer 에다가 Person =&gt; Developer를 할당</span></span><br><span class="line"><span class="title function_">tellme</span>(<span class="keyword">function</span> <span class="title function_">pToD</span>(<span class="params">d: Person</span>): <span class="title class_">Developer</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Developer</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 하위 참조 요소</span></span><br><span class="line"><span class="comment">// Developer =&gt; Developer 에다가 StartupDeveloper =&gt; Developer를 할당</span></span><br><span class="line"><span class="comment">// Strict Function Type tsconfig 옵션을 키면 오류가 난다.</span></span><br><span class="line"><span class="title function_">tellme</span>(<span class="keyword">function</span> <span class="title function_">sToD</span>(<span class="params">d: StartupDeeloper</span>): <span class="title class_">Developer</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Developer</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="TypeScript-Compilation-Context"><a href="#TypeScript-Compilation-Context" class="headerlink" title="TypeScript Compilation Context"></a>TypeScript Compilation Context</h2><hr>
+<p>타입스크립트 컴파일러가 어떤 기준을 가지고 JS로 번역할 것인지 결정해주는 하나의 맥락이자 기준이다.</p>
+<h2 id="Interface-Indexable-Type"><a href="#Interface-Indexable-Type" class="headerlink" title="Interface Indexable Type"></a>Interface Indexable Type</h2><hr>
+<ul>
+<li>어떠한 값이 들어와도 괜찮은 타입</li>
+<li>[ index : string ] : any 처럼 사용한다.</li>
+<li>이후 어떤 key 값과 value로 오던간에 index 안에 넣어버린다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//숫자로 키값을 지정하고 value는 문자여야한다.</span></span><br><span class="line">interface <span class="title class_">Indexable</span> &#123;</span><br><span class="line">	[<span class="attr">index</span>: number]: string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Class-in-interface"><a href="#Class-in-interface" class="headerlink" title="Class in interface"></a>Class in interface</h2><hr>
+<ul>
+<li>class를 선언할 때 className 뒤에 implements InterfaceName을 적으면 최상단에 type을 지정해줄 수 있다.</li>
+<li>type 지정 후 그 밑은 일반 class 처럼 사용이 가능하다.</li>
+<li>단 implements class 내에서 선언한 type을 쓰기 위해선 constructor 내에서 선언해줘야 한다.</li>
+<li>이렇게 만든 class는 기존 interface를 참조하여 쓰는 것이다.</li>
+</ul>
+<h2 id="extends-TypeScript"><a href="#extends-TypeScript" class="headerlink" title="extends TypeScript"></a>extends TypeScript</h2><hr>
+<ul>
+<li>일종의 확장 기능으로 기존 interface를 참조하여 추가로 타입을 더 붙힐 수 있다.</li>
+<li>참조하여 만든 interface를 이용하여 변수를 만들 수 있으며, 동일한 값이 반복되는 interface가 있을 때 사용한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">interface <span class="title class_">IPerson</span> &#123;</span><br><span class="line">	<span class="attr">name</span>: string;</span><br><span class="line">	age?: number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface <span class="title class_">IKorean</span> <span class="keyword">extends</span> <span class="title class_">IPerson</span> &#123;</span><br><span class="line">	<span class="attr">city</span>: string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">k</span>: <span class="title class_">IKorean</span> = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;Lee&quot;</span>,</span><br><span class="line">	<span class="attr">city</span>: <span class="string">&quot;Seoul&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Middleware"><a href="#Middleware" class="headerlink" title="Middleware"></a>Middleware</h2><hr>
+<ul>
+<li>프로그램(JS Code)과 프로그램 사이에 들어가는 또 다른 프로그램</li>
+<li>특징 : Chain 구성(연속적인 사용) 가능</li>
+<li>Redux에선 store와 action을 파라미터로 받는 함수 action이 dispatch 되면 등록된 middleware에 순차적으로 입력된다.<br>모든 middleware을 통과하면 reducer에 도착한다.</li>
+<li>store를 파라미터로 받았으니 원한다면 getState나 dispatch도 가능하다.</li>
+<li>미들웨어는 모든 reducer들로 action이 전달될 때 거쳐가는 기능이며, 특정 reducer에만 적용하고 싶다면 reducer 내에 함수를 적는게 좋다.</li>
+<li>필수적으로 next(action)을 해줘야 원래 Reducer로 정보를 전달해준다.</li>
+</ul>
+<h2 id="Middleware-사용하기"><a href="#Middleware-사용하기" class="headerlink" title="Middleware 사용하기"></a>Middleware 사용하기</h2><hr>
+<ul>
+<li>Arrow Function을 사용한 경우</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">middleware</span> = store =&gt; <span class="function"><span class="params">next</span> =&gt;</span> <span class="function"><span class="params">action</span> =&gt;</span> &#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>함수 선언식을 사용한 경우</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">middleware</span>(<span class="params">store</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">next</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">action</span>)&#123;</span><br><span class="line">			...</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>미들웨어 등록하기</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(someReducer, <span class="title function_">applyMiddleware</span>(someMiddleware));</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>예제<ul>
+<li>원래 reducer인 userReducer가 받아야할 값을 미리 받아 쓸 수 있다.</li>
+<li>next(action)을 쓰지 않으면 전달되지 않는다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, combineReducers, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">INITIAL_STATE</span> = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">someMiddleware</span> = (<span class="params">store</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">next</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">action</span>)&#123;</span><br><span class="line">      <span class="keyword">let</span> randomCount = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">2</span>)</span><br><span class="line">      <span class="keyword">if</span>(randomCount === <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;성공! : &quot;</span>, randomCount)</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;action이 middleware 도착 : &quot;</span>, action)</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;현재 state : &quot;</span>, store.<span class="title function_">getState</span>())</span><br><span class="line">        <span class="title function_">next</span>(action)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">userReducer</span> = (<span class="params">state = INITIAL_STATE, action</span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;action이 state 도착!!! : &quot;</span>, state, action)</span><br><span class="line">  <span class="keyword">switch</span> (action.<span class="property">type</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;LOGIN&#x27;</span>:</span><br><span class="line">      <span class="keyword">return</span> action.<span class="property">payload</span></span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;LOGOUT&#x27;</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="variable constant_">INITIAL_STATE</span></span><br><span class="line">    <span class="attr">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(<span class="title function_">combineReducers</span>(&#123;</span><br><span class="line">  <span class="attr">user</span>: userReducer,</span><br><span class="line">&#125;),<span class="title function_">applyMiddleware</span>(someMiddleware))</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Redux-thunk"><a href="#Redux-thunk" class="headerlink" title="Redux-thunk"></a>Redux-thunk</h2><hr>
+<ul>
+<li><p>Redux에 함수를 Dispatch(&#x3D; action을 전달)하면 Reducer로 전달하지 않고(&#x3D; next를 호출하지 않고) 해당 함수를 실행시켜주는 간단한 Redux Middleware</p>
+</li>
+<li><p>해당 전달 action이 함수면 바로 실행하고, 함수가 아니면 값을 전달해주는 기능이다.</p>
+</li>
+<li><p>기존 dispatch({ …  }) 처럼 객체만 넘겼다면 이젠 실행함수 형식 자체로 넘길 수 있다.</p>
+</li>
+<li><p>되도록 view file이 아닌 store 파일에서 작업하는게 좋다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">onClick = &#123;</span><br><span class="line">	<span class="title function_">dispatch</span>(<span class="function">(<span class="params">store</span>) =&gt;</span> &#123;</span><br><span class="line">		store.<span class="title function_">dispatch</span>(&#123; type : <span class="string">&quot;...&quot;</span> &#125;);</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// store.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">a</span>(<span class="params">store</span>)&#123;</span><br><span class="line">	store.<span class="title function_">dispatch</span>(<span class="string">&quot;...&quot;</span>, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">setTimeout</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">		store.<span class="title function_">dispatch</span>(<span class="string">&quot;...&quot;</span>,<span class="number">1000</span></span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// &amp;</span></span><br><span class="line"><span class="comment">// Other Example</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">thunkMid</span>(<span class="params">store</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">next</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">action</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">				<span class="title function_">action</span>(store)</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="title function_">next</span>(action)</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>thunk : dispatch와 getState를 받는 <strong>함수를 create 하는 함수</strong></p>
+</li>
+</ul>
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>진상현 강사님의 마지막 React 강의가 끝났습니다. 뒤로 갈수록 난이도가 기하급수적으로 상승하여 이번 수업의 경우 거의 10%도 이해하지 못한 것 같습니다. 마지막 수업이라 그러한지 너무 급하게 끝내시려는 모습도 보인 것 같습니다.</p>
+<p>thunk의 경우 하나의 도구로써 자주 사용이 안될 수 있지만 현업에서 언젠가 막혔을 때 키가 될 수 있는 요소라고 생각합니다. 특히 로딩 중임을 띄워야 할땐 더욱이 그렇게 느끼는 바입니다. 그러한 기능을 실습에서 50명 중 45명 이상이 막혀하는 실습인데 풀이해석과 설명 없이 그저 끝내고 끝인게 너무 아쉬웠습니다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/06/07/TIL-2022-06-07/" rel="prev" title="2022 06 07 TIL">
+                  <i class="fa fa-chevron-left"></i> 2022 06 07 TIL
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kim Yun Seong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

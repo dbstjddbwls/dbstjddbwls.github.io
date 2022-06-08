@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,179 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/06/08/TIL-2022-06-08/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/06/08/TIL-2022-06-08/" class="post-title-link" itemprop="url">2022 06 08 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-06-08 22:14:29 / Modified: 22:15:17" itemprop="dateCreated datePublished" datetime="2022-06-08T22:14:29+09:00">2022-06-08</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="Type-System"><a href="#Type-System" class="headerlink" title="Type System"></a>Type System</h2><hr>
+<ul>
+<li>타입을 명시적으로 지정 가능하다.</li>
+<li>타입을 명시적으로 지정하지 않으면, 타입스크립트 컴파일러가 자동으로 any라고 추론한다.</li>
+<li>타입이란 해당 변수가 할 수 있는 일을 결정해주는 것이다.</li>
+</ul>
+<h2 id="Sub-Type"><a href="#Sub-Type" class="headerlink" title="Sub Type"></a>Sub Type</h2><hr>
+<ul>
+<li>작은 타입에는 큰 타입을 넣지 못한다.</li>
+<li>하지만 반대로 큰 타입에는 작은 타입을 대입시킬 수 있다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1만 들어갈 수 있음</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sub1</span>: <span class="number">1</span> = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup1</span>: number = sub1;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="comment">// 1이 number란 타입보다 작기때문</span></span><br><span class="line">sub1 = sup1</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sub2</span>: number[] = [<span class="number">1</span>];</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup2</span>: object = sub2;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line">sub2 = sup2</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>단 any의 경우 에러가 발생하지 않는다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">sub3</span>: number = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup3</span>: any= sub3;</span><br><span class="line"></span><br><span class="line">sub3 = sup3</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>같은 타입이거나 서브타입 또는 공변( | )인 경우 할당이 가능하다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">sub4</span>: string = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup4</span>: string | number = sub4</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sub5</span>: &#123;<span class="attr">a</span>: string; <span class="attr">b</span>: number&#125; = &#123;<span class="attr">a</span>:<span class="string">&#x27;&#x27;</span>, <span class="attr">b</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup5</span>: &#123;<span class="attr">a</span>: string | number; <span class="attr">b</span>: number&#125; = sub5</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">sub6</span>: <span class="title class_">Array</span>&lt;&#123;<span class="attr">a</span>: string; <span class="attr">b</span>: number&#125;&gt; = [&#123;<span class="attr">a</span>: <span class="string">&#x27;&#x27;</span>, <span class="attr">b</span>: <span class="number">1</span>&#125;];</span><br><span class="line"><span class="keyword">let</span> <span class="attr">sup6</span>: <span class="title class_">Array</span>&lt;&#123;<span class="attr">a</span>: string | number; <span class="attr">b</span>: number&#125;&gt; = sub6</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>함수의 매개변수 타입만 같거나 슈퍼타입인 경우 할당이 가능하다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Developer</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Person</span>&#123;</span><br><span class="line">	<span class="title function_">coding</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">StartupDeveloper</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Developer</span>&#123;</span><br><span class="line">	<span class="title function_">buring</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 인자로 함수를 받고, Developer을 인자로 받으며 Developer를 리턴함</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">tellme</span>(<span class="params">f: (d: Developer) =&gt; Developer</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Developer =&gt; Developer 에다가 Developer =&gt; Developer를 할당</span></span><br><span class="line"><span class="title function_">tellme</span>(<span class="keyword">function</span> <span class="title function_">dToD</span>(<span class="params">d: Developer</span>): <span class="title class_">Developer</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Developer</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 슈퍼타입</span></span><br><span class="line"><span class="comment">// Developer =&gt; Developer 에다가 Person =&gt; Developer를 할당</span></span><br><span class="line"><span class="title function_">tellme</span>(<span class="keyword">function</span> <span class="title function_">pToD</span>(<span class="params">d: Person</span>): <span class="title class_">Developer</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Developer</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 하위 참조 요소</span></span><br><span class="line"><span class="comment">// Developer =&gt; Developer 에다가 StartupDeveloper =&gt; Developer를 할당</span></span><br><span class="line"><span class="comment">// Strict Function Type tsconfig 옵션을 키면 오류가 난다.</span></span><br><span class="line"><span class="title function_">tellme</span>(<span class="keyword">function</span> <span class="title function_">sToD</span>(<span class="params">d: StartupDeeloper</span>): <span class="title class_">Developer</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Developer</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="TypeScript-Compilation-Context"><a href="#TypeScript-Compilation-Context" class="headerlink" title="TypeScript Compilation Context"></a>TypeScript Compilation Context</h2><hr>
+<p>타입스크립트 컴파일러가 어떤 기준을 가지고 JS로 번역할 것인지 결정해주는 하나의 맥락이자 기준이다.</p>
+<h2 id="Interface-Indexable-Type"><a href="#Interface-Indexable-Type" class="headerlink" title="Interface Indexable Type"></a>Interface Indexable Type</h2><hr>
+<ul>
+<li>어떠한 값이 들어와도 괜찮은 타입</li>
+<li>[ index : string ] : any 처럼 사용한다.</li>
+<li>이후 어떤 key 값과 value로 오던간에 index 안에 넣어버린다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//숫자로 키값을 지정하고 value는 문자여야한다.</span></span><br><span class="line">interface <span class="title class_">Indexable</span> &#123;</span><br><span class="line">	[<span class="attr">index</span>: number]: string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Class-in-interface"><a href="#Class-in-interface" class="headerlink" title="Class in interface"></a>Class in interface</h2><hr>
+<ul>
+<li>class를 선언할 때 className 뒤에 implements InterfaceName을 적으면 최상단에 type을 지정해줄 수 있다.</li>
+<li>type 지정 후 그 밑은 일반 class 처럼 사용이 가능하다.</li>
+<li>단 implements class 내에서 선언한 type을 쓰기 위해선 constructor 내에서 선언해줘야 한다.</li>
+<li>이렇게 만든 class는 기존 interface를 참조하여 쓰는 것이다.</li>
+</ul>
+<h2 id="extends-TypeScript"><a href="#extends-TypeScript" class="headerlink" title="extends TypeScript"></a>extends TypeScript</h2><hr>
+<ul>
+<li>일종의 확장 기능으로 기존 interface를 참조하여 추가로 타입을 더 붙힐 수 있다.</li>
+<li>참조하여 만든 interface를 이용하여 변수를 만들 수 있으며, 동일한 값이 반복되는 interface가 있을 때 사용한다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">interface <span class="title class_">IPerson</span> &#123;</span><br><span class="line">	<span class="attr">name</span>: string;</span><br><span class="line">	age?: number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface <span class="title class_">IKorean</span> <span class="keyword">extends</span> <span class="title class_">IPerson</span> &#123;</span><br><span class="line">	<span class="attr">city</span>: string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">k</span>: <span class="title class_">IKorean</span> = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;Lee&quot;</span>,</span><br><span class="line">	<span class="attr">city</span>: <span class="string">&quot;Seoul&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Middleware"><a href="#Middleware" class="headerlink" title="Middleware"></a>Middleware</h2><hr>
+<ul>
+<li>프로그램(JS Code)과 프로그램 사이에 들어가는 또 다른 프로그램</li>
+<li>특징 : Chain 구성(연속적인 사용) 가능</li>
+<li>Redux에선 store와 action을 파라미터로 받는 함수 action이 dispatch 되면 등록된 middleware에 순차적으로 입력된다.<br>모든 middleware을 통과하면 reducer에 도착한다.</li>
+<li>store를 파라미터로 받았으니 원한다면 getState나 dispatch도 가능하다.</li>
+<li>미들웨어는 모든 reducer들로 action이 전달될 때 거쳐가는 기능이며, 특정 reducer에만 적용하고 싶다면 reducer 내에 함수를 적는게 좋다.</li>
+<li>필수적으로 next(action)을 해줘야 원래 Reducer로 정보를 전달해준다.</li>
+</ul>
+<h2 id="Middleware-사용하기"><a href="#Middleware-사용하기" class="headerlink" title="Middleware 사용하기"></a>Middleware 사용하기</h2><hr>
+<ul>
+<li>Arrow Function을 사용한 경우</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">middleware</span> = store =&gt; <span class="function"><span class="params">next</span> =&gt;</span> <span class="function"><span class="params">action</span> =&gt;</span> &#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>함수 선언식을 사용한 경우</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">middleware</span>(<span class="params">store</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">next</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">action</span>)&#123;</span><br><span class="line">			...</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>미들웨어 등록하기</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(someReducer, <span class="title function_">applyMiddleware</span>(someMiddleware));</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>예제<ul>
+<li>원래 reducer인 userReducer가 받아야할 값을 미리 받아 쓸 수 있다.</li>
+<li>next(action)을 쓰지 않으면 전달되지 않는다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore, combineReducers, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">INITIAL_STATE</span> = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">someMiddleware</span> = (<span class="params">store</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">next</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">action</span>)&#123;</span><br><span class="line">      <span class="keyword">let</span> randomCount = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">2</span>)</span><br><span class="line">      <span class="keyword">if</span>(randomCount === <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;성공! : &quot;</span>, randomCount)</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;action이 middleware 도착 : &quot;</span>, action)</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;현재 state : &quot;</span>, store.<span class="title function_">getState</span>())</span><br><span class="line">        <span class="title function_">next</span>(action)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">userReducer</span> = (<span class="params">state = INITIAL_STATE, action</span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;action이 state 도착!!! : &quot;</span>, state, action)</span><br><span class="line">  <span class="keyword">switch</span> (action.<span class="property">type</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;LOGIN&#x27;</span>:</span><br><span class="line">      <span class="keyword">return</span> action.<span class="property">payload</span></span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;LOGOUT&#x27;</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="variable constant_">INITIAL_STATE</span></span><br><span class="line">    <span class="attr">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(<span class="title function_">combineReducers</span>(&#123;</span><br><span class="line">  <span class="attr">user</span>: userReducer,</span><br><span class="line">&#125;),<span class="title function_">applyMiddleware</span>(someMiddleware))</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Redux-thunk"><a href="#Redux-thunk" class="headerlink" title="Redux-thunk"></a>Redux-thunk</h2><hr>
+<ul>
+<li><p>Redux에 함수를 Dispatch(&#x3D; action을 전달)하면 Reducer로 전달하지 않고(&#x3D; next를 호출하지 않고) 해당 함수를 실행시켜주는 간단한 Redux Middleware</p>
+</li>
+<li><p>해당 전달 action이 함수면 바로 실행하고, 함수가 아니면 값을 전달해주는 기능이다.</p>
+</li>
+<li><p>기존 dispatch({ …  }) 처럼 객체만 넘겼다면 이젠 실행함수 형식 자체로 넘길 수 있다.</p>
+</li>
+<li><p>되도록 view file이 아닌 store 파일에서 작업하는게 좋다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">onClick = &#123;</span><br><span class="line">	<span class="title function_">dispatch</span>(<span class="function">(<span class="params">store</span>) =&gt;</span> &#123;</span><br><span class="line">		store.<span class="title function_">dispatch</span>(&#123; type : <span class="string">&quot;...&quot;</span> &#125;);</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// store.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">a</span>(<span class="params">store</span>)&#123;</span><br><span class="line">	store.<span class="title function_">dispatch</span>(<span class="string">&quot;...&quot;</span>, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">setTimeout</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">		store.<span class="title function_">dispatch</span>(<span class="string">&quot;...&quot;</span>,<span class="number">1000</span></span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// &amp;</span></span><br><span class="line"><span class="comment">// Other Example</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">thunkMid</span>(<span class="params">store</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">next</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">action</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">				<span class="title function_">action</span>(store)</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="title function_">next</span>(action)</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>thunk : dispatch와 getState를 받는 <strong>함수를 create 하는 함수</strong></p>
+</li>
+</ul>
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>진상현 강사님의 마지막 React 강의가 끝났습니다. 뒤로 갈수록 난이도가 기하급수적으로 상승하여 이번 수업의 경우 거의 10%도 이해하지 못한 것 같습니다. 마지막 수업이라 그러한지 너무 급하게 끝내시려는 모습도 보인 것 같습니다.</p>
+<p>thunk의 경우 하나의 도구로써 자주 사용이 안될 수 있지만 현업에서 언젠가 막혔을 때 키가 될 수 있는 요소라고 생각합니다. 특히 로딩 중임을 띄워야 할땐 더욱이 그렇게 느끼는 바입니다. 그러한 기능을 실습에서 50명 중 45명 이상이 막혀하는 실습인데 풀이해석과 설명 없이 그저 끝내고 끝인게 너무 아쉬웠습니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1488,234 +1661,6 @@
 </ul>
 <h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘은 Next.js로 블로그 프로필을 만드는 예제를 진행하였습니다. 처음에는 잘 따라갔으나 나중가서는 거의 따라잡지 못하였습니다. getStaticPaths 부분부터는 아예 이해하지 못한 것 같습니다.</p>
 <p>추후 시간이 된다면 이에 대해 다시 확인을 해봐야 할 것 같습니다.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/05/23/TIL-2022-05-23/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Yun Seong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/23/TIL-2022-05-23/" class="post-title-link" itemprop="url">2022 05 23 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-05-23 21:54:38 / Modified: 21:56:19" itemprop="dateCreated datePublished" datetime="2022-05-23T21:54:38+09:00">2022-05-23</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="Apollo-Server"><a href="#Apollo-Server" class="headerlink" title="Apollo Server"></a>Apollo Server</h2><hr>
-<ul>
-<li>GraphQL을 효율있게 사용할 수 있는 서버 모듈</li>
-<li>프론트와 서버 모두를 제공하는 라이브러리다.</li>
-<li>express와 비슷하게 사용할 수 있으며 npm install apollo-server graphql을 받아 사용할 수 있다.</li>
-<li>이후 해당 폴더에 정의를 한 파일을 생성하고 안에 로직에 맞는 코드를 입력하면 사용 가능하다.</li>
-<li>실시간으로 값을 변경하고 싶다면 nodemon이란 모듈을 받아 package.json 내 script &gt; start : nodemon filename.js라고 입력하면 지정한 파일을 불러와 쓸 수 있다.</li>
-</ul>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;<span class="title class_">ApolloServer</span>, gql&#125; = <span class="built_in">require</span>(<span class="string">&quot;apollo-server&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> typeDefs = gql<span class="string">`</span></span><br><span class="line"><span class="string">    type Book&#123;</span></span><br><span class="line"><span class="string">        title: String</span></span><br><span class="line"><span class="string">        author: String</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    type Query&#123;</span></span><br><span class="line"><span class="string">        books: [Book]</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> books = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">title</span>: <span class="string">&#x27;The Book 1&#x27;</span>,</span><br><span class="line">        <span class="attr">author</span>: <span class="string">&#x27;Others 1&#x27;</span>,</span><br><span class="line">        <span class="attr">price</span>: <span class="string">&#x27;39000&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">title</span>: <span class="string">&#x27;The Book 3&#x27;</span>,</span><br><span class="line">        <span class="attr">author</span>: <span class="string">&#x27;Others 3&#x27;</span>,</span><br><span class="line">        <span class="attr">price</span>: <span class="string">&#x27;40000&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> resolvers = &#123;</span><br><span class="line">    <span class="title class_">Query</span>: &#123;</span><br><span class="line">        <span class="attr">books</span>: <span class="function">() =&gt;</span> books,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = <span class="keyword">new</span> <span class="title class_">ApolloServer</span>(&#123;typeDefs, resolvers&#125;);</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">listen</span>().<span class="title function_">then</span>(<span class="function">(<span class="params">&#123;url&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Server ready at <span class="subst">$&#123;url&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="Apollo-Server-Schema"><a href="#Apollo-Server-Schema" class="headerlink" title="Apollo Server Schema"></a>Apollo Server Schema</h2><hr>
-<ul>
-<li>Schema : 프론트쪽과 공유할 데이터의 구조를 뜻한다.</li>
-<li>실제 작업 시에는 한 폴더에 모든 설정 파일을 넣는게 아닌 분리해서 작업을 한다.</li>
-<li>주로 사용하는 폴더 경로<ul>
-<li>client</li>
-<li>server<ul>
-<li>node_module</li>
-<li>src</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>src 폴더 내 datasource 폴더나 index.js, schema.js, resolver.js 등을 넣어 사용함</li>
-<li>REST API의 경우 <code>apollo-datasource-rest</code>라는 모듈을 받아서 사용하며 spaceX를 혼합하여 쓰는 경우가 많다.</li>
-</ul>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;<span class="title class_">RESTDataSource</span>&#125; = <span class="built_in">require</span>(<span class="string">&#x27;apollo-datasource-rest&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LaunchAPI</span> <span class="keyword">extends</span> <span class="title class_ inherited__">RESTDataSource</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>();</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">baseURL</span> = <span class="string">&#x27;https://api.spacexdata.com/v2/&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title class_">LaunchAPI</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Apollo-Server-Query-Resolver"><a href="#Apollo-Server-Query-Resolver" class="headerlink" title="Apollo Server Query Resolver"></a>Apollo Server Query Resolver</h2><hr>
-<ul>
-<li><p>쿼리 요청에 대한 응답을 생성하고 Data나 Promise를 반환한다.</p>
-</li>
-<li><p>Data는 보통 4가지 항목들을 전달받아 값을 반환한다.</p>
-<ul>
-<li>parent : Resolver의 filed 부모에 접근해야할 때 전달한다.</li>
-<li>args : 변수로 전달되는 항목을 요청한다.</li>
-<li>context : 모든 Resolver가 실행될 때 공통적으로 반환받아야하는 부분들을 대상으로 한다.</li>
-<li>info : Optional 적으로 필요한 정보를 요청한다.</li>
-<li>예시</li>
-</ul>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="title class_">Query</span>: &#123;</span><br><span class="line">        <span class="attr">launches</span>: <span class="function">(<span class="params">_, __, &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">            dataSources</span></span></span><br><span class="line"><span class="params"><span class="function">        &#125;</span>) =&gt;</span> dataSources.<span class="property">launchAPI</span>.<span class="title function_">getAllLaunches</span>(),</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>참고 URL : <a target="_blank" rel="noopener" href="https://www.apollographql.com/tutorials/fullstack-quickstart/writing-query-resolvers">https://www.apollographql.com/tutorials/fullstack-quickstart/writing-query-resolvers</a></p>
-</li>
-<li><p>Paginate : Query에서 너무 많은 데이터를 가져오면 오류가 날 수 있다. 그걸 방지하기 위해 Page 형식 처럼 한 번에 보여지는 데이터의 갯수를 제한할 수 있다. 이로 인하여 서버의 부하를 줄인다.</p>
-</li>
-</ul>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// resolver.js</span></span><br><span class="line">type <span class="title class_">Query</span> &#123;</span><br><span class="line">        <span class="title function_">launches</span>(</span><br><span class="line">          <span class="attr">pageSize</span>: <span class="title class_">Int</span></span><br><span class="line">          <span class="attr">after</span>: <span class="title class_">String</span></span><br><span class="line">        ): <span class="title class_">LaunchConnection</span>!</span><br><span class="line">        <span class="title function_">launch</span>(<span class="attr">id</span>: <span class="variable constant_">ID</span>!): <span class="title class_">Launch</span></span><br><span class="line">        <span class="attr">me</span>: <span class="title class_">User</span></span><br><span class="line">&#125;</span><br><span class="line">      </span><br><span class="line">type <span class="title class_">LaunchConnection</span> &#123; </span><br><span class="line">        <span class="attr">cursor</span>: <span class="title class_">String</span>!</span><br><span class="line">        <span class="attr">hasMore</span>: <span class="title class_">Boolean</span>!</span><br><span class="line">        <span class="attr">launches</span>: [<span class="title class_">Launch</span>]!</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Apollo graphQL Server</span></span><br><span class="line">query <span class="title class_">GetLaunches</span> &#123;</span><br><span class="line">	<span class="comment">// 3개만 보여준다.</span></span><br><span class="line">  <span class="title function_">launches</span>(<span class="params">pageSize: <span class="number">3</span></span>) &#123;</span><br><span class="line">    launches &#123;</span><br><span class="line">      id</span><br><span class="line">      mission &#123;</span><br><span class="line">        name</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Mutation Resolver : 주로 값이 수정되는 로그인이나 예약 등의 용도로 사용된다.</li>
-<li>ApolloClient : 만약 프론트엔드와의 연결을 원한다면 해당 모듈을 사용하여 연결 후 화면에 출력한다.</li>
-</ul>
-<h2 id="GraphQL-요약"><a href="#GraphQL-요약" class="headerlink" title="GraphQL 요약"></a>GraphQL 요약</h2><hr>
-<ul>
-<li><p>vs SQL : SQL은 DB랑 Server간의 요청이였다면, Server와 Web Client간의 요청이다.<br>기존 Server에서 DB로 요청을 보내 해당 결과를 Client에게 보냈다면, GraphQL은 Client가 Server로 요청을 보낸 뒤 조건에 부합하는 응답을 준다.</p>
-</li>
-<li><p>vs REST API : 기존 REST API는 다중 엔드포인트로 곤혹이 있었으나, GraphQL은 단일 엔드포인트로 그것을 통하여 Overfetching이나 Underfetching 문제를 해결한다.</p>
-</li>
-<li><p>Overfetching : 기존 어떤 하나의 데이터를 뽑기 위해선 모든 데이터를 우선 받아와야 했지만 이러한 점을 개선하고 하나의 데이터만을 가져올 수 있다.</p>
-</li>
-<li><p>Underfetching  : 기존 여러 요청을 하나하나 줘야했지만 GraphQL은 하나의 요청에 여러 조건을 담아 전달하여 한 번에 받을 수 있다.</p>
-</li>
-<li><p>GraphQL은 라이브러리가 아닌 언어 또는 명세이며 다루기 위해선 Apollo 같은 구현체가 필요하다.</p>
-</li>
-<li><p>graphiql express 등등 여러 도구가 존재한다.</p>
-</li>
-<li><p>Query : 요청을 보낼 때 사용하는 단어이며 원하는 결과를 받기 위해 데이터나 주석, 작업을 보낸다. 필드 객체를 참조하며 인자나 변수를 보낼 수 있다.</p>
-</li>
-<li><p>Fragment : 반복되는 필드셋이나 변수를 전달할 수 있다.</p>
-</li>
-<li><p>변수, if문(지시어) : 동적으로 값을 전달하는 쿼리 방법이며 @include나 @skip을 통하여 사용한다.</p>
-</li>
-<li><p>Mutation : Query가 데이터를 받아오는 기법이라면 Mutation은 데이터를 수정하는 방법</p>
-</li>
-<li><p>Apollo graphQL : 다양한 기능이 추가된 라이브러리</p>
-</li>
-<li><p>Query와 다르게 Mutation은 순차적으로 실행된다. Query같이 데이터를 불러오는 것만 하면 순서가 상관 없지만 수정을 하기 위해선 이전 수정 내역에 기반하여 변경되는 점을 찾아야 할 수 있기에 순차적으로 실행된다.</p>
-</li>
-<li><p>inline Fragment : Fragment와 기능 자체는 동일하지만 interface나 union 타입일 때 주로 사용한다.</p>
-</li>
-<li><p>Type : 객체 타입과 필드를 가지는 시스템이며 타입 스크립트와 비슷하게 작동한다. Query, Scala, interface, union, input 등이 있다.</p>
-</li>
-<li><p>Query나 Mutation도 이러한 타입 중 하나에 포함되어있다.</p>
-</li>
-<li><p>Scala Type : String, float, Boolean 등 구체적인 데이터의 타입을 말한다.</p>
-</li>
-<li><p>Apollo GraphQL은 프론트와 서버를 모두 제공하는 라이브러리이다.</p>
-</li>
-<li><p>apollo-server graphql이란 모듈을 통하여 서버를 작동시킬 수 있다.</p>
-</li>
-<li><p>Schema란 프론트와 백엔드가 쉐어할 JSON 데이터의 구조 방식을 뜻한다.</p>
-</li>
-<li><p>Data Source의 경우 SpaceX REST API에는 기본적인 캐싱 기능이 포함되어 있다. 허나 Datasouce 자체에는 캐싱 기능이 없으니 추가 조치가 필요하다.</p>
-</li>
-<li><p>Resolver : 쿼리의 요청에 대한 응답 생성 코드를 뜻한다.</p>
-</li>
-<li><p>Pagenation : 서버 부하를 줄이는 기능으로 여러 데이터를 불러올 때 불러올 데이터의 갯수를 제한한다.</p>
-</li>
-<li><p>Mutation Resolver : 주로 로그인이나 예약 등의 정보가 변경될 기능에 사용되는 Resolver이다.</p>
-</li>
-<li><p>Apollo GraphQL로 프론트엔드 연결을 하기 위해선 ApolloClient란 모듈이 필요하다.</p>
-</li>
-<li><p>useQuery란 함수를 사용하여 data, loading, error 상황등에 대한 코드를 작성한다.</p>
-</li>
-</ul>
-<h2 id="Next-js"><a href="#Next-js" class="headerlink" title="Next.js"></a>Next.js</h2><hr>
-<ul>
-<li>Vercel이란 곳에서 만든 React의 프레임워크이다.</li>
-<li>라이브러리를 표방한 React의 장점은 살리며 다양한 편의기능을 추가한 프레임워크이다.</li>
-<li>SSR(Server Side Rendering)를 기반으로 한다.<ul>
-<li>SSR이란 클라이언트로 전달될 HTML 파일 내용의 일부를 미리 그려서 내어주는 것을 뜻한다.</li>
-<li>클라이언트의 렌더링 속도를 빠르게 하여 사용자의 체감 속도를 증진시킨다.</li>
-<li>검색 엔진이 JS를 실행하지 않아도 크롤링이 가능하다.</li>
-</ul>
-</li>
-<li>사용을 위해선 npx CRA을 기존에 사용했다면 Next.js는 npx create-next-app, 버전 관리 모듈인 n이라는 모듈의 설치가 필요하다.</li>
-<li>Pre-rendering의 특징을 활용할 수 있다.<ul>
-<li>SSG : getStaticProps</li>
-<li>SSR : getServerSideProps</li>
-</ul>
-</li>
-</ul>
-<aside>
-💡 진상현 강사님의 리액트 강의 (4)
-
-</aside>
-
-<h2 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect()"></a>useEffect()</h2><hr>
-<ul>
-<li>Side Effect를 통해 DOM을 수정할 때 쓰는 Hook</li>
-<li>첫 번째 인자로 실행할 콜백 함수를 넘겨준다.</li>
-<li>App 함수 컴포넌트가 다시 렌더링 되더라도 콜백함수는 첫 번째 렌더링 이후에만 실행한다. 즉 셋팅할 땐 실행하지 않으며 셋팅이 다 된 이후 실행한다.</li>
-<li>두 번째 인자로는 Array를 받으며 최초 렌더링 이후 1회 실행한다. 이후 해당 Array에 넣은 값이 바뀌면 첫 번째 인자로 받은 함수를 재실행 된다.</li>
-<li>만약 useEffect가 특정 value값 변경에 의해 Event가 쌓이게 된다면 useEffect 첫 인자의 함수 내 return 값으로 removeEvent를 해주면 된다. (Cleanup)</li>
-</ul>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">React</span>.<span class="title function_">useEffect</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="title function_">handleClick</span> = (<span class="params"></span>) =&gt; <span class="title function_">alert</span>(value);</span><br><span class="line">	<span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, handleClick);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="function">()=&gt;</span>&#123;</span><br><span class="line">		<span class="variable language_">document</span>.<span class="title function_">removeEventListener</span>(<span class="string">&#x27;click&#x27;</span>, handleClick);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,[value]);</span><br></pre></td></tr></table></figure>
-
-<h2 id="useMemo"><a href="#useMemo" class="headerlink" title="useMemo()"></a>useMemo()</h2><hr>
-<ul>
-<li>return으로 반환하는 값이 있는 연산이나 코드의 경우 계속 반복하는 것이 아닌, 기존 값을 저장해놨다가 인자가 변화하지 않으면 저장값을 반환하는 Hook</li>
-<li>첫 번째 인자로는 실행 함수를 넣는다. 해당 함수는 첫 렌더링 때 한 번 실행되고, 두 번째 인자로 받는 State나 Value가 변화하지 않는 이상 중복 실행이 된다면 이전 렌더링 때 실행되어 반환된 값을 전달한다.</li>
-<li>예시)<br>input의 입력에 따라 state가 변하는 컴포넌트를 다른 컴포넌트에 해당 state를 props를 전달하고, 해당 자식 컴포넌트 안에 1~4억까지 모든 수를 더한 값을 하는 연산이 있다면 첫 렌더링 때 수행 후 부모 컴포넌트가 바뀔 때만 수행하고 자식 컴포넌트가 다시 렌더링 될 땐 실행하지 않고 이전 렌더링 값을 저장해뒀다 반환한다.</li>
-</ul>
-<h2 id="useCallback"><a href="#useCallback" class="headerlink" title="useCallback()"></a>useCallback()</h2><hr>
-<ul>
-<li>useMemo의 경우 첫 인자로 받은 실행 함수 내 return 값이 반환된다.</li>
-<li>useCallback()의 경우 첫 인자로 받은 실행 함수 자체라 Memoization 된다.<ul>
-<li>함수를 반환해야할 때 : Memo, Callback</li>
-<li>그 외나 변수를 반환할 때 : Memo</li>
-</ul>
-</li>
-<li>useCallback의 경우 첫 번째 인자 자체를 반환하는 것이기 때문에 cleanup이 불가능하다.</li>
-</ul>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ()=&gt;&#123; &lt;div&gt;&#123;a&#125;&lt;/div&gt; &#125;를 반환</span></span><br><span class="line"><span class="title function_">useMemo</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> a = <span class="string">&#x27;a&#x27;</span></span><br><span class="line">	<span class="keyword">return</span> <span class="function">()=&gt;</span>&#123; <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;a&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span> &#125;</span><br><span class="line">&#125;,[state])</span><br><span class="line"></span><br><span class="line"><span class="comment">// ()=&gt;&#123; let a = &#x27;a&#x27; return a &#125;를 반환</span></span><br><span class="line"><span class="title function_">useCallback</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> a = <span class="string">&#x27;a&#x27;</span></span><br><span class="line">	<span class="keyword">return</span> a</span><br><span class="line">&#125;,[state])</span><br></pre></td></tr></table></figure>
-
-<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘은 GraphQL의 온라인 강의 마무리와 Next.js의 시작을 진행하였습니다. GraphQL은 처음 시작할 땐 알기 쉬웠으나 심화로 들어갈 수록 너무 어려웠고 마지막은 거의 이해하지 못한 것 같습니다. 추후 리액트 강의 때 GraphQL에 관한 실시간 강의가 있던 것으로 기억하는데 이후 해당 수업을 듣고 추가로 공부를 더 해야할 것 같습니다.</p>
-<p>Next.js의 경우 아직 환경 설정 및 파일 생성만 진행하여 이것이 CRA와 무슨 차이점이 있는지 아직 느끼진 못하였으나 실제 작업에서 용이하게 쓰이는 것으로 알고 있어 집중해서 공부해야 할 것 같습니다.</p>
-<p>실시간 강의는 저번 useState에 이어 useEffect와 useMemo, useCallback 등 대표적인 hook에 대하여 배웠습니다. 이 중 useEffect의 경우 DOM을 제어하는 만큼 잘 배워둬야 이후 React 강의나 실습 때 쓸 수 있으리라 생각합니다.</p>
 
       
     </div>
