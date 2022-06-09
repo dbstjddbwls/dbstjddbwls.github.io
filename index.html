@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,158 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/06/09/TIL-2022-06-09/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Yun Seong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/06/09/TIL-2022-06-09/" class="post-title-link" itemprop="url">2022 06 09 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-06-09 21:57:39 / Modified: 21:58:08" itemprop="dateCreated datePublished" datetime="2022-06-09T21:57:39+09:00">2022-06-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="TypeScript-Classes"><a href="#TypeScript-Classes" class="headerlink" title="TypeScript Classes"></a>TypeScript Classes</h2><hr>
+<ul>
+<li>Object를 만드는 하나의 설계도</li>
+<li>클래스 이전에 Object를 만드는 방법은 function이였다.</li>
+<li>TypeScript에서는 클래스도 사용자가 만드는 하나의 타입이다.</li>
+</ul>
+<h2 id="Start-Class"><a href="#Start-Class" class="headerlink" title="Start Class"></a>Start Class</h2><hr>
+<ul>
+<li><p>Class의 첫 글자는 무조건 대문자로 적는다. (구분을 위한 규칙)</p>
+</li>
+<li><p>사용할 땐 new ClassName()을 변수에 할당하여 사용한다.</p>
+</li>
+<li><p>npx tsc —init 명령어를 통해 config 파일을 생성할 수 있다.</p>
+</li>
+<li><p>.ts파일에서 작업을 완료한 후 npx tsc 명령어를 입력 하면 자동 컴파일링 되어 js 파일로 변환해준다.<br>단 tsx의 경우 리액트 실행 시 자동 변환이 된다.</p>
+</li>
+<li><p>Class 내부에 constructor(param){ } 를 통하여 전달받는 인자에 대하여 생성자를 만들어 인자 자체를 Class에 귀속시킬 수 있다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">	name;</span><br><span class="line"></span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">name: string</span>) &#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Constructor-amp-Initialize"><a href="#Constructor-amp-Initialize" class="headerlink" title="Constructor &amp; Initialize"></a>Constructor &amp; Initialize</h2><hr>
+<ul>
+<li>Class 내에서 어떠한 값을 선언하기 위해선 타입을 꼭 선언해줘야 한다.</li>
+<li>타입을 선언할 때 값(key) 부분에 !나 ?를 붙혀 값의 필수성을 조정할 수 있다.<ul>
+<li>!가 붙으면 이 값은 무조건 할당이 되어있으니 에러가 뜨지 않게 하라는 기능이다.</li>
+<li>?가 붙으면 해당 값이 인자로 올 수도 있고 없을 수도 있다고 알려준다.</li>
+</ul>
+</li>
+<li>생성자에는 async를 설정할 수 없다.</li>
+</ul>
+<h2 id="Getter-amp-Setter"><a href="#Getter-amp-Setter" class="headerlink" title="Getter &amp; Setter"></a>Getter &amp; Setter</h2><hr>
+<ul>
+<li>클래스 내 함수의 선언 앞에 get을 붙히면 return하는 값이 필수로 있어야하며, return 전에 어떠한 코드를 넣을 수 있다.</li>
+<li>클래스 내 함수를 호출할 때 set을 붙힌다면 해당 setter 함수가 호출이 된다.</li>
+<li>get과 set을 이용한다면 아래 코드에서 _name 변수 생성자에 private를 써도 접근이 가능해진다. (get과 set은 Class A 안에서 작동하기 때문에 직접 _name에 접근하는게 아니기 때문)</li>
+<li>단 get을 없애면 두 console.log 다 undefined가 뜨고 set을 없애면 재할당이 불가능해진다.</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">		_name: string,</span></span><br><span class="line"><span class="params">	</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">get</span> <span class="title function_">name</span>() &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;get&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">_name</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">set</span> <span class="title function_">name</span>(<span class="params">n: string</span>) &#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">_name</span> = n</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">a1</span>: A = <span class="keyword">new</span> <span class="title function_">A</span>(<span class="string">&quot;Mark&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// get을 하는 함수 getter</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a1.<span class="property">name</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//set을 하는 함수 setter</span></span><br><span class="line">a1.<span class="property">name</span> = <span class="string">&quot;Jackson&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a1.<span class="property">name</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 결과</span></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">get</span></span><br><span class="line"><span class="comment">Mark</span></span><br><span class="line"><span class="comment">set</span></span><br><span class="line"><span class="comment">Jackson</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Readonly"><a href="#Readonly" class="headerlink" title="Readonly"></a>Readonly</h2><hr>
+<ul>
+<li>Getter와 비슷한 기능이지만 읽기 전용으로, 즉 불러오는 기능만 지원하며 수정이 아예 불가하게 만들 수 있다.</li>
+<li>변수 선언 시 public이나 private 과 변수명 사이에 readonly를 붙히면 된다.<br>예시) public readonly name: …</li>
+</ul>
+<h2 id="Indexable"><a href="#Indexable" class="headerlink" title="Indexable"></a>Indexable</h2><hr>
+<p>변수 선언시 대괄호로 감싸서 선언을 하면 해당 Class에 추가로 값을 선언하면 대체되어 들어간다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">	[<span class="attr">index</span>: string]: <span class="string">&quot;male&quot;</span> | <span class="string">&quot;female&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = <span class="keyword">new</span> <span class="title function_">A</span>();</span><br><span class="line">a.<span class="property">mark</span> = <span class="string">&quot;male&quot;</span>;</span><br><span class="line">a.<span class="property">jade</span> = <span class="string">&quot;female&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line"><span class="comment">// A &#123; mark: &quot;male&quot;, jade: &quot;female&quot; &#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h2><hr>
+<ul>
+<li><p>public이나 private과 변수명 사이에 static을 넣으면 해당 Class에서 요소를 가져와 사용할 때 굳이 변수에 new ClassName으로 할당하고 사용하지 않고 바로 ClassName.staticProps 처럼 사용할 수 있다.</p>
+</li>
+<li><p>변수든 함수든 사용없이 사용이 가능하다.</p>
+</li>
+<li><p>해당 Class 안에서도 사용이 가능하다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">	private <span class="keyword">static</span> <span class="variable constant_">CITY</span> = <span class="string">&quot;Seoul&quot;</span>;</span><br><span class="line">	public <span class="keyword">static</span> <span class="title function_">hello</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hi&quot;</span>, <span class="title class_">Person</span>.<span class="property">CITY_</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Person</span>.<span class="title function_">hello</span>()</span><br><span class="line"><span class="comment">// Hi Seoul</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Generics"><a href="#Generics" class="headerlink" title="Generics"></a>Generics</h2><hr>
+<ul>
+<li><p>소괄호 안에 Generic Name을 넣어 사용하는 타입 선언 방법</p>
+</li>
+<li><p>자동으로 해당 타입을 추론해서 보여준다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> generics&lt;T&gt;(<span class="attr">msg</span>: T): T&#123;</span><br><span class="line">	<span class="keyword">return</span> msg</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">generics</span>(<span class="string">&quot;Mark&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">generics</span>(<span class="number">30</span>));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>배열로 받고 싶다면 인자 뒤에 배열 표시를 해주면 된다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title class_">Arr</span>&lt;T&gt;(<span class="attr">msg</span>:T[]): T &#123;</span><br><span class="line">	<span class="keyword">return</span> msg[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Arr</span>([<span class="string">&quot;Hello&quot;</span>, <span class="string">&quot;World&quot;</span>])</span><br><span class="line"></span><br><span class="line"><span class="title class_">Arr</span>([<span class="string">&quot;Hello&quot;</span>, <span class="number">5</span>])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>다른 타입을 2개 동시에 사용하는 방식은 Tuple이라고 한다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title class_">Tup</span>&lt;T, K&gt;(<span class="attr">msg</span>:[T,K]): T &#123;</span><br><span class="line">	<span class="keyword">return</span> msg[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Tup</span>([<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;world&quot;</span>]);</span><br><span class="line"></span><br><span class="line"><span class="title class_">Tup</span>([<span class="string">&quot;hello&quot;</span>, <span class="number">10</span>])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Function 형식으로 Generic을 선언할 수 있다. 단 이렇게 선엉한 Generic은 실제로 사용할 때 구현체에 동일하게 Generic 선언을 한 번 더 해줘야한다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">type <span class="title class_">FuncGeneric</span> = &lt;T&gt;<span class="function">(<span class="params">msg:T</span>) =&gt;</span> T;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">useFunc</span>: <span class="title class_">FuncGeneric</span> = &lt;T&gt;(<span class="attr">msg</span>: T): <span class="function"><span class="params">T</span> =&gt;</span> &#123; </span><br><span class="line">	<span class="keyword">return</span> msg</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface <span class="title class_">FuncGeneric2</span> &#123;</span><br><span class="line">	&lt;T&gt;(<span class="attr">msg</span>: T): T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">useFunc2</span>: <span class="title class_">FuncGeneric2</span> = &lt;T&gt;(<span class="attr">msg</span>: T): <span class="function"><span class="params">T</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> msg</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>function에서 사용이 가능한 만큼 Class에서도 사용이 가능하다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&lt;T, K&gt; &#123;</span><br><span class="line">	private <span class="attr">_name</span>: T;</span><br><span class="line">	private <span class="attr">_age</span>: K;</span><br><span class="line">	</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">name: T, age: K</span>) &#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">_name</span> = name;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">_age</span> = age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Mark&quot;</span>, <span class="number">40</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Error</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Person</span>&lt;string, number&gt;(<span class="string">&quot;Mark2&quot;</span>, <span class="string">&quot;Jason&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Pass</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Person</span>&lt;string, number&gt;(<span class="string">&quot;Mark2&quot;</span>, <span class="number">41</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>keyof를 통하여 유니온 타입이면서 동시에 조건을 만족해야할 때 문제를 해결할 수 있다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">interface <span class="title class_">IPerson</span> &#123;</span><br><span class="line">	<span class="attr">name</span>: string,</span><br><span class="line">	<span class="attr">age</span>: number</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">person</span>: <span class="title class_">IPerson</span> = &#123;</span><br><span class="line">	<span class="attr">name</span>: <span class="string">&quot;Mark&quot;</span>,</span><br><span class="line">	<span class="attr">age</span>: <span class="number">39</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> getProp&lt;T, K <span class="keyword">extends</span> keyof T&gt;(<span class="attr">obj</span>: T, <span class="attr">key</span>: K): T[K] &#123;</span><br><span class="line">	<span class="keyword">return</span> obj[key];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">getProp</span>(person, <span class="string">&quot;name&quot;</span>)</span><br><span class="line"><span class="title function_">getProp</span>(person, <span class="string">&quot;age&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> setProp&lt;T, K <span class="keyword">extends</span> keyof T&gt;(<span class="attr">obj</span>: T, <span class="attr">key</span>: K, <span class="attr">value</span>: T[K]): <span class="keyword">void</span> &#123;</span><br><span class="line">	obj[key] = value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">setProp</span>(person, <span class="string">&quot;name&quot;</span>, <span class="string">&quot;Anna&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>타입스크립트의 복습 수업이 끝났습니다. </p>
+<p>타입스크립트를 지금까지 배워오면서 드는 생각은 이렇게 안전해도 되나와 이렇게 복잡해도 되나의 반복이였던 것 같습니다. </p>
+<p>항상 코드를 짜며 이 코드가 맞는지, 어디서 이런 오류가 나는지 몰랐던 적이 많은데 타입스크립트가 그 오류를 코드 작성 과정에서 보여주는 점이 너무 매력적입니다.</p>
+<p>이번 파이널 프로젝트에도 1순위 희망 기업이 타입스크립트로 코드 작성을 원하는 기업이였고 그러한 만큼 최대한 지금보다 더 익숙해져야 실무에서 적어도 문법오류 없이 쓸 수 있을 것 같습니다.</p>
+<p>기본적인 문법은 다 배웠다고 생각합니다. 앞으로 남은 길은 계속 쓰며 익숙해지고, 문제가 생겼을 때의 해결능력을 늘리는 것만이 남은 것 같습니다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -356,9 +508,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-06-07 22:01:30 / Modified: 22:02:13" itemprop="dateCreated datePublished" datetime="2022-06-07T22:01:30+09:00">2022-06-07</time>
+      <time title="Created: 2022-06-07 22:01:30" itemprop="dateCreated datePublished" datetime="2022-06-07T22:01:30+09:00">2022-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-09 13:48:23" itemprop="dateModified" datetime="2022-06-09T13:48:23+09:00">2022-06-09</time>
     </span>
 
   
@@ -496,11 +654,6 @@
 </ul>
   <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">returnvoid</span>(<span class="params">msg: string</span>):<span class="keyword">void</span> &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(msg);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<aside>
-💡 나동빈 강사님의 코딩테스트 강의 (1)
-
-</aside>
-
 <h2 id="코딩테스트란"><a href="#코딩테스트란" class="headerlink" title="코딩테스트란?"></a>코딩테스트란?</h2><hr>
 <ul>
 <li>기업이나 기관에서 인원 선발을 목적으로 시행되는 문제 풀이 시험</li>
@@ -1519,168 +1672,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://dbstjddbwls.github.io/2022/05/24/TIL-2022-05-24/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Yun Seong">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 프론트엔드에 깃발 세우기">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/24/TIL-2022-05-24/" class="post-title-link" itemprop="url">2022 05 24 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-05-24 22:21:11 / Modified: 22:21:54" itemprop="dateCreated datePublished" datetime="2022-05-24T22:21:11+09:00">2022-05-24</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="수업-내용"><a href="#수업-내용" class="headerlink" title="수업 내용"></a>수업 내용</h1><h2 id="Next-js로-Blog-만들어보기"><a href="#Next-js로-Blog-만들어보기" class="headerlink" title="Next.js로 Blog 만들어보기"></a>Next.js로 Blog 만들어보기</h2><hr>
-<ul>
-<li><p>참고 URL : <a target="_blank" rel="noopener" href="https://nextjs.org/learn/basics/create-nextjs-app/setup">https://nextjs.org/learn/basics/create-nextjs-app/setup</a></p>
-</li>
-<li><p><strong>import Link Component</strong></p>
-<ul>
-<li><p>link를 넣는 컴포넌트로 a 태그와 같이 사용할 수 있다.</p>
-</li>
-<li><p>두 태그의 차이점은 a 태그는 다른 페이지 항목을 처음부터 새로 불러들이는 것이라면, Link 태그는 기존 보고있는 페이지와 이동할 페이지를 비교하여 없는 파일이나 요소만 불러들여 화면에 출력한다. 즉 공통되는 파일이나 요소를 저장하는 이러한 점 때문에 페이지 이동 시의 깜빡임이 사라진다.<br>  이러한 것을 Code Splitting이라고 부른다.</p>
-</li>
-<li><p>또 다른 기능으로는 prefetching이라는 기능이 있다.<br>  npm run build를 한 뒤 npm start를 하였을 때 보여지는 화면에 보여지는 정보만 가져오는 것이 아닌, 보여지는 화면에서 이동할 수 있는 링크의 페이지 정보까지 우선적으로 받아들인다. 이후 페이지 이동 시에는 chunk만 불러오게 된다. 이러한 기능 또한 a 태그만 사용해서는 불가능한 기능이다.</p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Link</span> <span class="keyword">from</span> <span class="string">&#x27;next/link&#x27;</span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"><span class="keyword">return</span>(</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/posts/first-post&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			a 태그 이동</span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">Link</span> <span class="attr">href</span>=<span class="string">&quot;/posts/first-post&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">a</span>&gt;</span> Link태그 이동 <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/&gt;</span></span></span><br><span class="line">)</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p><strong>import Image Component</strong></p>
-<ul>
-<li><p>image 태그와 비슷한 기능을 하는 컴포넌트이다.</p>
-</li>
-<li><p>속성을 동일하게 받으나 사용 사이즈에 맞춰 이미지 파일을 자동으로 최적화를 해주어 파일 크기도 줄어들게 된다.</p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> image <span class="keyword">from</span> <span class="string">&#x27;next/image&#x27;</span>;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"><span class="keyword">return</span>(</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">Image</span> <span class="attr">src</span>=<span class="string">&quot;../asset/image.jpg&#x27; /&gt;</span></span></span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p><strong>MetaData</strong></p>
-<ul>
-<li><p>HTML에서 head 태그의 역할을 하는 기능이다.</p>
-</li>
-<li><p>주로 <Head>란 태그를 써서 사용하며 안에 title 태그나 link favicon 태그 등을 사용하여 넣는다.</p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Head</span> <span class="keyword">from</span> <span class="string">&#x27;next/head&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">Head</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;<span class="name">title</span>&gt;</span> Create Next App<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;icon&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/favicon.ico&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;author&quot;</span> <span class="attr">content</span>=<span class="string">&#x27;Hello Nextjs&#x27;</span>&gt;</span><span class="tag">&lt;/<span class="name">meta</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">meta</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">Head</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p><strong>CSS Modules</strong></p>
-<ul>
-<li><p>React에서 CSS를 적용 시키는 방법 중 하나이다.</p>
-</li>
-<li><p>css 파일 자체로 적용 하는 것이 아닌, .module.css 파일로 만들어 적용하는 방법으로 특정 div나 컴포넌트의 className으로 module 파일 내 class 이름을 지정하면 자동으로 적용된다.</p>
-</li>
-<li><p>해당 파일의 이름은 fileName.css가 아닌 fileName.module.css로 지정을 해야만 한다.</p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// layout.module.css</span></span><br><span class="line">.<span class="property">container</span> &#123;</span><br><span class="line">    max-<span class="attr">width</span>: 36rem;</span><br><span class="line">    <span class="attr">padding</span>: <span class="number">0</span> 1rem;</span><br><span class="line">    <span class="attr">margin</span>: 3rem auto 6rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Layout.js</span></span><br><span class="line"><span class="keyword">import</span> styles <span class="keyword">from</span> <span class="string">&#x27;./layout.module.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Layout</span>(<span class="params">&#123; children &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&#123;styles.container&#125;</span>&gt;</span>&#123;children&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Layout</span> <span class="keyword">from</span> <span class="string">&#x27;./Layout&#x27;</span></span><br><span class="line"></span><br><span class="line">&lt;<span class="title class_">Layout</span>&gt; <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span> &lt;/<span class="title class_">Layout</span>&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p><strong>Global CSS</strong></p>
-<ul>
-<li><p>모든 페이지에 전반적으로 들어갈 css 파일을 지정한다</p>
-</li>
-<li><p>경로는 보통 처음 CNA 제작 시 자동으로 정해지며 pages 폴더 내 _app.js란 파일을 만들어 해당 파일 안에 Global CSS를 import 시킨다.</p>
-</li>
-<li><p>_app.js에 import된 css는 모든 파일에 공통적으로 자동 반영된다.</p>
-</li>
-<li><p>_app.js는 모든 컴포넌트를 한 번 감싸는 역할을 한다.  즉 css만이 아니라 js code도 공유가 된다.</p>
-</li>
-<li><p>SASS 또한 이용할 수 있다.</p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /styles/global.css</span></span><br><span class="line">a &#123;</span><br><span class="line">	<span class="attr">color</span>: red</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// /pages/_app.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;../styles/global.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">App</span>(<span class="params">&#123; Component, pageProps &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Component</span> &#123;<span class="attr">...pageProps</span>&#125; /&gt;</span></span>;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p><strong>hydration</strong><br>페이지가 브라우저에 로딩되고 JS CODE가 실행되며 페이지가 인터렉팅하게 동작할 상태가 되는 과정이다.</p>
-</li>
-<li><p><strong>pre-rendering</strong></p>
-<ul>
-<li>Next.js는 모든 페이지를 기본적으로 Pre Rendering을 하고 있다.</li>
-<li>HTML 태그들을 먼저 우선적으로 pre-rendering을 한 뒤 이후 JS 파일들을 불러와서 적용시킨다. pre-rendering 이후 JS 파일을 적용시키는 과정을 위에서 말한 hydration이라고 부른다.</li>
-<li>Next.js로 npm run start를 한 화면에서 js disabled를 하게되면 import나 alert 같은 코드들은 모두 제외되고 태그 형식의 컴포넌트나 이미지들만 보이게 된다.</li>
-<li>반면 create-react-app으로 만든 순수한 react-app에게 js disable은 치명적이다. React-app은 JS 실행으로 화면을 그리는 것이라 어떠한 화면도 나오지 않게 되기 때문이다.</li>
-</ul>
-</li>
-<li><p><strong>getStaticProps()</strong></p>
-<ul>
-<li><p>해당 함수를 통하여 마크다운이나 다른 폴더들을 읽어서 올 수 있다.</p>
-</li>
-<li><p>gray-matter라는 라이브러리로 파일의 해석을 진행해야 한다.</p>
-</li>
-<li><p>따로 모듈화를 해두는 것이 좋으며 이러한 읽어본 파일들의 정보는 server 폴더 내에서 확인할 수 있다.</p>
-</li>
-<li><p>이러한 기능은 build될 때 pre-rendering 된다.</p>
-</li>
-<li><p>만약 사용자의 요청마다 외부의 데이터를 가져와야 한다면 getStaticProps가 아니라 getServerSideProps를 사용하면 된다.</p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// lib/posts.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> fs <span class="keyword">from</span> <span class="string">&#x27;fs&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> path <span class="keyword">from</span> <span class="string">&#x27;path&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> matter <span class="keyword">from</span> <span class="string">&#x27;gray-matter&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> postsDirectory = path.<span class="title function_">join</span>(process.<span class="title function_">cwd</span>(), <span class="string">&#x27;posts&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">getSortedPostsData</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// Get file names under /posts</span></span><br><span class="line">  <span class="keyword">const</span> fileNames = fs.<span class="title function_">readdirSync</span>(postsDirectory);</span><br><span class="line">  <span class="keyword">const</span> allPostsData = fileNames.<span class="title function_">map</span>(<span class="function">(<span class="params">fileName</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// Remove &quot;.md&quot; from file name to get id</span></span><br><span class="line">    <span class="keyword">const</span> id = fileName.<span class="title function_">replace</span>(<span class="regexp">/\.md$/</span>, <span class="string">&#x27;&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Read markdown file as string</span></span><br><span class="line">    <span class="keyword">const</span> fullPath = path.<span class="title function_">join</span>(postsDirectory, fileName);</span><br><span class="line">    <span class="keyword">const</span> fileContents = fs.<span class="title function_">readFileSync</span>(fullPath, <span class="string">&#x27;utf8&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Use gray-matter to parse the post metadata section</span></span><br><span class="line">    <span class="keyword">const</span> matterResult = <span class="title function_">matter</span>(fileContents);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Combine the data with the id</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      id,</span><br><span class="line">      ...matterResult.<span class="property">data</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="comment">// Sort posts by date</span></span><br><span class="line">  <span class="keyword">return</span> allPostsData.<span class="title function_">sort</span>(<span class="function">(<span class="params">&#123; date: a &#125;, &#123; date: b &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (a &lt; b) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">      <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; getSortedPostsData &#125; <span class="keyword">from</span> <span class="string">&#x27;../lib/posts&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getStaticProps</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> allPostsData = <span class="title function_">getSortedPostsData</span>();</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">props</span>: &#123;</span><br><span class="line">      allPostsData,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;section&gt;</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Blog<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          &#123;allPostsData.map((&#123; id, date, title &#125;) =&gt; (</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;id&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">              &#123;title&#125;</span></span><br><span class="line"><span class="language-xml">              <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">              &#123;id&#125;</span></span><br><span class="line"><span class="language-xml">              <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">              &#123;date&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          ))&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">&lt;/section&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p><strong>Dynamic Routes</strong></p>
-<ul>
-<li>파일을 읽고 불러들이고 만드는 역할을 하는 기능들이다.</li>
-<li>getStaticPaths : [{ params : { id : string }}] 목록을 반환한다. params 안에는 dynamic routes key가 들어있어야한다.</li>
-<li>getStaticProps: id 별로 md 파일에서 데티러를 읽어 page에 props로 전달하는 기능을 한다.</li>
-<li>remark : npm으로 html에 md content를 보여주는 역할을 한다.</li>
-<li>Catch-all Route : id를 하나만 받는 것이 아닌 여러 개를 받는 역할로 &#x2F;pages&#x2F;posts&#x2F;[…id].js 이러한 방식으로 만들어두고 사용한다.</li>
-<li>fallback : false면 404를 반환하고 true면 router.isFallback을 반환한다.</li>
-</ul>
-</li>
-</ul>
-<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><p>오늘은 Next.js로 블로그 프로필을 만드는 예제를 진행하였습니다. 처음에는 잘 따라갔으나 나중가서는 거의 따라잡지 못하였습니다. getStaticPaths 부분부터는 아예 이해하지 못한 것 같습니다.</p>
-<p>추후 시간이 된다면 이에 대해 다시 확인을 해봐야 할 것 같습니다.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
